@@ -76,9 +76,9 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => '',
+	'username' => 'root',
 	'password' => '',
-	'database' => '',
+	'database' => 'agenda_dev',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -94,3 +94,33 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+$db['mssql'] = array(
+	'dsn'	=> '',
+	'hostname' => '10.231.45.205',
+	'username' => 'debo',
+	'password' => 'debo',
+	'database' => 'dossa_060921',
+	'dbdriver' => 'sqlsrv',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
+
+/*
+$db['foca_mssql']['hostname'] = '10.231.45.205';
+$db['foca_mssql']['username'] = 'debo';
+$db['foca_mssql']['password'] = 'debo';
+$db['foca_mssql']['database'] = 'dossa_060921';
+$db['foca_mssql']['dbdriver'] = 'mssql';
+*/
