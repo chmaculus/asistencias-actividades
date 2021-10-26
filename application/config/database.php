@@ -117,10 +117,3 @@ $db['mssql'] = array(
 	'save_queries' => TRUE
 );
 
-/*
-$db['foca_mssql']['hostname'] = '10.231.45.205';
-$db['foca_mssql']['username'] = 'debo';
-$db['foca_mssql']['password'] = 'debo';
-$db['foca_mssql']['database'] = 'dossa_060921';
-$db['foca_mssql']['dbdriver'] = 'mssql';
-*/
