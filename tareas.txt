@@ -1,0 +1,11 @@
+conectar mssql
+
+teclado virtual
+https://github.com/search?l=&p=2&q=keyboard++language%3APHP&ref=advsearch&type=Repositories
+
+https://www.jose-aguilar.com/blog/teclado-virtual-con-jquery/
+
+
+
+https://github.com/Vibhu578/CodeIgniter-AngularJS-Search-Rest-API-
+
