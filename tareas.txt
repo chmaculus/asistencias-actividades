@@ -13,3 +13,6 @@ http://localhost/asistencias_actividades/index.php/Init/getMysql
 
 http://localhost/asistencias_actividades/index.php/Init/index2
 
+http://localhost/asistencias_actividades/index.php/init/getmysql
+
+http://localhost/asistencias_actividades/index.php/init/getmssql

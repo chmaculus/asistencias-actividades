@@ -5,7 +5,7 @@ class Init_model extends CI_Model {
 
 	function __construct(){
     parent::__construct();
-    $this->db2 = $this->load->database('foca_mssql', TRUE);
+    $this->db2 = $this->load->database('mssql', TRUE);
   }
 
 	public function getTableOne()

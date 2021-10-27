@@ -10,15 +10,15 @@ class Init extends CI_Controller {
 	 }
 
 
-	public function getMssql()
+	public function getmssql()
 	{
 		$data = $this->init_model->getTableOne();
 		echo json_encode($data);
 	}
 
-	public function getMysql()
+	public function getmysql()
 	{
-		$data = $this->init_model->getTableOne();
+		$data = $this->init_model->getTableTwo();
 		echo json_encode($data);
 	}
 
