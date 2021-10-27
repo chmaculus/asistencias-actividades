@@ -18,7 +18,7 @@ class Init extends CI_Controller {
 
 	public function getmysql()
 	{
-		$data = $this->init_model->getTableTwo();
+		$data = $this->init_model->getactividades();
 		echo json_encode($data);
 	}
 
