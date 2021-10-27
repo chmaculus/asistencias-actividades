@@ -9,3 +9,7 @@ https://www.jose-aguilar.com/blog/teclado-virtual-con-jquery/
 
 https://github.com/Vibhu578/CodeIgniter-AngularJS-Search-Rest-API-
 
+http://localhost/asistencias_actividades/index.php/Init/getMysql
+
+http://localhost/asistencias_actividades/index.php/Init/index2
+
