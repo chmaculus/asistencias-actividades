@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Init_model extends CI_Model {
+class actividades_model extends CI_Model {
 
 	function __construct(){
     parent::__construct();
@@ -23,7 +23,9 @@ class Init_model extends CI_Model {
 	{
     $query = $this->db1->get_where("actividades",array('activado'=>1));
     $this->db1->order_by("actividad");
-		return $query->result();
+		//return $query->result();
+		return $query->result_array();
+		
 	}
 
 }

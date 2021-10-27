@@ -6,16 +6,20 @@ class actividades extends CI_Controller {
 	 public function __construct()
 	 {
 			 parent::__construct();
-			 //$this->load->model('actividades_model');
-			 $this->load->model('init_model');
+			 $this->load->model('actividades_model');
 	 }
 
 
 	public function index()
 	{
-		$data = $this->init_model->getactividades();
-		echo json_encode($data);
+		$data = $this->actividades_model->getactividades();
+		//echo json_encode($data);
+		$data['page_title'] = 'Asistencia Actividades';
+		echo '<table border="1"><tr>';
+		foreach($data as $row){
+			echo "<td>".$row["Actividad"]."</td>";
+		}
+		echo '</tr></table>';
 	}
-
 }
 

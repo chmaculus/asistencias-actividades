@@ -23,6 +23,7 @@ class Init_model extends CI_Model {
 	{
     $query = $this->db1->get_where("actividades",array('activado'=>1));
     $this->db1->order_by("actividad");
+    $this->db2->limit(1);
 		return $query->result();
 	}
 
