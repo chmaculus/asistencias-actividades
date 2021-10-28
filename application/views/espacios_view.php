@@ -7,7 +7,7 @@
 <!-- Core CSS de Bootstrap-->
 <link href="<?php  echo base_url().bootstrap_path;?>css/bootstrap.css" rel="stylesheet">
 
-<link href="<?php  echo base_url();?>assets/css/clases.css" rel="stylesheet">
+<link href="<?php  echo base_url();?>assets/css/espacios.css" rel="stylesheet">
 
 <style>
 	.bd-placeholder-img {
