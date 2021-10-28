@@ -21,7 +21,9 @@
 
 <center>
 
-<table border="1"><tr>
+<label>CLUB HOUSE</label>
+
+<table style="border:1px solid black;margin-top: 30px;"><tr>
 
 <?php
 $count=0;
