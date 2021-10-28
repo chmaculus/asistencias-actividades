@@ -1,3 +1,9 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="content-type" />
+</head>
+
 <!-- Core CSS de Bootstrap-->
 <link href="<?php  echo base_url().bootstrap_path;?>css/bootstrap.css" rel="stylesheet">
 
@@ -21,24 +27,36 @@
 
 <center>
 
-<label>CLUB HOUSE</label>
+<br><table><tr>
+<td><img src="<?php echo base_url()."assets/images/club_house.png";?>"></td>
 
+<?php /*
+ width="5" height="5"
+*/
+?>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+<td><label class="label1">ACTIVIDADES</label></td>
+
+
+</tr></table>
 <table style="border:1px solid black;margin-top: 30px;"><tr>
 
 <?php
 $count=0;
 		foreach($data as $row){
 			$count++;
-			//echo '<td><button class="btn btn-primary btn-lg" type="button">'.$row["Actividad"].'</button></td>';
-			//echo '<td><button class="btn btn-outline-primary btn-lg" type="button">'.$row["Actividad"].'</button></td>';
-			echo '<td><button class="btn-3d" type="button">'.$row["Actividad"].'</button></td>';
+			$str=$row["Actividad"];
+			//$str=str_replace(chr(63), "Ñ", $str);
+			$str=strtoupper($str);
+			echo '<td><button class="btn-3d" type="button">'.$str.'</button></td>';
 			if($count==5){
 				echo "</tr><tr>";
 				$count=0;
 			}
 		}
-echo '<td><button class="btn-3d" type="button"></button></td>';
-echo '<td><button class="btn-3d" type="button"></button></td>';
+//echo '<td><button class="btn-3d" type="button"></button></td>';
+//echo '<td><button class="btn-3d" type="button"></button></td>';
 ?>
 
 </tr>

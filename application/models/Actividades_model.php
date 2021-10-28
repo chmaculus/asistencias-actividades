@@ -28,7 +28,7 @@ class actividades_model extends CI_Model {
 		//return $query->result_array();
 */
 		$this->db1->distinct();
-		//$this->db1->select('actividad');
+		$this->db1->select('Actividad');
 		$this->db1->from("actividades");
 		$this->db1->where("activado=1");
 		//$this->db1->group_by("Actividad");
