@@ -12,17 +12,11 @@ class Actividades extends CI_Controller {
 
 	public function index()
 	{
-		$data = $this->actividades_model->getactividades();
+		$data = $this->Actividades_model->getactividades();
 		$this->load->view('actividades', array(
 		'data' =>$data
 		));
 		//echo json_encode($data);
-		/*$data['page_title'] = 'Asistencia Actividades';
-		echo '<table border="1"><tr>';
-		foreach($data as $row){
-			echo "<td>".$row["Actividad"]."</td>";
-		}
-		echo '</tr></table>';*/
 	}
 }
 

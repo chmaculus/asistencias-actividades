@@ -22,7 +22,7 @@ class actividades_model extends CI_Model {
 	public function getactividades()
 	{
     $query = $this->db1->get_where("actividades",array('activado'=>1));
-    $this->db1->order_by("actividad");
+    $this->db1->order_by("Actividad");
 		//return $query->result();
 		return $query->result_array();
 		

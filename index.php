@@ -305,6 +305,10 @@ switch (ENVIRONMENT)
 
 	define('VIEWPATH', $view_folder.DIRECTORY_SEPARATOR);
 
+	define('bootstrap_path','plugins/bootstrap-5.1.3/dist/');
+
+
+
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
