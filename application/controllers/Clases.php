@@ -13,7 +13,7 @@ class Clases extends CI_Controller {
 	public function index()
 	{
 		$data = $this->Clases_model->getclases();
-		$this->load->view('Clases_view', array(
+		$this->load->view('clases_view', array(
 		'data' =>$data
 		));
 		//echo json_encode($data);

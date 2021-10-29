@@ -13,7 +13,7 @@ class Espacios extends CI_Controller {
 	public function index()
 	{
 		$data = $this->Espacios_model->getespacios();
-		$this->load->view('Espacios_view', array(
+		$this->load->view('espacios_view', array(
 		'data' =>$data
 		));
 		//echo json_encode($data);

@@ -6,7 +6,7 @@ class Espacios_model extends CI_Model {
 	function __construct(){
 		parent::__construct();
 		$this->db1 = $this->load->database('mysql', TRUE);
-		$this->db2 = $this->load->database('mssql', TRUE);
+		//$this->db2 = $this->load->database('mssql', TRUE);
 	}
 
 	public function getespacios()

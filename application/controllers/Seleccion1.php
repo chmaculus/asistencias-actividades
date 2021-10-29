@@ -11,7 +11,7 @@ class Seleccion1 extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('Seleccion1_view','');
+		$this->load->view('seleccion1_view','');
 	}
 }
 
