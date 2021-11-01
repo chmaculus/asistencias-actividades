@@ -77,7 +77,7 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => 'maculuss',
+	'password' => '',
 	'database' => 'agenda_dev',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
@@ -94,7 +94,7 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
-/*
+
 $db['mssql'] = array(
 	'dsn'	=> '',
 	'hostname' => '10.231.45.205',
@@ -116,12 +116,12 @@ $db['mssql'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
-*/
+
 $db['mysql'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => 'maculuss',
+	'password' => '',
 	'database' => 'agenda_dev',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
