@@ -13,6 +13,7 @@ class Actividades extends CI_Controller {
 	public function index()
 	{
 		$data = $this->Actividades_model->getactividades();
+		$this->load->view('header','');
 		$this->load->view('actividades', array(
 		'data' =>$data
 		));
