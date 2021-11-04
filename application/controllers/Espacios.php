@@ -13,6 +13,12 @@ class Espacios extends CI_Controller {
 	public function index()
 	{
 		$data = $this->Espacios_model->getespacios();
+		$aaa['title'] = 'ESPACIOS';
+		$aaa['css'] = 'espacios.css';
+		$this->load->view('cabecera',array(
+			'data2' =>$aaa
+		));
+
 		$this->load->view('espacios_view', array(
 		'data' =>$data
 		));
