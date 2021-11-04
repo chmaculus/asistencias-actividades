@@ -1,8 +1,16 @@
+body{
+  background: rgb(0,179,255);
+  background: -moz-radial-gradient(circle, rgba(0,179,255,0.6629026610644257) 30%, rgba(1,62,88,1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(0,179,255,0.6629026610644257) 30%, rgba(1,62,88,1) 100%);
+  background: radial-gradient(circle, rgba(0,179,255,0.6629026610644257) 30%, rgba(1,62,88,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00b3ff",endColorstr="#013e58",GradientType=1);
+}
+
 .btn-actividades {
   padding: .6rem 1rem;
   border: 1px solid #995309;
   border-radius: 4px;
-  background-color: #d9750b;
+  background-color: #f00f0f;
   color: #fff;
 
   font-size: 3.5rem;

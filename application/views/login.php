@@ -10,9 +10,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <img id="logo-dalvian" src="<?php echo base_url()."assets/images/club_house.png";?>">
     <div class="login">
-        <input placeholder="DNI" id="input-dni">
+        <div class="panel-izquierdo">
+            <img id="logo-dalvian" src="<?php echo base_url()."assets/images/club_house.png";?>">
+            <input type=text placeholder="DNI" id="input-dni">
+            <button id="enter" class="button-36" role="button">Ingresar</button>
+        </div>
 
         <table class="teclado-numerico">
             <tr class="primera-fila">
@@ -34,20 +37,19 @@
             </tr>
 
             <tr class="cuarta-fila">
-                <td><button><img id="borrar" src="<?php echo base_url()."assets/images/borrar.png";?>"></button></td>
+                <td><button><img id="limpiar" src="<?php echo base_url()."assets/images/delete-all.png";?>"></button></td>
                 <td id="cero"><button>0</button></td>
-                <td><button><img id="enter" src="<?php echo base_url()."assets/images/enter.png";?>"></button></td>
+                <td><button><img id="borrar" src="<?php echo base_url()."assets/images/borrar.png";?>"></button></td>
             </tr>
             <tr class="cuarta-fila">
-                <th>Borrar</td>
+                <th>Limpiar</td>
                 <th></td>
-                <th>Aceptar</td>
+                <th>Borrar</td>
             </tr>
         </table>
     </div>
-    
+    <img id="foca-logo" src="<?php echo base_url()."assets/images/logo-foca.png";?>">
 </body>
-<img id="foca-logo" src="<?php echo base_url()."assets/images/logo-foca.png";?>">
 </html>
 
 <script>
@@ -127,10 +129,17 @@
         $( "#input-dni" ).val(dni);
     });
 
+    $( "#limpiar" ).click(function() {
+        $( "#input-dni" ).val('');
+    });
+
     $( "#enter" ).click(function() {
         var dni =  $( "#input-dni" ).val();
         if(dni.toString().length == 8){
-            location.href = "http://10.231.45.108/asistencias-actividades/seleccion1";
+            $('.login').css("transform","translate(-1500px,0)");
+            $('.login').css("transition-duration","1.5s");
+            setTimeout(function(){location.href = "http://10.231.45.108/asistencias-actividades/menu";}, 1200);
+                
         }else{
             alert("El DNI ingresado no es valido");
         }
