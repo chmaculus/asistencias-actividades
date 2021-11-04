@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 3e07d1c8983e615c74ee2b85617dc12ecdf71cbd
 <table style="border:1px solid black;margin-top: 30px;"><tr>
 
 <?php

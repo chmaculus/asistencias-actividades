@@ -7,7 +7,7 @@
 <!-- Core CSS de Bootstrap-->
 <link href="<?php  echo base_url().bootstrap_path;?>css/bootstrap.css" rel="stylesheet">
 
-<link href="<?php  echo base_url();?>assets/css/<?php echo $data2['css'];?>" rel="stylesheet">
+<link href="<?php  echo base_url();?>assets/css/<?php if(isset($data2['css'])){echo $data2['css'];}else{echo "seleccion1.css";} ?>" rel="stylesheet">
 
 <style>
 	.bd-placeholder-img {
@@ -43,7 +43,11 @@
 			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 
 			<td>
-				<label class="label1"><?php echo $data2['title'];?></label>
-			</td>
-		</tr>
-	</table>
+				<label class="label1"><?php 
+				if(isset($data2['title'])){
+					echo $data2['title'];
+				}
+			?></label>
+		</td>
+	</tr>
+</table>
