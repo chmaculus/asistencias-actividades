@@ -10,9 +10,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <img id="logo-dalvian" src="<?php echo base_url()."assets/images/club_house.png";?>" width="100" height="100">
+    <img id="logo-dalvian" src="<?php echo base_url()."assets/images/club_house.png";?>">
     <div class="login">
-        <input placeholder="DNI" id="input-dni" type="number" maxlength="8">
+        <input placeholder="DNI" id="input-dni">
 
         <table class="teclado-numerico">
             <tr class="primera-fila">
@@ -34,9 +34,9 @@
             </tr>
 
             <tr class="cuarta-fila">
-                <td><button><img id="borrar" src="<?php echo base_url()."assets/images/borrar.png";?>" width="100" height="100"></button></td>
+                <td><button><img id="borrar" src="<?php echo base_url()."assets/images/borrar.png";?>"></button></td>
                 <td id="cero"><button>0</button></td>
-                <td><button><img id="enter" src="<?php echo base_url()."assets/images/enter.png";?>" width="100" height="100"></button></td>
+                <td><button><img id="enter" src="<?php echo base_url()."assets/images/enter.png";?>"></button></td>
             </tr>
             <tr class="cuarta-fila">
                 <th>Borrar</td>
@@ -47,7 +47,7 @@
     </div>
     
 </body>
-<img id="foca-logo" src="<?php echo base_url()."assets/images/logo-foca.png";?>" width="100" height="100">
+<img id="foca-logo" src="<?php echo base_url()."assets/images/logo-foca.png";?>">
 </html>
 
 <script>
@@ -136,4 +136,11 @@
         }
     });
 
+    //impide el ingreso de letras o caracteres por encima de 8 digitos
+    $('#input-dni').keypress(function(event){
+        var dni =  $( "#input-dni" ).val();
+    if(event.which != 8 && isNaN(String.fromCharCode(event.which)) || dni.toString().length == 8){
+        event.preventDefault();
+    }
+    });
 </script>
