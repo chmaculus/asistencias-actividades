@@ -1,0 +1,104 @@
+*{
+    font-family:sans-serif;
+}
+
+img{
+    image-rendering: auto;
+    width: auto;
+    height: auto;
+    padding-left: 43%;
+}
+
+.login{
+    border: 2px #f5f5f5 solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    border-radius: 10px;
+    height: 50%;
+    margin-left: 35%;
+    box-shadow: 10px 10px 10px 10px #888888;
+    margin-top: 20px;
+}
+
+.teclado-numerico tr td{
+    padding: 3px;
+}
+
+.teclado-numerico tr td button{
+    border-radius: 50px;
+    height: 80px;
+    width: 80px;
+    background-color: #f3f3f3;
+    font-size: 35px;
+    overflow: hidden;
+    color: black;
+}
+
+input{
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid black;
+    width: 50%;
+    margin-bottom: 10px;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 15px;
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 20px;
+}
+
+.teclado-numerico tr th{
+    color: black;
+    padding-bottom: 30px;
+}
+
+h2{
+    color: black;
+}
+
+button:active {
+    background: linear-gradient(#ffffff, #afafaf); 
+  }
+
+  .teclado-numerico tr td button:active{
+    border: 2px solid  linear-gradient(#afafaf, #ffffff); 
+}
+
+#logo-dalvian{
+    padding-left: 43%;
+    padding-top: 3%;
+    padding-bottom: 1.5%;
+}
+
+#foca-logo{
+    position: absolute;
+    left: 44%;
+    bottom: 3%;
+    height: 6%;
+}
+
+#enter{
+    max-width: 100%; 
+    height: 80%;
+    padding-left: 0px;
+    padding-top: 8px;
+}
+
+#borrar{
+    max-width: 100%; 
+    height: 90%;
+    padding-left: 0px;
+    padding-top: 5px;
+}
