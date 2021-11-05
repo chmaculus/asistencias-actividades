@@ -31,8 +31,8 @@
 	<table>
 		<tr>
 			<td>
-				<a href="<?php echo base_url()."seleccion1";?>">
-					<img src="<?php echo base_url()."assets/images/back2.png";?>" width="50" height="50">
+				<a href="<?php echo base_url()."menu";?>">
+					<img id="back" src="<?php echo base_url()."assets/images/back.png";?>"  width="50" height="50">
 				</a>
 			</td>
 
@@ -51,3 +51,21 @@
 		</td>
 	</tr>
 </table>
+
+<style>
+	#back{
+		background: none;
+		border: none;
+		background-image: url('../../assets/images/back.png');
+		background-size:cover ;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		transform: rotate(180deg);
+		position: absolute;
+		top: 88%;
+		left: 1%;
+		width: 7em;
+		height: 5em;
+		cursor: pointer;
+	}
+</style>

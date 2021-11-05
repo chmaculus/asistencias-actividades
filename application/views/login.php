@@ -11,7 +11,7 @@
 <body>
     <div class="login">
         <div class="panel-izquierdo">
-            <img id="logo-dalvian" src="<?php echo base_url()."assets/images/club_house.png";?>">
+            <img id="logo-dalvian" src="<?php echo base_url()."assets/images/club_house-grey.png";?>">
             <input type=text placeholder="DNI" id="input-dni">
             <button id="enter" class="button-36" role="button">Ingresar</button>
         </div>
@@ -135,12 +135,7 @@
     $( "#enter" ).click(function() {
         var dni =  $( "#input-dni" ).val();
         if(dni.toString().length == 8){
-            //ACA MANDAR VARIABLE DNI QUE CONTIENE EL DNI DEL CLIENTE
-
-            $('.login').css("transform","translate(-1500px,0)");
-            $('.login').css("transition-duration","1.5s");
-            setTimeout(function(){location.href = "http://10.231.45.108/asistencias-actividades/menu";}, 1200);
-                
+            location.href = "http://10.231.45.108/asistencias-actividades/menu";
         }else{
             alert("El DNI ingresado no es valido");
         }
