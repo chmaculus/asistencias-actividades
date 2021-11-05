@@ -6,16 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Club House</title>
     <link rel="stylesheet" href="menu.css">
-    <link href="<?php echo base_url(); ?>assets/css/login.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/menu.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-<table>
-	<tr><td><a href="actividades"><button class="btn-actividades" type="button">ACTIVIDADES</button></a></td></tr>
-	<tr><td><br></td></tr>
-	<tr><td><a href="clases"><button class="btn-clases" type="button">CLASES</button></a></td></tr>
-	<tr><td><br></td></tr>
-	<tr><td><a href="espacios"><button class="btn-espacios" type="button">ESPACIOS</button></a></td></tr>
-</table>
+<div class="contendedor-menu">
+   <div class="actividades-contenedor"><button id="actividades">ACTIVIDADES</button></div> 
+    <div class="clases-contenedor"><button id="clases">CLASES</button></div>
+    <div class="espacios-contenedor"><button id="espacios">ESPACIOS</button></div>
+</div>
+<img id="foca-logo" src="<?php echo base_url()."assets/images/logo-foca.png";?>">
 </body>
 </html>

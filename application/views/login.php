@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Club House</title>
-    <link rel="stylesheet" href="login.css">
     <link href="<?php echo base_url(); ?>assets/css/login.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -136,6 +135,8 @@
     $( "#enter" ).click(function() {
         var dni =  $( "#input-dni" ).val();
         if(dni.toString().length == 8){
+            //ACA MANDAR VARIABLE DNI QUE CONTIENE EL DNI DEL CLIENTE
+
             $('.login').css("transform","translate(-1500px,0)");
             $('.login').css("transition-duration","1.5s");
             setTimeout(function(){location.href = "http://10.231.45.108/asistencias-actividades/menu";}, 1200);

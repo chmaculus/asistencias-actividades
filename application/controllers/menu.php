@@ -11,12 +11,7 @@ class Menu extends CI_Controller {
 
 	public function index()
 	{
-		$data = $this->Actividades_model->getactividades();
-		$aaa['title'] = 'Menu';
-		$aaa['css'] = 'menu.css';
-		$this->load->view('menu', array(
-			'data' =>$data
-		));
+		$this->load->view('menu');
 		//echo json_encode($data);
 	}
 }
