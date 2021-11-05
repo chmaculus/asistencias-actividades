@@ -12,6 +12,12 @@ class Clases extends CI_Controller {
 
 	public function index()
 	{
+		$aaa['title'] = 'CLASES';
+		$aaa['css'] = 'clases.css';
+		$this->load->view('cabecera',array(
+			'data2' =>$aaa
+		));
+
 		$data = $this->Clases_model->getclases();
 		$this->load->view('clases_view', array(
 		'data' =>$data
