@@ -23,6 +23,22 @@
                         font-size: 3.5rem;
                 }
         }
+<link href="<?php  echo base_url();?>assets/css/clases.css" rel="stylesheet">
+
+<style>
+	.bd-placeholder-img {
+		font-size: 1.125rem;
+		text-anchor: middle;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		user-select: none;
+	}
+
+	@media (min-width: 768px) {
+		.bd-placeholder-img-lg {
+			font-size: 3.5rem;
+		}
+	}
 </style>
 
 <center>
@@ -34,3 +50,10 @@
 
 <td><label class="label1"></label></td>
 </tr></table>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+<td><label class="label1"><?php echo $data2("title");?></label></td>
+
+
+</tr></table>
+

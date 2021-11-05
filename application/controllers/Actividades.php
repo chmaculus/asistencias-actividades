@@ -13,6 +13,7 @@ class Actividades extends CI_Controller {
 	public function index()
 	{
 		$data = $this->Actividades_model->getactividades();
+
 		$aaa['title'] = 'ACTIVIDADES';
 		$aaa['css'] = 'actividades.css';
 		$this->load->view('cabecera',array(
@@ -21,6 +22,10 @@ class Actividades extends CI_Controller {
 
 		$this->load->view('actividades_view', array(
 			'data' =>$data
+		));
+		$this->load->view('header','');
+		$this->load->view('actividades', array(
+		'data' =>$data
 		));
 		//echo json_encode($data);
 	}

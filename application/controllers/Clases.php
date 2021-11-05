@@ -19,6 +19,7 @@ class Clases extends CI_Controller {
 		));
 
 		$data = $this->Clases_model->getclases();
+		$this->load->view('header','');
 		$this->load->view('clases_view', array(
 		'data' =>$data
 		));
