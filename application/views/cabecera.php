@@ -32,8 +32,8 @@
 		<tr>
 			<td>
 				<a href="<?php echo base_url()."seleccion1";?>">
-				<img src="<?php echo base_url()."assets/images/back2.png";?>" width="50" height="50">
-			</a>
+					<img src="<?php echo base_url()."assets/images/back2.png";?>" width="50" height="50">
+				</a>
 			</td>
 
 			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
