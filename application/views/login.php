@@ -11,7 +11,7 @@
 <body>
     <div class="login">
         <div class="panel-izquierdo">
-            <img id="logo-dalvian" src="<?php echo base_url()."assets/images/club_house-grey.png";?>">
+            <img id="logo-dalvian" src="<?php echo base_url()."assets/images/club_house.png";?>">
             <input type=text placeholder="DNI" id="input-dni">
             <button id="enter" class="button-36" role="button">Ingresar</button>
         </div>
@@ -42,110 +42,124 @@
             </tr>
             <tr class="cuarta-fila">
                 <th>Limpiar</td>
-                <th></td>
-                <th>Borrar</td>
-            </tr>
-        </table>
-    </div>
-    <img id="foca-logo" src="<?php echo base_url()."assets/images/logo-foca.png";?>">
-</body>
-</html>
+                    <th></td>
+                        <th>Borrar</td>
+                        </tr>
+                    </table>
+                </div>
+                <img id="foca-logo" src="<?php echo base_url()."assets/images/logo-foca.png";?>">
+            </body>
+            </html>
 
-<script>
-    $( "#uno" ).click(function() {
-        var dni =  $( "#input-dni" ).val();
-        if(dni.toString().length < 8){
-        $( "#input-dni" ).val(dni + 1);
-        }
-    });    
+            <script>
+                $( "#uno" ).click(function() {
+                    var dni =  $( "#input-dni" ).val();
+                    if(dni.toString().length < 8){
+                        $( "#input-dni" ).val(dni + 1);
+                    }
+                });    
 
-    $( "#dos" ).click(function() {
-        var dni =  $( "#input-dni" ).val();
-        if(dni.toString().length < 8){
-        $( "#input-dni" ).val(dni + 2);
-        }
-    });
+                $( "#dos" ).click(function() {
+                    var dni =  $( "#input-dni" ).val();
+                    if(dni.toString().length < 8){
+                        $( "#input-dni" ).val(dni + 2);
+                    }
+                });
 
-    $( "#tres" ).click(function() {
-        var dni =  $( "#input-dni" ).val();
-        if(dni.toString().length < 8){
-        $( "#input-dni" ).val(dni + 3);
-        }
-    });
+                $( "#tres" ).click(function() {
+                    var dni =  $( "#input-dni" ).val();
+                    if(dni.toString().length < 8){
+                        $( "#input-dni" ).val(dni + 3);
+                    }
+                });
 
-    $( "#cuatro" ).click(function() {
-        var dni =  $( "#input-dni" ).val();
-        if(dni.toString().length < 8){
-        $( "#input-dni" ).val(dni + 4);
-        }
-    });
+                $( "#cuatro" ).click(function() {
+                    var dni =  $( "#input-dni" ).val();
+                    if(dni.toString().length < 8){
+                        $( "#input-dni" ).val(dni + 4);
+                    }
+                });
 
-    $( "#cinco" ).click(function() {
-        var dni =  $( "#input-dni" ).val();
-        if(dni.toString().length < 8){
-        $( "#input-dni" ).val(dni + 5);
-        }
-    });
+                $( "#cinco" ).click(function() {
+                    var dni =  $( "#input-dni" ).val();
+                    if(dni.toString().length < 8){
+                        $( "#input-dni" ).val(dni + 5);
+                    }
+                });
 
-    $( "#seis" ).click(function() {
-        var dni =  $( "#input-dni" ).val();
-        if(dni.toString().length < 8){
-        $( "#input-dni" ).val(dni + 6);
-        }
-    });
+                $( "#seis" ).click(function() {
+                    var dni =  $( "#input-dni" ).val();
+                    if(dni.toString().length < 8){
+                        $( "#input-dni" ).val(dni + 6);
+                    }
+                });
 
-    $( "#siete" ).click(function() {
-        var dni =  $( "#input-dni" ).val();
-        if(dni.toString().length < 8){
-        $( "#input-dni" ).val(dni + 7);
-        }
-    });
+                $( "#siete" ).click(function() {
+                    var dni =  $( "#input-dni" ).val();
+                    if(dni.toString().length < 8){
+                        $( "#input-dni" ).val(dni + 7);
+                    }
+                });
 
-    $( "#ocho" ).click(function() {
-        var dni =  $( "#input-dni" ).val();
-        if(dni.toString().length < 8){
-        $( "#input-dni" ).val(dni + 8);
-        }
-    });
+                $( "#ocho" ).click(function() {
+                    var dni =  $( "#input-dni" ).val();
+                    if(dni.toString().length < 8){
+                        $( "#input-dni" ).val(dni + 8);
+                    }
+                });
 
-    $( "#nueve" ).click(function() {
-        var dni =  $( "#input-dni" ).val();
-        if(dni.toString().length < 8){
-        $( "#input-dni" ).val(dni + 9);
-        }
-    });
+                $( "#nueve" ).click(function() {
+                    var dni =  $( "#input-dni" ).val();
+                    if(dni.toString().length < 8){
+                        $( "#input-dni" ).val(dni + 9);
+                    }
+                });
 
-    $( "#cero" ).click(function() {
-        var dni =  $( "#input-dni" ).val();
-        if(dni.toString().length < 8){
-        $( "#input-dni" ).val(dni + 0);
-        }
-    });
+                $( "#cero" ).click(function() {
+                    var dni =  $( "#input-dni" ).val();
+                    if(dni.toString().length < 8){
+                        $( "#input-dni" ).val(dni + 0);
+                    }
+                });
 
-    $( "#borrar" ).click(function() {
-        var dni =  $( "#input-dni" ).val();
-        dni = dni.slice(0, -1);
-        $( "#input-dni" ).val(dni);
-    });
+                $( "#borrar" ).click(function() {
+                    var dni =  $( "#input-dni" ).val();
+                    dni = dni.slice(0, -1);
+                    $( "#input-dni" ).val(dni);
+                });
 
-    $( "#limpiar" ).click(function() {
-        $( "#input-dni" ).val('');
-    });
+                $( "#limpiar" ).click(function() {
+                    $( "#input-dni" ).val('');
+                });
 
-    $( "#enter" ).click(function() {
-        var dni =  $( "#input-dni" ).val();
-        if(dni.toString().length == 8){
-            location.href = "http://10.231.45.108/asistencias-actividades/menu";
-        }else{
-            alert("El DNI ingresado no es valido");
-        }
-    });
+$( "#enter" ).click(function() {
+    var dni =  $( "#input-dni" ).val();
+    if(dni.toString().length == 8){
+    //ACA MANDAR VARIABLE DNI QUE CONTIENE EL DNI DEL CLIENTE
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url();?>clientes/consultaDNI",
+            dataType: "json",
+            data: {
+                dni,
+            },
+            success:function(data){
+                console.log(data);
+                $('.login').css("transform","translate(-1500px,0)");
+                $('.login').css("transition-duration","1.5s");
+                setTimeout(function(){location.href = "<?php echo base_url();?>menu";}, 1200);
+            },
+        });
+    }else{
+        alert("El DNI ingresado no es valido");
+    }
+});
 
     //impide el ingreso de letras o caracteres por encima de 8 digitos
     $('#input-dni').keypress(function(event){
         var dni =  $( "#input-dni" ).val();
-    if(event.which != 8 && isNaN(String.fromCharCode(event.which)) || dni.toString().length == 8){
-        event.preventDefault();
-    }
+        if(event.which != 8 && isNaN(String.fromCharCode(event.which)) || dni.toString().length == 8){
+            event.preventDefault();
+        }
     });
 </script>
