@@ -1,8 +1,8 @@
 #foca-logo{
     position: absolute;
-    left: 85%;
-    top: 90%;
-    width: 10em;
+    left: 89%;
+    top: 91%;
+    width: 8em;
 }
 
 label{
@@ -21,7 +21,8 @@ body{
 
 .titulo-menu{
     width: 100%;
-    color: black;
+    color: white;
+    -webkit-text-stroke: 1.2px black;
 }
 
 .contendedor-menu{
@@ -39,6 +40,7 @@ body{
     justify-content: space-evenly;
     align-items: stretch;
     overflow: hidden;
+    filter: grayscale(20%);
 }
 
 #actividades{
@@ -104,7 +106,7 @@ body{
     background-size: 100% 100%;
     transform: rotate(180deg);
     position: absolute;
-    top: 85%;
+    top: 2%;
     width: 8em;
     height: 6em;
     cursor: pointer;

@@ -28,7 +28,6 @@
 <center>
 
 <br><table><tr>
-<td><img src="<?php echo base_url()."assets/images/club_house.png";?>"></td>
 
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 

@@ -1,4 +1,4 @@
-<table style="border:1px solid black;margin-top: 30px;"><tr>
+<table><tr>
 
 
 

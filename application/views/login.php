@@ -135,7 +135,6 @@
 $( "#enter" ).click(function() {
     var dni =  $( "#input-dni" ).val();
     if(dni.toString().length == 8){
-    //ACA MANDAR VARIABLE DNI QUE CONTIENE EL DNI DEL CLIENTE
         $.ajax({
             type: "POST",
             url: "<?php echo base_url();?>clientes/consultaDNI",
@@ -144,10 +143,12 @@ $( "#enter" ).click(function() {
                 dni,
             },
             success:function(data){
-                console.log(data);
-                $('.login').css("transform","translate(-1500px,0)");
-                $('.login').css("transition-duration","1.5s");
-                setTimeout(function(){location.href = "<?php echo base_url();?>menu";}, 1200);
+                if(data != 0){
+                    location.href = "<?php echo base_url();?>menu";
+                }else{
+                    alert("Documento no encontrado: "+ dni)
+                    $( "#input-dni" ).val('');
+                }
             },
         });
     }else{

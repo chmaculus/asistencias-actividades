@@ -23,7 +23,6 @@
 
         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 
-        <td><img src="<?php echo base_url()."assets/images/club_house.png";?>"></td>
 
         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 
@@ -36,7 +35,7 @@
     </td>
 </tr>
 </table>
-<table style="border:1px solid black;margin-top: 30px;"><tr>
+<table><tr>
 
 <?php
 

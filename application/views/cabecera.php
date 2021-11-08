@@ -38,7 +38,6 @@
 
 			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 
-			<td><img src="<?php echo base_url()."assets/images/club_house.png";?>"></td>
 
 			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 
@@ -62,9 +61,9 @@
 		background-size: 100% 100%;
 		transform: rotate(180deg);
 		position: absolute;
-		top: 88%;
-		left: 1%;
-		width: 7em;
+		top: 2%;
+		left: 0.8%;
+		width: 6.7em !important;
 		height: 5em;
 		cursor: pointer;
 	}

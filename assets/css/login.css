@@ -99,9 +99,9 @@ button:active {
 
 #foca-logo{
     position: absolute;
-    left: 87%;
-    top: 90%;
-    width: 10em;
+    left: 89%;
+    top: 91%;
+    width: 8em;
 }
 
 #logo-dalvian{
@@ -132,7 +132,7 @@ button:active {
   cursor: pointer;
   flex-shrink: 0;
   font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   height: 3em;
   padding: 0 1.6rem;
