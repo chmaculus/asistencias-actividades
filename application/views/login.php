@@ -144,7 +144,10 @@ $( "#enter" ).click(function() {
             },
             success:function(data){
                 if(data != 0){
-                    location.href = "<?php echo base_url();?>menu";
+                    //container.html(JSON.stringify(data, null, "<pre>    "));
+                    var json = $.parseJSON(data);
+                    alert(json.html);
+                    //location.href = "<?php echo base_url();?>menu";
                 }else{
                     alert("Documento no encontrado: "+ dni)
                     $( "#input-dni" ).val('');
@@ -164,3 +167,7 @@ $( "#enter" ).click(function() {
         }
     });
 </script>
+
+
+<div id="get">GET</div>
+<div id="container"></div>

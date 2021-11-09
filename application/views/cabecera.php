@@ -2,6 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta content="text/html; charset=iso-8859-1" http-equiv="content-type" />
+
+<script type="text/javascript">
+	    function imprimir(URL)
+    {
+    	var oReq = new XMLHttpRequest();
+    	oReq.open("get",URL);
+    	oReq.send();
+    	console.log(URL);
+        //temp.src = "http://camera-kkw.at/axis-cgi/io/port.cgi?action=1:/1000%5C?";
+        onload = function(){
+        	document.location.href=URL;
+        	console.log('here');
+        };
+        return false;
+    }
+
+</script>
+
+
 </head>
 
 <!-- Core CSS de Bootstrap-->
