@@ -35,12 +35,6 @@
 					<img id="back" src="<?php echo base_url()."assets/images/back.png";?>"  width="50" height="50">
 				</a>
 			</td>
-
-			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-
-
-			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-
 			<td>
 				<label class="label1"><?php 
 				if(isset($data2['title'])){
@@ -58,13 +52,11 @@
 		background-image: url('../../assets/images/back.png');
 		background-size:cover ;
 		background-repeat: no-repeat;
-		background-size: 100% 100%;
-		transform: rotate(180deg);
 		position: absolute;
 		top: 2%;
-		left: 0.8%;
-		width: 6.7em !important;
-		height: 5em;
+		left: 0.6%;
+		width: 15.8em;
+   		height: 6.3em;
 		cursor: pointer;
 	}
 </style>

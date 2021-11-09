@@ -104,10 +104,9 @@ body{
     background-size:cover ;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    transform: rotate(180deg);
     position: absolute;
     top: 2%;
-    width: 8em;
-    height: 6em;
+    width: 19em;
+    height: 7.5em;
     cursor: pointer;
 }
