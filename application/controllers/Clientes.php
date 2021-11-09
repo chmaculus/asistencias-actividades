@@ -30,7 +30,7 @@ class Clientes extends CI_Controller {
 		//echo json_encode($data);
 	}
 
-  	public function consultaDNI()
+	public function consultaDNI()
 	{	
 		$dni = $this->input->post('dni');
 		$data = $this->Clientes_model->getclientes_mssql($dni);
