@@ -144,29 +144,7 @@ $( "#enter" ).click(function() {
             },
             success:function(data){
                 if(data != 0){
-                    console.log(data);
-
-                $.ajax({
-                    type: "POST",
-                    dataType: "json",
-                    /*url: "<?php echo base_url();?>menu",*/
-                    url: "../prueba.php",
-
-                    data: {array:data},
-                    contentType: "application/json; charset=utf-8",
-                    success: function(data){
-                        alert('Items added');
-                    },
-                    error: function(e){
-                        console.log("jejejeje");
-                    }
-                });
-
-
-
-                //location.href = "<?php echo base_url();?>menu";
-                location.href = "../prueba.php";
-
+                    location.href = "<?php echo base_url();?>menu";
                 }else{
                     alert("Documento no encontrado: "+ dni)
                     $( "#input-dni" ).val('');
@@ -186,7 +164,3 @@ $( "#enter" ).click(function() {
         }
     });
 </script>
-
-<?php 
-echo "server: ".$_SERVER["SCRIPT_NAME"]."<br>";
-?>
