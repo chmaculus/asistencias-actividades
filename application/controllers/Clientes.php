@@ -34,6 +34,7 @@ class Clientes extends CI_Controller {
 	{	
 		$dni = $this->input->post('dni');
 		$data = $this->Clientes_model->getclientes_mssql($dni);
+		$SESSION['DNI'] = $data[0];
 		echo json_encode($data);
 	}
 }
