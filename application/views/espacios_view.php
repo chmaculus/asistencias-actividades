@@ -1,12 +1,6 @@
 <table><tr>
 
 <?php
-
-//echo print_r($data,true);
-
-//exit;
-
-
 $count=0;
 		foreach($data as $row){
 			$count++;

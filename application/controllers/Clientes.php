@@ -12,6 +12,7 @@ class Clientes extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Clientes_model');
+		//$this->load->library('session');
 	}
 
 
@@ -34,7 +35,7 @@ class Clientes extends CI_Controller {
 	{	
 		$dni = $this->input->post('dni');
 		$data = $this->Clientes_model->getclientes_mssql($dni);
-		$SESSION['DNI'] = $data[0];
+		$_SESSION['DNI'] = $data[0];
 		echo json_encode($data);
 	}
 }

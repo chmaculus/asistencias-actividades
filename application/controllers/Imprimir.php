@@ -27,14 +27,16 @@ class Imprimir extends CI_Controller {
 			//echo $aaa[1]."<br>";
 
 			//exit;
-
-			//$this->imprimir_turno($aaa[0], $aaa[1], NULL, $fecha_castellano);
+			$dni = $_SESSION['DNI']['DNI'];
+			$nombre = $_SESSION['DNI']['NOM'];
+			$direccion = "Manzana: ".$_SESSION['DNI']['MZNA'].", Casa: ". $_SESSION['DNI']['CASA'];
+			$this->imprimir_turno($aaa[0], $aaa[1], NULL, $fecha_castellano, $dni, $nombre,$direccion);
 			//$this->file_write("cam.txt",$_GET["data"]);
 	}
 
 
 
-	function imprimir_turno($tipo, $valor, $array_nombre, $fecha){
+	function imprimir_turno($tipo, $valor, $array_nombre, $fecha, $dni, $nombre,$direccion){
 	  $impresion = chr(27).'t'.chr(3); // ESC t n selecciona tabla de codigos de caracter n=
 	  $impresion .= chr(29).'!'.chr(40); // GS ! n cambia tamaño
 	  $impresion .= chr(27).'a'.chr(1); // ESC a n 0=izquierda, 1=centrar, 2=derecha
@@ -54,6 +56,16 @@ class Imprimir extends CI_Controller {
 	  $impresion .= chr(27).'a'.chr(0); // ESC a n 0=izquierda, 1=centrar, 2=derecha
 	  $impresion .= $fecha." ".date("H:i:s")."\r\n";
 	  $impresion .= "\r\n";
+
+	  $impresion .= "DNI: ".$dni."\r\n";
+	  $impresion .= "\r\n";
+
+	  $impresion .= "Nombre: ".$nombre."\r\n";
+	  $impresion .= "\r\n";
+
+	  $impresion .= "Domicilio: ".$direccion."\r\n";
+	  $impresion .= "\r\n";
+
 	  $impresion .= ucfirst($tipo).": ".$valor."\r\n";
 	  $impresion .= "\r\n";
 	  $impresion .= chr(29).'V'.chr(66).chr(80); // GS V n m n=66 avanza y corta, m=10 añade 10 milimetros
@@ -84,7 +96,7 @@ class Imprimir extends CI_Controller {
 		$dia = date('l', strtotime($fecha));
 		$mes = date('F', strtotime($fecha));
 		$anio = date('Y', strtotime($fecha));
-		$dias_ES = array("Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo");
+		$dias_ES = array("Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo");
 		$dias_EN = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
 		$nombredia = str_replace($dias_EN, $dias_ES, $dia);
 		$meses_ES = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
