@@ -144,6 +144,22 @@ $( "#enter" ).click(function() {
             },
             success:function(data){
                 if(data != 0){
+                    .ajax({
+            type: "POST",
+            url: "<?php echo base_url();?>clientes/consultaDNI",
+            dataType: "json",
+            data: {
+                dni,
+            },
+            success:function(data){
+                if(data != 0){
+                    location.href = "<?php echo base_url();?>menu";
+                }else{
+                    alert("Documento no encontrado: "+ dni)
+                    $( "#input-dni" ).val('');
+                }
+            },
+        });
                     location.href = "<?php echo base_url();?>menu";
                 }else{
                     alert("Documento no encontrado: "+ dni)
