@@ -15,6 +15,8 @@
         	document.location.href=URL;
         	console.log('here');
         };
+		alert('Se envio a imprimir');
+		location.href = "<?php echo base_url();?>login";
         return false;
     }
 
