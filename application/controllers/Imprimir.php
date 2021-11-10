@@ -29,7 +29,13 @@ class Imprimir extends CI_Controller {
 			//exit;
 			$dni = $_SESSION['DNI']['DNI'];
 			$nombre = $_SESSION['DNI']['NOM'];
-			$direccion = "Manzana: ".$_SESSION['DNI']['MZNA'].", Casa: ". $_SESSION['DNI']['CASA'];
+			if($_SESSION['DNI']['MZNA'] != ''){
+				$direccion = "Manzana: ".$_SESSION['DNI']['MZNA'].", Casa: ". $_SESSION['DNI']['CASA'];
+			}else{
+				$direccion = $_SESSION['DNI']['DOM'];
+			}
+			
+			
 			$this->imprimir_turno($aaa[0], $aaa[1], NULL, $fecha_castellano, $dni, $nombre,$direccion);
 			//$this->file_write("cam.txt",$_GET["data"]);
 	}
