@@ -1,21 +1,4 @@
-conectar mssql
+registrar ingresos en tabla
+crear formulario ingreso clientes
+listar consulta clientes mssql
 
-teclado virtual
-https://github.com/search?l=&p=2&q=keyboard++language%3APHP&ref=advsearch&type=Repositories
-
-https://www.jose-aguilar.com/blog/teclado-virtual-con-jquery/
-
-
-
-https://github.com/Vibhu578/CodeIgniter-AngularJS-Search-Rest-API-
-
-http://localhost/asistencias_actividades/index.php/Init/getMysql
-
-http://localhost/asistencias_actividades/index.php/Init/index2
-
-http://localhost/asistencias_actividades/index.php/init/getmysql
-
-http://localhost/asistencias_actividades/index.php/init/getmssql
-
-plantilla agregada
-https://www.grocerycrud.com/v1.x/codeigniter-simplicity
