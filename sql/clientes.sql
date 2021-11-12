@@ -1,13 +1,11 @@
 DROP TABLE IF EXISTS `clientes_dalvian`;
 CREATE TABLE `clientes_dalvian` (
   id mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  codigo_cliente int(),
   apellido varchar(35),
   nombres varchar(35),
-  cpo varchar(35),
-  tipo_documento varchar(8)
-  numero_documento varchar(25),
-  provincia varchar(25),
-  localidad varchar(25),
+  tipo_documento varchar(2)
+  numero_documento int(13),
   manzana int(4),
   casa int(4),
   numero varchar(10),
@@ -17,7 +15,6 @@ CREATE TABLE `clientes_dalvian` (
   telefono varchar(40),
   email varchar(30),
   observaciones text,
-  imagen_path varchar(30),
   imagen_nombre varchar(30),
   fecha_creado int(13),
   fecha_modificado int(13),
