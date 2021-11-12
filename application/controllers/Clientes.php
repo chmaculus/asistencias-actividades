@@ -44,8 +44,6 @@ class Clientes extends CI_Controller {
 	{	
 		$mzna = $this->input->post('mzna');
 		$casa = $this->input->post('casa');
-		//$mzna=57;
-		//$casa=12;
 		$query = $this->Clientes_model->getclientesByMznaCasa($mzna, $casa);
 		$_SESSION['DOM'] = $query[0];
 		log_this("logs/mzacasa.log","POST: ".$mzna." casa".$casa."\n");
