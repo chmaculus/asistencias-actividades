@@ -43,6 +43,8 @@ class Clientes_ingreso_model extends CI_Model {
 		log_this("logs/save.log",$query."\n");
 
 		$this->db->query($query);
+		//echo $this->db->insert_id();
+		return $this->db->insert_id();
 
 	}
 

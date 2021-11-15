@@ -49,7 +49,7 @@ class Clientes_ingreso extends CI_Controller {
 //		$this->Clientes_ingreso_model->insertar_cliente(array(
 //			'data' =>$data
 //		));
-		$this->Clientes_ingreso_model->insertar_cliente($data);
+		echo $this->Clientes_ingreso_model->insertar_cliente($data);
 
 /*
 		$this->load->view('actividades_view', array(
