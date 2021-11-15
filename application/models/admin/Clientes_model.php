@@ -14,22 +14,23 @@ class Clientes_model extends CI_Model {
 
 	public function getclientes_mysql($dni = 0)
 	{
-		$this->db2->select('*');
-		$this->db2->from('clientes');
-		$this->db2->where("DNI like '%".$dni."%'");
-		$this->db2->limit(1);
-		$query = $this->db2->get();
-		return $query->result_array();
+		$this->db1->select('*');
+		$this->db1->from('clientes');
+		$this->db1->where("DNI like '%".$dni."%'");
+		$this->db1->limit(1);
+		$query = $this->db1->get();
+		//return $query->result_array();
 	}
 
 public function getclientes_mssql($dni = 0)
 	{
 		$this->db2->select('*');
-		$this->db2->from('clientes_dalvian');
+		$this->db2->from('clientes');
+		//$this->db2->from('clientes_dalvian');
 		$this->db2->where("DNI like '%".$dni."%'");
 		$this->db2->limit(0,1);
 		$query = $this->db2->get();
-		return $query->result_array();
+		//return $query->result_array();
 	}
 
 

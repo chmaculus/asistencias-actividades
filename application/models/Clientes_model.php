@@ -5,9 +5,23 @@ class Clientes_model extends CI_Model {
 
 	function __construct(){
 		parent::__construct();
+		$this->db1 = $this->load->database('mysql', TRUE);
 		$this->db2 = $this->load->database('mssql', TRUE);
 	}
 
+
+	public function getclientes_mysql($dni = 0)
+	{
+		if($dni==0){
+			return 0;
+		}
+		$this->db1->select('*');
+		$this->db1->from('clientes_dalvian');
+		$this->db1->where("DNI like '%".$dni."%'");
+		$this->db1->limit(1);
+		$query = $this->db1->get();
+		return $query->result_array();
+	}
 
 
 
@@ -16,7 +30,7 @@ class Clientes_model extends CI_Model {
 		$this->db2->select('*');
 		$this->db2->from('clientes');
 		$this->db2->where("DNI like '%".$dni."%'");
-		$this->db2->limit(100);
+		$this->db2->limit(1);
 		$query = $this->db2->get();
 		return $query->result_array();
 	}
