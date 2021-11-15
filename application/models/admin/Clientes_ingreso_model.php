@@ -7,38 +7,48 @@ class Clientes_ingreso_model extends CI_Model {
 		parent::__construct();
 	}
 
+	function get_All_Users(){
 
+        $query = $this->db->get('users');
+        if($query->num_rows() > 0){
+            foreach($query->result() as $row) {
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
 
-	function grabar_cliente(){
+	function insertar_cliente($data){
+		$query='insert into clientes_dalvian set 
+		codigo_cliente="'.$data["codigo_cliente"].'",
+		apellido="'.$data["apellido"].'",
+		nombres="'.$data["nombres"].'",
+		tipo_documento="'.$data["tipo_documento"].'",
+		numero_documento="'.$data["numero_documento"].'",
+		manzana="'.$data["manzana"].'",
+		casa="'.$data["casa"].'",
+		calle="'.$data["calle"].'",
+		numero="'.$data["numero"].'",
+		piso="'.$data["piso"].'",
+		dpto="'.$data["dpto"].'",
+		cod_postal="'.$data["cod_postal"].'",
+		telefono="'.$data["telefono"].'",
+		email="'.$data["email"].'",
+		observaciones="'.$data["observaciones"].'",
+		imagen_nombre="'.$data["imagen_nombre"].'",
+		fecha_creado="'.$data["fecha_creado"].'"
+		';
+		//echo $query."<br>";
 
-		$query='insert into temp.clientes_dalvian set 
-		id="'.$id.'",
-		codigo_cliente="'.$codigo_cliente.'",
-		apellido="'.$apellido.'",
-		nombres="'.$nombres.'",
-		tipo_documento="'.$tipo_documento.'",
-		numero_documento="'.$numero_documento.'",
-		manzana="'.$manzana.'",
-		casa="'.$casa.'",
-		calle="'.$calle.'",
-		numero="'.$numero.'",
-		piso="'.$piso.'",
-		dpto="'.$dpto.'",
-		cod_postal="'.$cod_postal.'",
-		telefono="'.$telefono.'",
-		email="'.$email.'",
-		observaciones="'.$observaciones.'",
-		imagen_nombre="'.$imagen_nombre.'",
-		fecha_creado="'.$fecha_creado.'",
-		fecha_modificado="'.$fecha_modificado.'"';
+		log_this("logs/save.log",$query."\n");
 
-		log_this("logs/save.log");
-
-		$this->db->query("YOUR QUERY");
+		$this->db->query($query);
 
 	}
 
-
+	function update_clientes($data){
+        // update code...
+    }
 
 
 

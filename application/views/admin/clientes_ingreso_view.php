@@ -9,7 +9,7 @@
     <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 </head>
 
-<form method="post" action="clientes_dalvian_update.php" name="form_clientes_dalvian">
+<form method="post" action="<?php echo base_url(); ?>admin/clientes_ingreso/grabar" name="form_clientes_dalvian">
 
 <center>
 <table class="t1" border="1">
