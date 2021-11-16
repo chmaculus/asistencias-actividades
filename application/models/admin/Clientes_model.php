@@ -34,6 +34,17 @@ public function getclientes_mssql($dni = 0)
 	}
 
 
+	public function listadoclientes_mysql($dni = 0)
+	{
+		$this->db1->select('*');
+		$this->db1->from('clientes');
+		$this->db1->limit(100);
+		$query = $this->db1->get();
+		//return $query->result_array();
+	}
+
+
+
 public function getclientesByMznaCasa($mzna, $casa)
 	{
 		/*

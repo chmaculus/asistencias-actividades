@@ -5,17 +5,40 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET");
 header("Access-Control-Allow-Methods: GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
-class Clientes_ingreso extends CI_Controller {
 
-	public function __construct()
-	{
+
+class Clientes extends CI_Controller {
+
+	public function __construct(){
 		parent::__construct();
 		//$this->load->model('admin/clientes_ingreso_model');
 	}
 
 
-	public function index()
-	{
+	public function index(){
+		$this->load->view('admin/clientes_ingreso_view');
+		//echo json_encode($data);
+	}
+
+	public function ingreso(){
+		$this->load->view('admin/clientes_ingreso_view');
+		//echo json_encode($data);
+	}
+
+	public function listado(){
+		$this->load->model('admin/clientes_model');
+		$data=$this->Clientes_model->listadoclientes_mysql();
+		
+		//$this->load->view('admin/clientes_ingreso_view');
+		//echo json_encode($data);
+	}
+
+	public function busqueda(){
+		$this->load->view('admin/clientes_ingreso_view');
+		//echo json_encode($data);
+	}
+
+	public function modificacion(){
 		$this->load->view('admin/clientes_ingreso_view');
 		//echo json_encode($data);
 	}
@@ -44,7 +67,6 @@ class Clientes_ingreso extends CI_Controller {
 		'fecha_creado' => time()
 	);
 		
-		//$this->load->model('user_model');
 		log_this("logs/array.log",print_r($data,true));
 //		$this->Clientes_ingreso_model->insertar_cliente(array(
 //			'data' =>$data
