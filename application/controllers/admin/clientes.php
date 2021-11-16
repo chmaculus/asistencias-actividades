@@ -77,7 +77,8 @@ class Clientes extends CI_Controller {
 		$this->load->model('admin/Clientes_model');
 		$mzna=$this->input->post('mzna');
 		$casa=$this->input->post('casa');
-		$data=getclientesByMznaCasa($mzna, $casa);
+		$data=$this->Clientes_model->getclientesByMznaCasa($mzna, $casa);
+
 		$this->load->view('admin/clientes_dossa_main_view',$data);
 		//echo json_encode($data);
 	}
