@@ -76,9 +76,14 @@ class Clientes extends CI_Controller {
 	public function busqueda_dossa_mzna(){
 		$mzna=$this->input->post('mzna');
 		$casa=$this->input->post('casa');
-		$data=$this->Clientes_model->getclientesByMznaCasa($mzna, $casa);
-
-		$this->load->view('admin/clientes_dossa_main_view',$data);
+		if($this->input->post('mzna') and $this->input->post('casa')){
+			$data=$this->Clientes_model->getclientesByMznaCasa($mzna, $casa);
+			log_this("logs/data2.log",date("H:i:s")."\n".print_r($data,true)."\n");
+		}else{
+			$data=0;
+		}
+		
+		$this->load->view('admin/clientes_dossa_mzna',$data);
 		//echo json_encode($data);
 	}
 	#--------------------------------------------
