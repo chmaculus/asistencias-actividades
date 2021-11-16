@@ -31,8 +31,10 @@ class Clientes extends CI_Controller {
 	public function listado(){
 		$this->load->model('admin/Clientes_model');
 		$data=$this->Clientes_model->listadoclientes_mysql();
-		$this->load->view('admin/Clientes_listado_view',$data);
-		log_this("logs/listado.log",print_r($data,true));
+		$this->load->view('admin/Clientes_listado_view',array(
+			'data' =>$data
+		));
+		log_this("logs/listado.log",date("H:i:s")."\n".print_r($data,true));
 		//echo json_encode($data);
 	}
 	#--------------------------------------------
@@ -94,7 +96,7 @@ class Clientes extends CI_Controller {
 		echo $this->Clientes_model->insertar_cliente($data);
 
 /*
-		$this->load->view('actividades_view', array(
+		$this->load->view('actividades_view',array(
 			'data' =>$data
 		));
 */

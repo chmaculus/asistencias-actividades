@@ -24,6 +24,8 @@ echo '<tr>';
 	echo '<th>fecha_modificado</th>';
 echo '</tr>';
 
+log_this("logs/data.log",print_r("$data",true));
+
 
 $count=0;
 foreach($data as $row){
