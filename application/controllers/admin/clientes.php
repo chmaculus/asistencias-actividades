@@ -11,6 +11,7 @@ class Clientes extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
+		$this->load->model('admin/Clientes_model');
 		//$this->load->model('admin/clientes_ingreso_model');
 	}
 
@@ -29,7 +30,6 @@ class Clientes extends CI_Controller {
 
 	#--------------------------------------------
 	public function listado(){
-		$this->load->model('admin/Clientes_model');
 		$data=$this->Clientes_model->listadoclientes_mysql();
 		$this->load->view('admin/Clientes_listado_view',array(
 			'data' =>$data
@@ -74,7 +74,6 @@ class Clientes extends CI_Controller {
 
 	#--------------------------------------------
 	public function busqueda_dossa_mzna(){
-		$this->load->model('admin/Clientes_model');
 		$mzna=$this->input->post('mzna');
 		$casa=$this->input->post('casa');
 		$data=$this->Clientes_model->getclientesByMznaCasa($mzna, $casa);
@@ -97,7 +96,6 @@ class Clientes extends CI_Controller {
 
 	#--------------------------------------------
 	public function grabar(){
-		$this->load->model('admin/Clientes_ingreso_model');
 
 		$data=array(
 			'codigo_cliente' => $this->input->post('codigo_cliente'),

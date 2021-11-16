@@ -1,6 +1,6 @@
 <center>
 <?php
-include('clientes_dossa_main_view.php');
+include('clientes_base.php');
 
 ?>
 <br>
