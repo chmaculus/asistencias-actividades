@@ -24,32 +24,46 @@ class Clientes extends CI_Controller {
 		$this->load->view('admin/clientes_ingreso_view');
 		//echo json_encode($data);
 	}
+	#--------------------------------------------
 
+
+	#--------------------------------------------
 	public function listado(){
 		$this->load->model('admin/Clientes_model');
 		$data=$this->Clientes_model->listadoclientes_mysql();
-		log_this("logs/listado.log",print_r($data,true));
-		
 		$this->load->view('admin/Clientes_listado_view',$data);
+		log_this("logs/listado.log",print_r($data,true));
 		//echo json_encode($data);
 	}
+	#--------------------------------------------
 
+
+	#--------------------------------------------
 	public function busqueda(){
 		$this->load->view('admin/clientes_ingreso_view');
 		//echo json_encode($data);
 	}
+	#--------------------------------------------
 
+
+	#--------------------------------------------
 	public function busqueda_dossa(){
 		$this->load->view('admin/clientes_ingreso_view');
 		//echo json_encode($data);
 	}
+	#--------------------------------------------
 
+
+	#--------------------------------------------
 	public function modificacion(){
 		$this->load->view('admin/clientes_ingreso_view');
 		//echo json_encode($data);
 	}
+	#--------------------------------------------
 
 
+
+	#--------------------------------------------
 	public function grabar(){
 		$this->load->model('admin/Clientes_ingreso_model');
 
@@ -89,6 +103,7 @@ class Clientes extends CI_Controller {
 
 
 	}
+	#--------------------------------------------
 
 
 }

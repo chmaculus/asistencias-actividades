@@ -40,7 +40,7 @@ public function getclientes_mssql($dni = 0)
 		$this->db1->from('clientes_dalvian');
 		$this->db1->limit(100);
 		$query = $this->db1->get();
-		log_this("logs/query.log",print_r($query,true));
+		//log_this("logs/query.log",print_r($query,true));
 		return $query->result_array();
 	}
 
