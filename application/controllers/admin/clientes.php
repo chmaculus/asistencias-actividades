@@ -26,14 +26,20 @@ class Clientes extends CI_Controller {
 	}
 
 	public function listado(){
-		$this->load->model('admin/clientes_model');
+		$this->load->model('admin/Clientes_model');
 		$data=$this->Clientes_model->listadoclientes_mysql();
+		log_this("logs/listado.log",print_r($data,true));
 		
-		//$this->load->view('admin/clientes_ingreso_view');
+		$this->load->view('admin/Clientes_listado_view',$data);
 		//echo json_encode($data);
 	}
 
 	public function busqueda(){
+		$this->load->view('admin/clientes_ingreso_view');
+		//echo json_encode($data);
+	}
+
+	public function busqueda_dossa(){
 		$this->load->view('admin/clientes_ingreso_view');
 		//echo json_encode($data);
 	}
@@ -71,7 +77,7 @@ class Clientes extends CI_Controller {
 //		$this->Clientes_ingreso_model->insertar_cliente(array(
 //			'data' =>$data
 //		));
-		echo $this->Clientes_ingreso_model->insertar_cliente($data);
+		echo $this->Clientes_model->insertar_cliente($data);
 
 /*
 		$this->load->view('actividades_view', array(
