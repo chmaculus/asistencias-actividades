@@ -71,19 +71,17 @@ class Clientes extends CI_Controller {
 	}
 	#--------------------------------------------
 
-	public function busqueda_dossa_mzna($mzna, $casa)
-	{
-		/*
-		consultar manzana y casa en tabla mysql en caso de no encontrar nada consultar tabla mssql
-		*/
-		$q='select COD, NOM, DOM, CALLE, NUMERO, MZNA, CASA, PISO, DEPTO from clientes where mzna=\''.$mzna.'\' and casa=\''.$casa.'\' or ( dom like \'%M '.$mzna.' %\' and dom like \'%C '.$casa.'%\') limit 1';
 
-		$query = $this->db2->query($q);
-		log_this("logs/mzacasa.log",print_r(date("H:i:s")." ".$q,true)."\n");
-		//log_this("logs/mzacasa.log",print_r($query,true)."\n");
-		return $query->result_array();
+	#--------------------------------------------
+	public function busqueda_dossa_mzna(){
+		$this->load->model('admin/Clientes_model');
+		$mzna=$this->input->post('mzna');
+		$casa=$this->input->post('casa');
+		$data=getclientesByMznaCasa($mzna, $casa);
+		$this->load->view('admin/clientes_dossa_main_view',$data);
+		//echo json_encode($data);
 	}
-
+	#--------------------------------------------
 
 
 

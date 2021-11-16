@@ -1,4 +1,12 @@
 registrar ingresos en tabla
-crear formulario ingreso clientes
+
+crear formulario ingreso clientes listo
+
 listar consulta clientes mssql
+
+popup datos incorrectos
+
+consulta primero local luego tabla dossa
+
+listado / modificacion clientes
 
