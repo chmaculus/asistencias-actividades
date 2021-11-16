@@ -49,6 +49,14 @@ class Clientes extends CI_Controller {
 
 
 	#--------------------------------------------
+	public function busqueda_dossa_main(){
+		$this->load->view('admin/clientes_dossa_main_view');
+		//echo json_encode($data);
+	}
+	#--------------------------------------------
+
+
+	#--------------------------------------------
 	public function busqueda_dossa_nombre(){
 		$this->load->view('admin/clientes_dossa_main_view');
 		//echo json_encode($data);
@@ -62,6 +70,21 @@ class Clientes extends CI_Controller {
 		//echo json_encode($data);
 	}
 	#--------------------------------------------
+
+	public function busqueda_dossa_mzna($mzna, $casa)
+	{
+		/*
+		consultar manzana y casa en tabla mysql en caso de no encontrar nada consultar tabla mssql
+		*/
+		$q='select COD, NOM, DOM, CALLE, NUMERO, MZNA, CASA, PISO, DEPTO from clientes where mzna=\''.$mzna.'\' and casa=\''.$casa.'\' or ( dom like \'%M '.$mzna.' %\' and dom like \'%C '.$casa.'%\') limit 1';
+
+		$query = $this->db2->query($q);
+		log_this("logs/mzacasa.log",print_r(date("H:i:s")." ".$q,true)."\n");
+		//log_this("logs/mzacasa.log",print_r($query,true)."\n");
+		return $query->result_array();
+	}
+
+
 
 
 	#--------------------------------------------
@@ -78,24 +101,24 @@ class Clientes extends CI_Controller {
 		$this->load->model('admin/Clientes_ingreso_model');
 
 		$data=array(
-		'codigo_cliente' => $this->input->post('codigo_cliente'),
-		'apellido' => $this->input->post('apellido'),
-		'nombres' => $this->input->post('nombres'),
-		'tipo_documento' => $this->input->post('tipo_documento'),
-		'numero_documento' => $this->input->post('numero_documento'),
-		'manzana' => $this->input->post('manzana'),
-		'casa' => $this->input->post('casa'),
-		'calle' => $this->input->post('calle'),
-		'numero' => $this->input->post('numero'),
-		'piso' => $this->input->post('piso'),
-		'dpto' => $this->input->post('dpto'),
-		'cod_postal' => $this->input->post('cod_postal'),
-		'telefono' => $this->input->post('telefono'),
-		'email' => $this->input->post('email'),
-		'observaciones' => $this->input->post('observaciones'),
-		'imagen_nombre' => $this->input->post('imagen_nombre'),
-		'fecha_creado' => time()
-	);
+			'codigo_cliente' => $this->input->post('codigo_cliente'),
+			'apellido' => $this->input->post('apellido'),
+			'nombres' => $this->input->post('nombres'),
+			'tipo_documento' => $this->input->post('tipo_documento'),
+			'numero_documento' => $this->input->post('numero_documento'),
+			'manzana' => $this->input->post('manzana'),
+			'casa' => $this->input->post('casa'),
+			'calle' => $this->input->post('calle'),
+			'numero' => $this->input->post('numero'),
+			'piso' => $this->input->post('piso'),
+			'dpto' => $this->input->post('dpto'),
+			'cod_postal' => $this->input->post('cod_postal'),
+			'telefono' => $this->input->post('telefono'),
+			'email' => $this->input->post('email'),
+			'observaciones' => $this->input->post('observaciones'),
+			'imagen_nombre' => $this->input->post('imagen_nombre'),
+			'fecha_creado' => time()
+		);
 		
 		log_this("logs/array.log",print_r($data,true));
 //		$this->Clientes_ingreso_model->insertar_cliente(array(
