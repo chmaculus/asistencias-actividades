@@ -49,8 +49,16 @@ class Clientes extends CI_Controller {
 
 
 	#--------------------------------------------
-	public function busqueda_dossa(){
-		$this->load->view('admin/clientes_ingreso_view');
+	public function busqueda_dossa_nombre(){
+		$this->load->view('admin/clientes_dossa_main_view');
+		//echo json_encode($data);
+	}
+	#--------------------------------------------
+
+
+	#--------------------------------------------
+	public function busqueda_dossa_dni(){
+		$this->load->view('admin/clientes_dossa_main_view');
 		//echo json_encode($data);
 	}
 	#--------------------------------------------
