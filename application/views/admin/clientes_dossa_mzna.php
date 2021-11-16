@@ -7,7 +7,7 @@ include("clientes_dossa_main_view.php");
 	<form action="<?php echo base_url();?>admin/clientes/busqueda_dossa_mzna" method="post">
 		<table border="1">
 			<tr>
-				<td>Manzana</td><td><input type="text" name="manzana"></td>
+				<td>Manzana</td><td><input type="text" name="mzna"></td>
 			</tr>
 			<tr>
 				<td>Casa</td><td><input type="text" name="casa"></td>
@@ -17,7 +17,7 @@ include("clientes_dossa_main_view.php");
 	</form>
 	<?php
 	if(!isset($data)){
-		exit;
+		//exit;
 	}
 
 	include("clientes_listado.inc.php");

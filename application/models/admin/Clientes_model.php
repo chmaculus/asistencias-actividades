@@ -46,7 +46,7 @@ public function getclientes_mssql($dni = 0)
 
 
 
-public function getclientesByMznaCasa($mzna=0, $casa=0)
+public function getclientesByMznaCasa($mzna, $casa)
 	{
 		/*
 		consultar manzana y casa en tabla mysql en caso de no encontrar nada consultar tabla mssql
