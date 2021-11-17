@@ -17,10 +17,10 @@ include("clientes_dossa_main_view.php");
 	</form>
 	<?php
 	if(!isset($data)){
-		//exit;
+		exit;
 	}
 
-	include("clientes_listado.inc.php");
+	//include("clientes_listado.inc.php");
 
 
 	?>

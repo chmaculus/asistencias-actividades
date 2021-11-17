@@ -70,7 +70,12 @@ class Clientes extends CI_Controller {
 		//echo json_encode($data);
 	}
 	#--------------------------------------------
+/*
+cod residencia / facturacion
+codigo cliente = codigo residencia
 
+
+*/
 
 	#--------------------------------------------
 	public function busqueda_dossa_mzna(){
@@ -81,7 +86,7 @@ class Clientes extends CI_Controller {
 			log_this("logs/data2.log",date("H:i:s")."\nM".$mzna." C".$casa."\n");
 			log_this("logs/data2.log",date("H:i:s")."\n".print_r($data,true)."\n");
 		}else{
-			//$data=0;
+			$data=0;
 		}
 		
 		$this->load->view('admin/clientes_dossa_mzna',$data);
