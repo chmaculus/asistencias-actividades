@@ -7,6 +7,7 @@ class Clientes_model extends CI_Model {
 		parent::__construct();
 		$this->db1 = $this->load->database('mysql', TRUE);
 		$this->db2 = $this->load->database('mssql', TRUE);
+		//$this->load=>Clientes_model;
 	}
 
 
@@ -46,8 +47,8 @@ public function getclientes_mssql($dni = 0)
 
 
 
-public function getclientesByMznaCasa($mzna, $casa)
-	{
+public function getclientesByMznaCasa($mzna, $casa){
+	//trae de tabla mssql
 		/*
 		consultar manzana y casa en tabla mysql en caso de no encontrar nada consultar tabla mssql
 		*/
@@ -59,6 +60,45 @@ public function getclientesByMznaCasa($mzna, $casa)
 		return $query->result_array();
 	}
 
+	function insertar_cliente($data){
+		$query='insert into clientes_dalvian set 
+		codigo_residente="'.$data["codigo_residente"].'",
+		codigo_facturacion="'.$data["codigo_facturacion"].'",
+		apellido="'.$data["apellido"].'",
+		nombres="'.$data["nombres"].'",
+		tipo_documento="'.$data["tipo_documento"].'",
+		numero_documento="'.$data["numero_documento"].'",
+		manzana="'.$data["manzana"].'",
+		casa="'.$data["casa"].'",
+		calle="'.$data["calle"].'",
+		numero="'.$data["numero"].'",
+		piso="'.$data["piso"].'",
+		dpto="'.$data["dpto"].'",
+		cod_postal="'.$data["cod_postal"].'",
+		telefono="'.$data["telefono"].'",
+		email="'.$data["email"].'",
+		observaciones="'.$data["observaciones"].'",
+		imagen_nombre="'.$data["imagen_nombre"].'",
+		fecha_creado="'.$data["fecha_creado"].'"
+		';
+		//echo $query."<br>";
+
+		log_this("logs/save.log",$query."\n");
+
+		$this->db->query($query);
+		return $this->db->insert_id();
+
+	}
+
+	function update_clientes($data){
+        // update code...
+    }
+
+	function get_cliente_by_id($id){
+		$q='select * from clientes_dalvian where id="'.$id.'"';
+		$query = $this->db1->query($q);
+		return $query->result_array();
+	}
 
 
 }

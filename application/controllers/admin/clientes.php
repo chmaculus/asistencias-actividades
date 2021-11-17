@@ -17,7 +17,7 @@ class Clientes extends CI_Controller {
 
 
 	public function index(){
-		$this->load->view('admin/clientes_basen');
+		$this->load->view('admin/clientes_base');
 		//echo json_encode($data);
 	}
 
@@ -107,9 +107,9 @@ codigo cliente = codigo residencia
 
 	#--------------------------------------------
 	public function grabar(){
-
 		$data=array(
-			'codigo_cliente' => $this->input->post('codigo_cliente'),
+			'codigo_residente' => $this->input->post('codigo_residente'),
+			'codigo_facturacion' => $this->input->post('codigo_facturacion'),
 			'apellido' => $this->input->post('apellido'),
 			'nombres' => $this->input->post('nombres'),
 			'tipo_documento' => $this->input->post('tipo_documento'),
@@ -128,17 +128,17 @@ codigo cliente = codigo residencia
 			'fecha_creado' => time()
 		);
 		
-		log_this("logs/array.log",print_r($data,true));
-//		$this->Clientes_ingreso_model->insertar_cliente(array(
-//			'data' =>$data
-//		));
-		echo $this->Clientes_model->insertar_cliente($data);
+		//log_this("logs/array.log",print_r($data,true));
 
-/*
-		$this->load->view('actividades_view',array(
+		$id_cliente=$this->Clientes_model->insertar_cliente($data);
+
+		$data=$this->Clientes_model->get_cliente_by_id($id_cliente);
+		//log_this("logs/array.log",date("H:i:s")."\n".print_r($data,true));
+
+		$this->load->view('admin/clientes_muestra',array(
 			'data' =>$data
 		));
-*/
+		//$this->load->view('admin/clientes_muestra',$data);
         //$this->load->view('users_view');
         //redirect('users', 'refresh');
 

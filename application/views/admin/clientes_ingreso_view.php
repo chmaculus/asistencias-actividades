@@ -2,13 +2,17 @@
 include("clientes_base.php");
 ?>
 
-<form method="post" action="<?php echo base_url(); ?>admin/clientes_ingreso/grabar" name="form_clientes_dalvian">
+<form method="post" action="<?php echo base_url(); ?>admin/clientes/grabar" name="form_clientes_dalvian">
 
 <center>
 <table class="t1" border="1">
 	<tr>
-		<th>Codigo Cliente</th>
-		<td><input type="text" name="codigo_cliente" id="codigo_cliente" value="<?php if(isset($data["codigo_cliente"])){echo $data["codigo_cliente"];}?>" size="8"></td>
+		<th>Codigo Residente</th>
+		<td><input type="text" name="codigo_residente" id="codigo_residente" value="<?php if(isset($data["codigo_cliente"])){echo $data["codigo_cliente"];}?>" size="8"></td>
+	</tr>
+	<tr>
+		<th>Codigo Facturacion</th>
+		<td><input type="text" name="codigo_facturacion" id="codigo_facturacion" value="<?php if(isset($data["codigo_cliente"])){echo $data["codigo_cliente"];}?>" size="8"></td>
 	</tr>
 	<tr>
 		<th>Apellido</th>
