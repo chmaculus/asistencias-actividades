@@ -4,7 +4,8 @@ include('clientes_base.php');
 
 echo '<table border="1">';
 echo '<tr>';
-	echo '<th>codigo_cliente</th>';
+	echo '<th>codigo residente</th>';
+	echo '<th>codigo facturacion</th>';
 	echo '<th>apellido</th>';
 	echo '<th>nombres</th>';
 	echo '<th>tipo_documento</th>';
@@ -30,9 +31,8 @@ log_this("logs/data.log",print_r("$data",true));
 $count=0;
 foreach($data as $row){
 	echo '<tr>';
-	echo '<td>'.$count++.'</td>';
-	echo '<td>'.$row["id"].'</td>';
-	echo '<td>'.$row["codigo_cliente"].'</td>';
+	echo '<td>'.$row["codigo_residente"].'</td>';
+	echo '<td>'.$row["codigo_facturacion"].'</td>';
 	echo '<td>'.$row["apellido"].'</td>';
 	echo '<td>'.$row["nombres"].'</td>';
 	echo '<td>'.$row["tipo_documento"].'</td>';
