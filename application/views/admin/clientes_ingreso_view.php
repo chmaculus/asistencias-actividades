@@ -73,23 +73,18 @@ include("clientes_base.php");
 		<td><input type="text" name="email" id="email" value="<?php if(isset($data["email"])){echo $data["email"];}?>" size="10"></td>
 	</tr>
 	<tr>
+		<th>Imagen</th>
+		<? /*php if(isset($data["email"])){echo $data["email"];} */?>
+
+		<td><input type="file" name="imagen" id="imagen" value="" size="10"></td>
+	</tr>
+	<tr>
 		<th>Observaciones</th>
 			<td><textarea name="observaciones" id="observaciones" rows="10" cols="33"><?php if(isset($data["observaciones"])){echo $data["observaciones"];}?></textarea></td>	
 		</tr>
 
 </table>
 
-<?php
-/*
-if($_GET["id_clientes_dalvian"] OR $data["id"]){
-    echo '<input type="hidden" name="accion" value="modificacion">';
-    echo '<input type="hidden" name="id_clientes_dalvian" value="'.$data["id"].'">';
-    echo '<input type="hidden" name="uuid_clientes_dalvian" value="'.$data["uuid"].'">';
-}else{
-    echo '<input type="hidden" name="accion" value="ingreso">';
-}
-*/
-?>
 <br>
 <input type="submit" name="ACEPTAR" value="ACEPTAR">
 </form>
