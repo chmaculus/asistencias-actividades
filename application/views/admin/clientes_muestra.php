@@ -8,7 +8,8 @@ log_this("logs/array.log",date("H:i:s")."\n".print_r($data,true));
 <center>
 
 <form method='post' action='<?php echo base_url();?>admin/clientes_upload_image' enctype='multipart/form-data'>
-	<input type='file' name='file' > <br/><br/>
+	<input type='file' name='file' > <br/>
+	<input type="hidden" name="id_cliente" value="<?php echo $data[0]["id"];?>">
 	<input type='submit' value='Upload' name='upload' />
 </form>
 
