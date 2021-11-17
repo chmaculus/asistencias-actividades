@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="esp">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Club House</title>
-    <link href="<?php echo base_url(); ?>assets/css/clientes_ingreso.css" rel="stylesheet">
-    <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
-</head>
+<?php 
+include("clientes_base.php");
+?>
 
 <form method="post" action="<?php echo base_url(); ?>admin/clientes_ingreso/grabar" name="form_clientes_dalvian">
 
