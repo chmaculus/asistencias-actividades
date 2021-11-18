@@ -31,16 +31,16 @@ class Clientes extends CI_Controller {
 
 	public function consultaDNI(){	
 		$dni = $this->input->post('dni');
-		//$rows=rows_getclientes_mysql($dni);
-		log_this("logs/rows.log",date("H:i:s")."rows: ".$rows."\n");
-
-		/*
-		rows mysql
-		if>0 devuelve datos
-		else consultar mssql
-		
-		*/
+		$rows=$this->Clientes_model->rows_getclientes_mysql($dni);
+		log_this("logs/rows.log",date("H:i:s")."rows: ".$rows." dni:".$dni."\n");
 		$data = $this->Clientes_model->getclientes_mysql($dni);
+/*
+		if($rows<1){
+			$data = $this->Clientes_model->getclientes_mssql($dni);
+		}else{
+			$data = $this->Clientes_model->getclientes_mysql($dni);
+		}
+*/
 		$_SESSION['DNI'] = $data[0];
 		echo json_encode($data);
 	}
