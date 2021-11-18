@@ -11,10 +11,10 @@
 
 
 <center>
-<titulo>clientes_dalvian</titulo>
+<titulo>Clientes Dalvian</titulo>
 <table>
 	<tr>
-		<td><A href="ingreso"><button>Ingresar</button></a></td>
+		<td><A href="clientes/ingreso"><button>Ingresar</button></a></td>
 		<td><A href="clientes_dalvian_busqueda.php"><button>Buscar</button></a></td>
 		<td><A href="<?php base_url();?>busqueda_dossa_main"><button>Buscar DOSSA</button></a></td>
 		<td><A href="listado"><button>Listado</button></a></td>

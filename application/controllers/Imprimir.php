@@ -76,6 +76,7 @@ class Imprimir extends CI_Controller {
 	  $impresion .= "\r\n";
 	  $impresion .= chr(29).'V'.chr(66).chr(80); // GS V n m n=66 avanza y corta, m=10 añade 10 milimetros
 	  $str=utf8_decode($impresion);
+	  file_write("print.prn",$str);
 	  $this->imprimir($str);
 	}
 
@@ -89,7 +90,8 @@ class Imprimir extends CI_Controller {
 	}
 
 	function file_write($file_name, $data) {
-		$file = fopen($file_name, 'a+');
+		//$file = fopen($file_name, 'a+');
+		$file = fopen($file_name, 'w');
 		fwrite($file, $data);
 		fclose($file);
 	}
