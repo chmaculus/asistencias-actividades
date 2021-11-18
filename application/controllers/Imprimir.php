@@ -35,6 +35,8 @@ class Imprimir extends CI_Controller {
 				$direccion = $_SESSION['DNI']['DOM'];
 			}
 			
+			//grabar turno 
+
 			
 			$this->imprimir_turno($aaa[0], $aaa[1], NULL, $fecha_castellano, $dni, $nombre,$direccion);
 			//$this->file_write("cam.txt",$_GET["data"]);

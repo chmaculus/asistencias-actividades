@@ -28,13 +28,15 @@ class Clientes_model extends CI_Model {
 	#---------------------------------------------------
 	public function getclientes_mysql($dni = 0){
 		if($dni==0){
-			return 0;
+			//return 0;
 		}
 		$this->db1->select('*');
 		$this->db1->from('clientes_dalvian');
 		$this->db1->where('numero_documento ="'.$dni.'"');
 		$this->db1->limit(1);
 		$query = $this->db1->get();
+		log_this("logs/get_clientes.log","dni:".$dni."\n");
+		log_this("logs/get_clientes.log","\n".print_r($query,true));
 		return $query->result_array();
 	}
 	#---------------------------------------------------

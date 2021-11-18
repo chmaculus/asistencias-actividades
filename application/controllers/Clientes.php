@@ -31,6 +31,9 @@ class Clientes extends CI_Controller {
 
 	public function consultaDNI(){	
 		$dni = $this->input->post('dni');
+		//$rows=rows_getclientes_mysql($dni);
+		log_this("logs/rows.log",date("H:i:s")."rows: ".$rows."\n");
+
 		/*
 		rows mysql
 		if>0 devuelve datos
