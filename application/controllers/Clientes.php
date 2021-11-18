@@ -21,9 +21,7 @@ class Clientes extends CI_Controller {
 		$data = $this->Clientes_model->getclientes_mssql();
 		$aaa['title'] = 'ACTIVIDADES';
 		$aaa['css'] = 'actividades.css';
-		$this->load->view('cabecera',array(
-			'data2' =>$aaa
-		));
+		$this->load->view('cabecera',array('data2' =>$aaa));
 
 		$this->load->view('clientes_view', array(
 			'data' =>$data
@@ -55,18 +53,6 @@ class Clientes extends CI_Controller {
 		log_this("logs/mzacasa.log",print_r($query,true));
 		echo json_encode($query[0]);
 	}
-
-public function trae_cliente_by_id()
-	{	
-		$id = $this->input->post('id');
-		$query = $this->Clientes_model->getclientesByID($id);
-		$_SESSION['DOM'] = $query[0];
-		log_this("logs/mzacasa.log","POST: ".$mzna." casa".$casa."\n");
-		log_this("logs/mzacasa.log",print_r($query,true));
-		echo json_encode($query[0]);
-	}
-
-
 
 
 

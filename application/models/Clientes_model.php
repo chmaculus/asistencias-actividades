@@ -69,7 +69,19 @@ public function getclientesByMznaCasa($mzna, $casa)
 	#---------------------------------------------------
 
 
-
+	#---------------------------------------------------
+	public function trae_cliente_by_id($id){
+		if($id==0){
+			return 0;
+		}
+		$this->db1->select('*');
+		$this->db1->from('clientes_dalvian');
+		$this->db1->where('id ="'.$id.'"');
+		//$this->db1->limit(1);
+		$query = $this->db1->get();
+		return $query->result_array();
+	}
+	#---------------------------------------------------
 
 
 
