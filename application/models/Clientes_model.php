@@ -9,22 +9,39 @@ class Clientes_model extends CI_Model {
 		$this->db2 = $this->load->database('mssql', TRUE);
 	}
 
-
-	public function getclientes_mysql($dni = 0)
-	{
+	#---------------------------------------------------
+	public function rows_getclientes_mysql($dni = 0){
 		if($dni==0){
 			return 0;
 		}
 		$this->db1->select('*');
 		$this->db1->from('clientes_dalvian');
-		$this->db1->where("DNI like '%".$dni."%'");
+		$this->db1->where('numero_documento ="'.$dni.'"');
+		$this->db1->limit(1);
+		$query = $this->db1->get();
+		$rows = $query->row();
+		return $rows;
+	}
+	#---------------------------------------------------
+
+
+	#---------------------------------------------------
+	public function getclientes_mysql($dni = 0){
+		if($dni==0){
+			return 0;
+		}
+		$this->db1->select('*');
+		$this->db1->from('clientes_dalvian');
+		$this->db1->where('numero_documento ="'.$dni.'"');
 		$this->db1->limit(1);
 		$query = $this->db1->get();
 		return $query->result_array();
 	}
+	#---------------------------------------------------
 
 
 
+	#---------------------------------------------------
 	public function getclientes_mssql($dni = 0)
 	{
 		$this->db2->select('*');
@@ -36,6 +53,7 @@ class Clientes_model extends CI_Model {
 	}
 
 
+	#---------------------------------------------------
 public function getclientesByMznaCasa($mzna, $casa)
 	{
 		/*
@@ -48,6 +66,7 @@ public function getclientesByMznaCasa($mzna, $casa)
 		//log_this("logs/mzacasa.log",print_r($query,true)."\n");
 		return $query->result_array();
 	}
+	#---------------------------------------------------
 
 
 

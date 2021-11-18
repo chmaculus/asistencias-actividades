@@ -2,13 +2,17 @@
 include("clientes_base.php");
 ?>
 
-<form method="post" action="<?php echo base_url(); ?>admin/clientes_ingreso/grabar" name="form_clientes_dalvian">
+<form method="post" action="<?php echo base_url(); ?>admin/clientes/grabar" name="form_clientes_dalvian">
 
 <center>
 <table class="t1" border="1">
 	<tr>
-		<th>Codigo Cliente</th>
-		<td><input type="text" name="codigo_cliente" id="codigo_cliente" value="<?php if(isset($data["codigo_cliente"])){echo $data["codigo_cliente"];}?>" size="8"></td>
+		<th>Codigo Residente</th>
+		<td><input type="text" name="codigo_residente" id="codigo_residente" value="<?php if(isset($data["codigo_cliente"])){echo $data["codigo_cliente"];}?>" size="8"></td>
+	</tr>
+	<tr>
+		<th>Codigo Facturacion</th>
+		<td><input type="text" name="codigo_facturacion" id="codigo_facturacion" value="<?php if(isset($data["codigo_cliente"])){echo $data["codigo_cliente"];}?>" size="8"></td>
 	</tr>
 	<tr>
 		<th>Apellido</th>
@@ -69,23 +73,18 @@ include("clientes_base.php");
 		<td><input type="text" name="email" id="email" value="<?php if(isset($data["email"])){echo $data["email"];}?>" size="10"></td>
 	</tr>
 	<tr>
+		<th>Imagen</th>
+		<? /*php if(isset($data["email"])){echo $data["email"];} */?>
+
+		<td><input type="file" name="imagen" id="imagen" value="" size="10"></td>
+	</tr>
+	<tr>
 		<th>Observaciones</th>
 			<td><textarea name="observaciones" id="observaciones" rows="10" cols="33"><?php if(isset($data["observaciones"])){echo $data["observaciones"];}?></textarea></td>	
 		</tr>
 
 </table>
 
-<?php
-/*
-if($_GET["id_clientes_dalvian"] OR $data["id"]){
-    echo '<input type="hidden" name="accion" value="modificacion">';
-    echo '<input type="hidden" name="id_clientes_dalvian" value="'.$data["id"].'">';
-    echo '<input type="hidden" name="uuid_clientes_dalvian" value="'.$data["uuid"].'">';
-}else{
-    echo '<input type="hidden" name="accion" value="ingreso">';
-}
-*/
-?>
 <br>
 <input type="submit" name="ACEPTAR" value="ACEPTAR">
 </form>
