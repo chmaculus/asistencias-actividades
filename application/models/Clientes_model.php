@@ -31,7 +31,7 @@ class Clientes_model extends CI_Model {
 		if($dni==0){
 			//return 0;
 		}
-		$q='select * from clientes dalvian where numero_documento="'.$dni.'"';
+		$q='select * from clientes_dalvian where numero_documento="'.$dni.'"';
 		//$this->db1->select('*');
 		//$this->db1->from('clientes_dalvian');
 		//$this->db1->where('numero_documento ="'.$dni.'"');

@@ -185,15 +185,6 @@ public function modificar(){
 	}
 
 
-public function busqueda(){	
-		$id = $this->input->get('id');
-		//$data = $this->Clientes_model->get_cliente_by_id($id);
-		log_this("logs/id_cliente.log",print_r($data,true));
-		$this->load->view('admin/',array('data' =>$data));
-		return;
-		//echo json_encode($query[0]);
-	}
-
 
 
 
