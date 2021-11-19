@@ -85,7 +85,7 @@ class Imprimir extends CI_Controller {
 
 	function imprimir($datos){
 		  //file_put_contents($this->URI, mb_convert_encoding($datos, 'Windows-1252', 'UTF-8'));
-		  file_put_contents('\\\\10.231.45.184\\printer', $datos);
+		  file_put_contents('\\\\140.191.48.102\\printer', $datos);
 			//file_put_contents('\\\\127.0.0.1\\impresora', iconv('Windows-1252','UTF-8', $datos));
 		  //file_put_contents('prueba2.prn', $datos);
 		  //file_write("print.prn", $datos);
