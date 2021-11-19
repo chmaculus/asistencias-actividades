@@ -41,6 +41,8 @@ class Clientes_model extends CI_Model {
 		log_this("logs/get_clientes.log","dni:".$q."\n");
 		log_this("logs/get_clientes.log","\n".print_r($query,true));
 		return $query->result_array();
+		return $query;
+
 	}
 	#---------------------------------------------------
 
