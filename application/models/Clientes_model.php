@@ -11,6 +11,7 @@ class Clientes_model extends CI_Model {
 
 	#---------------------------------------------------
 	public function rows_getclientes_mysql($dni = 0){
+		log_this("logs/rows.log",date("H:i:s")."rows: 11\n");
 		if($dni==0){
 			return 0;
 		}
@@ -19,7 +20,7 @@ class Clientes_model extends CI_Model {
 		$this->db1->where('numero_documento ="'.$dni.'"');
 		$this->db1->limit(1);
 		$query = $this->db1->get();
-		$rows = $query->row();
+		$rows = $query->num_rows();
 		return $rows;
 	}
 	#---------------------------------------------------
@@ -28,13 +29,17 @@ class Clientes_model extends CI_Model {
 	#---------------------------------------------------
 	public function getclientes_mysql($dni = 0){
 		if($dni==0){
-			return 0;
+			//return 0;
 		}
-		$this->db1->select('*');
-		$this->db1->from('clientes_dalvian');
-		$this->db1->where('numero_documento ="'.$dni.'"');
-		$this->db1->limit(1);
-		$query = $this->db1->get();
+		$q='select * from clientes dalvian where numero_documento="'.$dni.'"';
+		//$this->db1->select('*');
+		//$this->db1->from('clientes_dalvian');
+		//$this->db1->where('numero_documento ="'.$dni.'"');
+		//$this->db1->limit(1);
+		//$query = $this->db1->get();
+		$query = $this->db1->query($q);
+		log_this("logs/get_clientes.log","dni:".$q."\n");
+		log_this("logs/get_clientes.log","\n".print_r($query,true));
 		return $query->result_array();
 	}
 	#---------------------------------------------------
@@ -69,7 +74,19 @@ public function getclientesByMznaCasa($mzna, $casa)
 	#---------------------------------------------------
 
 
-
+	#---------------------------------------------------
+	public function trae_cliente_by_id($id){
+		if($id==0){
+			return 0;
+		}
+		$this->db1->select('*');
+		$this->db1->from('clientes_dalvian');
+		$this->db1->where('id ="'.$id.'"');
+		//$this->db1->limit(1);
+		$query = $this->db1->get();
+		return $query->result_array();
+	}
+	#---------------------------------------------------
 
 
 

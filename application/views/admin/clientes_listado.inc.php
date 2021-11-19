@@ -45,8 +45,8 @@ foreach($data as $row){
 	echo '<td>'.$row["imagen_nombre"].'</td>';
 	echo '<td>'.$row["fecha_creado"].'</td>';
 	echo '<td>'.$row["fecha_modificado"].'</td>';
-	echo '<td><A HREF="clientes_dalvian_ingreso.php?id_clientes_dalvian='.$row["id"].'"><button>Modificar</button></A></td>';
-	echo '<td><A HREF="clientes_dalvian_eliminar.php?id_clientes_dalvian='.$row["id"].'"><button>Eliminar</button></A></td>';
+	echo '<td><A HREF="clientes/trae_cliente_by_id'.$row["id"].'"><button>Modificar</button></A></td>';
+	//echo '<td><A HREF="clientes_dalvian_eliminar.php?id_clientes_dalvian='.$row["id"].'"><button>Eliminar</button></A></td>';
 	echo '</tr>'.chr(10);
 }
 ?>

@@ -21,9 +21,7 @@ class Clientes extends CI_Controller {
 		$data = $this->Clientes_model->getclientes_mssql();
 		$aaa['title'] = 'ACTIVIDADES';
 		$aaa['css'] = 'actividades.css';
-		$this->load->view('cabecera',array(
-			'data2' =>$aaa
-		));
+		$this->load->view('cabecera',array('data2' =>$aaa));
 
 		$this->load->view('clientes_view', array(
 			'data' =>$data
@@ -31,10 +29,18 @@ class Clientes extends CI_Controller {
 		//echo json_encode($data);
 	}
 
-	public function consultaDNI()
-	{	
+	public function consultaDNI(){	
 		$dni = $this->input->post('dni');
-		$data = $this->Clientes_model->getclientes_mssql($dni);
+		$rows=$this->Clientes_model->rows_getclientes_mysql($dni);
+		log_this("logs/rows.log",date("H:i:s")."rows: ".$rows." dni:".$dni."\n");
+		$data = $this->Clientes_model->getclientes_mysql($dni);
+/*
+		if($rows<1){
+			$data = $this->Clientes_model->getclientes_mssql($dni);
+		}else{
+			$data = $this->Clientes_model->getclientes_mysql($dni);
+		}
+*/
 		$_SESSION['DNI'] = $data[0];
 		echo json_encode($data);
 	}
