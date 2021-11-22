@@ -34,6 +34,8 @@ class Clientes extends CI_Controller {
 		$rows=$this->Clientes_model->rows_getclientes_mysql($dni);
 		log_this("logs/rows.log",date("H:i:s")."rows: ".$rows." dni:".$dni."\n");
 		$data = $this->Clientes_model->getclientes_mysql($dni);
+		log_this("logs/rows.log",date("H:i:s").print_r($data,true)."\n");
+
 /*
 		if($rows<1){
 			$data = $this->Clientes_model->getclientes_mssql($dni);
