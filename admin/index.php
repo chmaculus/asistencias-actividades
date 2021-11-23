@@ -15,9 +15,9 @@
 <table>
 	<tr>
 		<td><A href="clientes_ingreso.php"><button>Ingresar</button></a></td>
-		<td><A href="clientes_dalvian_busqueda.php"><button>Buscar</button></a></td>
+		<td><A href="clientes_busqueda.php"><button>Buscar</button></a></td>
 		<td><A href="./busqueda_dossa_main"><button>Buscar DOSSA</button></a></td>
-		<td><A href="listado"><button>Listado</button></a></td>
+		<td><A href="clientes_listado.php"><button>Listado</button></a></td>
 	</tr>
 </table>
 <br><br>
