@@ -1,8 +1,14 @@
 <?php
-include("index.php");
-include("../includes/connect_mssql.php");
+include("../index.php");
+include("../../includes/connect_mssql.php");
+?>
+<form name="aa" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>" method="post">
+<input type="text" name="busqueda" value="<?php echo $_POST["busqueda"]; ?>">
+<input type="submit" name="buscar" value="Buscar"><br>
+</form>
 
-$sql = 'SELECT COD, NOM, DNI, DOM, CALLE, MZNA, CASA, PISO, DEPTO, TORRE, TEL, EMAIL FROM clientes ';
+<?php
+$sql = 'SELECT COD, NOM, DNI, DOM, CALLE, MZNA, CASA, PISO, DEPTO, TORRE, TEL, EMAIL FROM clientes where nom like \'%'.$_POST["busqueda"].'%\'  ';
 $stmt = sqlsrv_query( $conn, $sql );
 if( $stmt === false) {
     die( print_r( sqlsrv_errors(), true) );

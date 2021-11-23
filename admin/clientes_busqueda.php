@@ -1,5 +1,5 @@
 <?php
-include("index.php");
+include("dossa_main.php");
 ?>
 <body onLoad=document.aa.busqueda.focus()>
 
