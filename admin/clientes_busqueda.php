@@ -12,7 +12,7 @@ $desde=$_POST["desde"];
 $hasta=$_POST["hasta"];
 
 
-include('connect.php');
+include('../includes/connect.php');
 ?>
 </body>
 <form name="aa" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>" method="post">
@@ -78,7 +78,7 @@ if(mysql_error()){
 #crea cabecera listado
 echo '<br><br><font1>Mostrando Resultados desde: '.($desde+1).' Hasta: '.$hasta.' de: '.$total_rows.'</font1><br>';
 
-echo '<table class="t1">';
+echo '<table border="1">';
 echo '<tr>';
 	echo "<th>codigo facturacion</th>";
 	echo "<th>codigo residente</th>";
