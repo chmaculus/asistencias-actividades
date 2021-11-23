@@ -1,5 +1,5 @@
 <?php
-$server="192.168.3.101";
+$server="localhost";
 $user="root";
 $passwd="";
 $base="agenda_dev";
