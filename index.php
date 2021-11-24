@@ -140,7 +140,7 @@ $( "#enter" ).click(function() {
             url: "clientes/get_dni.php",
             dataType: "json",
             data: {
-                dni,
+                dni: dni
             },
             success:function(data){
                 if(data != 0){
