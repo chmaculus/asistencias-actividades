@@ -1,0 +1,47 @@
+Array
+(
+    [dni] => Array
+        (
+            [0] => 12
+            [id] => 12
+            [1] => 330
+            [codigo_residente] => 330
+            [2] => ALTANA, ERICA                      
+            [apellido] => ALTANA, ERICA                      
+            [3] => 
+            [nombres] => 
+            [4] => 
+            [tipo_documento] => 
+            [5] => 24486132
+            [numero_documento] => 24486132
+            [6] => 79
+            [manzana] => 79
+            [7] => 13
+            [casa] => 13
+            [8] => Cº LOS PUQUIOS   
+            [calle] => Cº LOS PUQUIOS   
+            [9] => 1147
+            [numero] => 1147
+            [10] => 0
+            [piso] => 0
+            [11] =>      
+            [dpto] =>      
+            [12] => 
+            [cod_postal] => 
+            [13] => 2615386578
+            [telefono] => 2615386578
+            [14] => erialtana@gmail.com           
+            [email] => erialtana@gmail.com           
+            [15] => 
+            [observaciones] => 
+            [16] => 
+            [imagen_nombre] => 
+            [17] => 1635724800
+            [fecha_creado] => 1635724800
+            [18] => 
+            [fecha_modificado] => 
+            [19] => 
+            [codigo_facturacion] => 
+        )
+
+)

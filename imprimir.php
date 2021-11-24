@@ -1,5 +1,8 @@
 <?php
 include("./includes/funciones.php");
+include("./includes/connect.php");
+
+session_start();
 
 		//echo "gettt: ".$_GET["data"]."<br>";
 		$aaa=base64_decode($_GET["data"]);
@@ -7,12 +10,12 @@ include("./includes/funciones.php");
 			$fecha = date('d-m-Y H:i:s');
 			$fecha_castellano=fechaCastellano ($fecha);
 
-			$dni = $_SESSION['DNI']['numero_documento'];
-			$nombre = $_SESSION['DNI']['apellido'];
-			if($_SESSION['DNI']['manzana'] != ''){
-				$direccion = "Manzana: ".$_SESSION['DNI']['manzana'].", Casa: ". $_SESSION['DNI']['casa'];
+			$dni = $_SESSION['dni']['numero_documento'];
+			$nombre = $_SESSION['dni']['apellido'];
+			if($_SESSION['dni']['manzana'] != ''){
+				$direccion = "Manzana: ".$_SESSION['dni']['manzana'].", Casa: ". $_SESSION['dni']['casa'];
 			}else{
-				$direccion = $_SESSION['DNI']['DOM'];
+				$direccion = $_SESSION['dni']['DOM'];
 			}
 
 
@@ -27,14 +30,28 @@ include("./includes/funciones.php");
   				hora_ingreso time,
 			*/
 
-			$q='insert into clientes_asistencias set codigo_residente="", codigo_facturacion="", apellido="", nombres="", fecha_ingreso="'.date("Y-m-d").'", hora_ingreso="'.date("H:i:s").'"';
+			$q='insert into clientes_asistencias set 
+				id_cliente="'.$_SESSION['dni']['id'].'",
+			 codigo_residente="'.$_SESSION['dni']['codigo_residente'].'",
+			 codigo_facturacion="'.$_SESSION['dni']['codigo_facturacion'].'", 
+			 apellido="'.$_SESSION['dni']['apellido'].'", 
+			 nombres="'.$_SESSION['dni']['nombres'].'", 
+			 fecha_ingreso="'.date("Y-m-d").'", 
+			 hora_ingreso="'.date("H:i:s").'"';
+			 mysql_query($q);
+			 if(mysql_error()){
+			 	log_this("sql_error.log",date("H:i:s")."\n".mysql_error()." \n".$q.";\n\n");
+
+			 }
+
+			//log_this("sql.log",date("H:i:s")." \n".$q.";\n\n");
 
 			//mysql_query($q);
 			//grabar turno 
 
 			
 			imprimir_turno($aaa[0], $aaa[1], NULL, $fecha_castellano, $dni, $nombre,$direccion);
-			log_this("session.log",print_r($_SESSION,true));
+			file_write("session.log",print_r($_SESSION,true));
 
 
 
@@ -72,7 +89,7 @@ include("./includes/funciones.php");
 	  $impresion .= "\r\n";
 	  $impresion .= chr(29).'V'.chr(66).chr(80); // GS V n m n=66 avanza y corta, m=10 añade 10 milimetros
 	  $str=utf8_decode($impresion);
-	  file_write("print.prn",$str);
+	  //file_write("print.prn",$str);
 	  imprimir($str);
 	}
 
