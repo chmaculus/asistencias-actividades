@@ -1,14 +1,27 @@
 <?php
-include("../index.php");
-include("../../includes/connect_mssql.php");
+include("dossa_cli_base.php");
+include("../includes/connect_mssql.php");
 ?>
+
+<titulo>Busqueda por DNI</titulo><br>
 <form name="aa" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>" method="post">
 <input type="text" name="busqueda" value="<?php echo $_POST["busqueda"]; ?>">
 <input type="submit" name="buscar" value="Buscar"><br>
 </form>
 
 <?php
-$sql = 'SELECT COD, NOM, DNI, DOM, CALLE, MZNA, CASA, PISO, DEPTO, TORRE, TEL, EMAIL FROM clientes where nom like \'%'.$_POST["busqueda"].'%\'  ';
+
+
+if(!$_POST["busqueda"]){
+	echo "Busqueda vacia<br>";
+	exit;
+}
+
+$num = number_format($_POST["busqueda"], 0, ',', '.');
+// 1 234,56
+
+
+$sql = 'SELECT top 500 COD, NOM, DNI, DOM, CALLE, MZNA, CASA, PISO, DEPTO, TORRE, TEL, EMAIL FROM clientes where dni like \'%'.$_POST["busqueda"].'%\'  or cui like \'%'.$_POST["busqueda"].'%\'  ';
 $stmt = sqlsrv_query( $conn, $sql );
 if( $stmt === false) {
     die( print_r( sqlsrv_errors(), true) );
@@ -19,6 +32,8 @@ if( $stmt === false) {
 /*
 COD|NOM                                     |DOM                                            |CPO     |PVC    |LOC        |CUI          |TEL                                         |FPA|TIP|ZON  |ACT|MCC        |MCH   |CTA|NLG       |TLI|IVA|TCO|CLC|CPV|OBS                                                                                                                 |DIC|GRP|BLO|PAH|PER|RAN|REC|VEN|NMB|E_HD|C_HD|REGGPR|EMG|PDA_A|CMBS|TIPORC|CALLE                         |NUMERO|OPE_CAT|ESTADO|TASAM2|CVTA|FVTA               |TASA_POR|MAG|CLO|RTA_TOA|ORD_TOA|RTA_ENF|ORD_ENF|CAG|MZNA|CASA|PISO|DEPTO|ID  |DNI            |TIPO_DNI|TIPO_CONS|M2T      |M2C     |ANEXO_MC|TORRE|IMP_ALQ    |INC_TAS|DESC_ALQ       |CBU                   |EMAIL                                  |CONTRASENA                      |ACTIVACION|CODIGO_ACTIVACION               |modCBU|RIESGO_FISCAL|BLO_CTA_PROPIA|NotaDescuento|
 */
+
+
 ?>
 
 <table border="1">
@@ -36,9 +51,6 @@ COD|NOM                                     |DOM                                
 		<th>Tel</th>
 		<th>E-Mail</th>
 	</tr>
-
-
-
 
 <?php
 

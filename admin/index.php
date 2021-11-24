@@ -16,8 +16,8 @@
 	<tr>
 		<td><A href="clientes_ingreso.php"><button>Ingresar</button></a></td>
 		<td><A href="clientes_busqueda.php"><button>Buscar</button></a></td>
-		<td><A href="dossa_main"><button>Buscar DOSSA</button></a></td>
 		<td><A href="clientes_listado.php"><button>Listado</button></a></td>
+		<td><A href="dossa_main.php"><button>Buscar DOSSA</button></a></td>
 	</tr>
 </table>
 <br><br>

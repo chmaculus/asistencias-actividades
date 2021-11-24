@@ -1,12 +1,10 @@
 registrar ingresos en tabla
 
-crear formulario ingreso clientes listo
-
-listar consulta clientes mssql
-
-popup datos incorrectos
-
-consulta primero local luego tabla dossa
+*listar consulta clientes mssql OK
 
 listado / modificacion clientes
+
+listado / modificacion residentes
+
+
 
