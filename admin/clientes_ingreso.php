@@ -79,11 +79,11 @@ if($_GET["id_clientes_dalvian"]){
 	</tr>
 	<tr>
 		<th>Telefono</th>
-		<td><input type="text" name="telefono" id="telefono" value="<?php if(isset($data["telefono"])){echo $data["telefono"];}?>" size="10"></td>
+		<td><input type="text" name="telefono" id="telefono" value="<?php if(isset($data["telefono"])){echo $data["telefono"];}?>" size="20"></td>
 	</tr>
 	<tr>
 		<th>E-Mail</th>
-		<td><input type="text" name="email" id="email" value="<?php if(isset($data["email"])){echo $data["email"];}?>" size="10"></td>
+		<td><input type="text" name="email" id="email" value="<?php if(isset($data["email"])){echo $data["email"];}?>" size="30"></td>
 	</tr>
 
 <!-- 

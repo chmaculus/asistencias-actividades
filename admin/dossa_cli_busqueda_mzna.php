@@ -3,7 +3,7 @@ include("dossa_cli_base.php");
 include("../includes/connect_mssql.php");
 ?>
 
-<titulo>Busqueda por Manzana / Casa</titulo><br>
+<titulo>Buscar cliente por Manzana / Casa en DOSSA</titulo><br>
 <form name="aa" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>" method="post">
 <table>
 <tr>

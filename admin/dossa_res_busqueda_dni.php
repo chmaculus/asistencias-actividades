@@ -3,7 +3,7 @@ include("dossa_cli_base.php");
 include("../includes/connect_mssql.php");
 ?>
 
-<titulo>Busqueda de residentes DOSSA por DNI</titulo><br>
+<titulo>Buscar residente por DNI en DOSSA</titulo><br>
 <form name="aa" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>" method="post">
 <table>
 <tr>
@@ -16,14 +16,14 @@ include("../includes/connect_mssql.php");
 <?php
 
 
-if(!$_POST["nombre"]){
+if(!$_POST["dni"]){
 	echo "Busqueda vacia<br>";
 	exit;
 }
 
-$sql='select top 500 COD_HAB, COD_RES, NOM, NUM_DOC, DIR TEL, EMAIL from residentes where dni like \''.$_POST["dni"].'\'  order by nom';
+$sql='select top 500 COD_HAB, COD_RES, NOM, NUM_DOC, DIR, TEL, EMAIL from residentes where num_doc like \''.$_POST["dni"].'\'  order by nom';
 
-echo $sql."<br>";
+echo "<br>";
 
 
 $stmt = sqlsrv_query( $conn, $sql );
@@ -37,8 +37,8 @@ if( $stmt === false) {
 
 <table border="1">
 	<tr>
-		<th>Codigo hab</th>
-		<th>Codigo Residente</th>
+		<th>Codigo hAB</th>
+		<th>Codigo residente</th>
 		<th>Nombre</th>
 		<th>DNI</th>
 		<th>Domicilio</th>
@@ -47,8 +47,10 @@ if( $stmt === false) {
 	</tr>
 
 <?php
+/*
+COD_HAB|COD_RES|TIPO_RE|NOM                                     |TIP_DOC|NUM_DOC        |FECHA_NAC          |DIR                                               |TEL                                         |EMAIL          |TRANSB|TRANSA|RIVA|CUIT         |
+*/
 
-$sql='select top 500 COD_HAB, COD_RES, NOM, NUM_DOC, DIR TEL, EMAIL from residentes';
 while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
 	echo '<tr>';
       echo "<td>".$row['COD_HAB']."</td>";
