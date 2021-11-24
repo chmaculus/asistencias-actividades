@@ -15,7 +15,7 @@
         	console.log('here');
         };
 		alert('Se envio a imprimir');
-		location.href = "./login.php";
+		location.href = "./index.php";
         return false;
     }
 

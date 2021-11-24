@@ -1,15 +1,12 @@
 <?php
+include("./includes/funciones.php");
 
 		//echo "gettt: ".$_GET["data"]."<br>";
 		$aaa=base64_decode($_GET["data"]);
 		$aaa=explode(":", $aaa);
 			$fecha = date('d-m-Y H:i:s');
-			$fecha_castellano=$this->fechaCastellano ($fecha);
+			$fecha_castellano=fechaCastellano ($fecha);
 
-			//echo $aaa[0]."<br>";
-			//echo $aaa[1]."<br>";
-
-			//exit;
 			$dni = $_SESSION['DNI']['numero_documento'];
 			$nombre = $_SESSION['DNI']['apellido'];
 			if($_SESSION['DNI']['manzana'] != ''){
@@ -31,12 +28,13 @@
 			*/
 
 			$q='insert into clientes_asistencias set codigo_residente="", codigo_facturacion="", apellido="", nombres="", fecha_ingreso="'.date("Y-m-d").'", hora_ingreso="'.date("H:i:s").'"';
+
 			//mysql_query($q);
 			//grabar turno 
 
 			
-			$this->imprimir_turno($aaa[0], $aaa[1], NULL, $fecha_castellano, $dni, $nombre,$direccion);
-			//$this->file_write("cam.txt",$_GET["data"]);
+			imprimir_turno($aaa[0], $aaa[1], NULL, $fecha_castellano, $dni, $nombre,$direccion);
+			log_this("session.log",print_r($_SESSION,true));
 
 
 
@@ -74,25 +72,19 @@
 	  $impresion .= "\r\n";
 	  $impresion .= chr(29).'V'.chr(66).chr(80); // GS V n m n=66 avanza y corta, m=10 añade 10 milimetros
 	  $str=utf8_decode($impresion);
-	  //$this->file_write("print.prn",$str);
-	  $this->imprimir($str);
+	  file_write("print.prn",$str);
+	  imprimir($str);
 	}
 
 
 	function imprimir($datos){
 		  //file_put_contents($this->URI, mb_convert_encoding($datos, 'Windows-1252', 'UTF-8'));
-		  file_put_contents('\\\\10.231.45.184\\printer', $datos);
+		  file_put_contents('\\\\localhost\\printer', $datos);
 			//file_put_contents('\\\\127.0.0.1\\impresora', iconv('Windows-1252','UTF-8', $datos));
 		  //file_put_contents('prueba2.prn', $datos);
-		  //file_write("print.prn", $datos);
+		  file_write("print.prn", $datos);
 	}
 
-	function file_write($file_name, $data) {
-		//$file = fopen($file_name, 'a+');
-		$file = fopen($file_name, 'w');
-		fwrite($file, $data);
-		fclose($file);
-	}
 
 
 
