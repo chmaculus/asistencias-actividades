@@ -12,7 +12,56 @@ if($_GET["id_clientes_dalvian"]){
 
 ?>
 
-<form method="post" action="clientes_update.php" name="form_clientes_dalvian">
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("form_clientes_dalvian").addEventListener('submit', validarFormulario); 
+  });
+
+  function validarFormulario(evento) {
+    evento.preventDefault();
+
+    var codigo_facturacion = document.getElementById('codigo_facturacion').value;
+    if(codigo_facturacion.length < 2) {
+      alert('El campo Codigo de facturacion no puede estar vacio');
+      return;
+    }
+
+    var apellido = document.getElementById('apellido').value;
+    if (apellido.length < 4) {
+      alert('El campo Apellido no puede estar vacio');
+      return;
+    }
+
+    var nombres = document.getElementById('nombres').value;
+    if (nombres.length < 4) {
+      alert('El campo Nombres no puede estar vacio');
+      return;
+    }
+
+    var numero_documento = document.getElementById('numero_documento').value;
+    if (numero_documento.length < 7) {
+      alert('Debe ingresar un numero de documento valido');
+      return;
+    }
+
+    var telefono = document.getElementById('telefono').value;
+    if (telefono.length < 4) {
+      alert('El campo Telefono no puede estar vacio');
+      return;
+    }
+
+    var email = document.getElementById('email').value;
+    if (email.length < 4) {
+      alert('El campo E-Mail no puede estar vacio');
+      return;
+    }
+
+    this.submit();
+  }
+</script>
+
+
+<form method="post" action="clientes_update.php" id="form_clientes_dalvian">
 
 <center>
 <table class="t1" border="1">
@@ -20,11 +69,6 @@ if($_GET["id_clientes_dalvian"]){
 	<tr>
 		<th>Codigo Facturacion</th>
 		<td><input type="text" name="codigo_facturacion" id="codigo_facturacion" value="<?php if(isset($data["codigo_facturacion"])){echo $data["codigo_facturacion"];}?>" size="8"></td>
-	</tr>
-
-	<tr>
-		<th>Codigo Residente</th>
-		<td><input type="text" name="codigo_residente" id="codigo_residente" value="<?php if(isset($data["codigo_cliente"])){echo $data["codigo_cliente"];}?>" size="8"></td>
 	</tr>
 
 	<tr>
@@ -47,7 +91,7 @@ if($_GET["id_clientes_dalvian"]){
 	</tr>
 	<tr>
 		<th>Numero documento</th>
-		<td><input type="text" name="numero_documento" id="numero_documento" value="<?php if(isset($data["numero_documento"])){echo $data["numero_documento"];}?>" size="10"></td>
+		<td><input type="text" name="numero_documento" id="numero_documento" value="<?php if(isset($data["numero_documento"])){echo $data["numero_documento"];}?>" size="10">Solo numeros sin puntos</td>
 	</tr>
 	<tr>
 		<th>Manzana</th>
