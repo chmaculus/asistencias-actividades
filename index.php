@@ -144,7 +144,7 @@ $( "#enter" ).click(function() {
             },
             success:function(data){
                 if(data != 0){
-                    location.href = "menu";
+                    location.href = "menu.php";
                 }else{
                     alert("Documento no encontrado: "+ dni)
                     $( "#input-dni" ).val('');

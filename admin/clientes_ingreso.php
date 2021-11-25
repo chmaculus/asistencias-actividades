@@ -22,19 +22,19 @@ if($_GET["id_clientes_dalvian"]){
 
     var codigo_facturacion = document.getElementById('codigo_facturacion').value;
     if(codigo_facturacion.length < 2) {
-      alert('El campo Codigo de facturacion debe se valido');
+      alert('El campo Codigo de facturacion debe ser valido');
       return;
     }
 
     var apellido = document.getElementById('apellido').value;
     if (apellido.length < 4) {
-      alert('El campo Apellido debe se valido');
+      alert('El campo Apellido debe ser valido');
       return;
     }
 
     var nombres = document.getElementById('nombres').value;
     if (nombres.length < 4) {
-      alert('El campo Nombres debe se valido');
+      alert('El campo Nombres debe ser valido');
       return;
     }
 
@@ -46,13 +46,13 @@ if($_GET["id_clientes_dalvian"]){
 
     var telefono = document.getElementById('telefono').value;
     if (telefono.length < 4) {
-      alert('El campo Telefono debe se valido');
+      alert('El campo Telefono debe ser valido');
       return;
     }
 
     var email = document.getElementById('email').value;
     if (email.length < 4) {
-      alert('El campo E-Mail debe se valido');
+      alert('El campo E-Mail debe ser valido');
       return;
     }
 
