@@ -62,7 +62,7 @@ while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
       echo "<td>".$row['MZNA']."</td>";
       echo "<td>".$row['CASA']."</td>";
       echo "<td>".$row['PISO']."</td>";
-      echo "<td>".$row['DPTO']."</td>";
+      echo "<td>".$row['DEPTO']."</td>";
       echo "<td>".$row['TORRE']."</td>";
       echo "<td>".$row['TEL']."</td>";
       echo "<td>".$row['EMAIL']."</td>";
