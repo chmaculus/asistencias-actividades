@@ -1,4 +1,5 @@
 <center>
+
 <table border="1">
 <tr>
 	<th>Codigo residente</th>	<td><?php echo $array_clientes_dalvian["id"]; ?></td>
@@ -49,6 +50,6 @@
 	<th>Observaciones</th>	<td><?php echo $array_clientes_dalvian["observaciones"]; ?></td>
 </tr>
 <tr>
-	<th>Fecha creado</th>	<td><?php echo $array_clientes_dalvian["fecha_creado"]; ?></td>
+	<th>Fecha creado</th>	<td><?php echo date("d/m/Y H:i:s",$array_clientes_dalvian["fecha_creado"]); ?></td>
 </tr>
 </table>
