@@ -1,0 +1,47 @@
+Array
+(
+    [dni] => Array
+        (
+            [0] => 96
+            [id] => 96
+            [1] => 1841
+            [codigo_residente] => 1841
+            [2] => PAVON, MARIA DEL ROSARIO           
+            [apellido] => PAVON, MARIA DEL ROSARIO           
+            [3] => 
+            [nombres] => 
+            [4] => 
+            [tipo_documento] => 
+            [5] => 11235037
+            [numero_documento] => 11235037
+            [6] => 60
+            [manzana] => 60
+            [7] => 0
+            [casa] => 0
+            [8] => Cº BODEGUITA     
+            [calle] => Cº BODEGUITA     
+            [9] => 1063
+            [numero] => 1063
+            [10] => 2
+            [piso] => 2
+            [11] => 1
+            [dpto] => 1
+            [12] => 
+            [cod_postal] => 
+            [13] =>                                         
+            [telefono] =>                                         
+            [14] => rosariopavon@yahoo.com.ar     
+            [email] => rosariopavon@yahoo.com.ar     
+            [15] => 
+            [observaciones] => 
+            [16] => 
+            [imagen_nombre] => 
+            [17] => 1635724800
+            [fecha_creado] => 1635724800
+            [18] => 
+            [fecha_modificado] => 
+            [19] => 
+            [codigo_facturacion] => 
+        )
+
+)

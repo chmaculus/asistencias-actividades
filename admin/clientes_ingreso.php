@@ -11,7 +11,6 @@ if($_GET["id_clientes_dalvian"]){
 
 
 ?>
-
 <script type="text/javascript">
   document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("form_clientes_dalvian").addEventListener('submit', validarFormulario); 
@@ -52,6 +51,44 @@ if($_GET["id_clientes_dalvian"]){
 
     this.submit();
   }
+
+function trae_datos() {
+        var codigo_facturacion = '';
+        codigo_facturacion = document.getElementById('codigo_facturacion').value;
+        console.log("trae_datos");
+
+        //open("POST", "trae_datos_cliente.php");
+
+        $.ajax({
+            type: "POST",
+            url: "trae_datos_cliente.php",
+            dataType: "json",
+            data: {
+                codigo_facturacion: codigo_facturacion
+            },
+            success:function(data){
+            	console.log("data: " + data);
+            },
+        });
+
+/*				fetch('data.php')
+            .then((res) => {
+                return res.json();
+            })*/
+
+
+/*
+        $('#marca option:selected').each(function () {
+        $.post("trae_datos_cliente.php", { 'marca': marca }, function(data){
+                $("#clasificacion").html(data);
+        });
+        });
+        */
+}
+
+
+
+
 </script>
 
 
@@ -62,7 +99,7 @@ if($_GET["id_clientes_dalvian"]){
 
 	<tr>
 		<th>Codigo Facturacion</th>
-		<td><input type="text" name="codigo_facturacion" id="codigo_facturacion" value="<?php if(isset($data["codigo_facturacion"])){echo $data["codigo_facturacion"];}?>" size="8"></td>
+		<td><input type="text" name="codigo_facturacion" id="codigo_facturacion" value="<?php if(isset($data["codigo_facturacion"])){echo $data["codigo_facturacion"];}?>" size="8" onchange="trae_datos();"></td>
 	</tr>
 
 	<tr>
