@@ -33,6 +33,5 @@ include("includes/cabecera_categorias.php");
 			</tr>
 		</table>
 
-		<!-- The actual snackbar -->
 <div id="snackbar">Se envio a imprimir</div> 
 	</center>
