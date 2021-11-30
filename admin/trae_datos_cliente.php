@@ -28,33 +28,21 @@ FROM
 
 log_this("trdata.log","\n".$sql."\n");
 
-//log_this("trdata.log",date("H:i:s")."\n111\n");
-
 $stmt = sqlsrv_query( $conn, $sql );
 //log_this("trdata.log",date("H:i:s")."\n222\n");
 if( $stmt === false) {
     die( log_this(print_r( sqlsrv_errors(), true)) );
 }
-//log_this("trdata.log",date("H:i:s")."\n333\n");
-
-//$array0=sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC);
-
-//log_this("trdata.log","row:".print_r($array0,true)."\n");
 
 
 while($row=sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC)){
 	$array[]=$row;
 }
-
-////$array=sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC);
-//log_this("trdata.log","row:".print_r($row,true)."\n");
-
-
 $array = $array[0];
+
 log_this("trdata.log",print_r($array,true)."\n");
 
 echo json_encode($array);
-
 
 sqlsrv_free_stmt( $stmt);
 
