@@ -32,4 +32,7 @@ include("includes/cabecera_categorias.php");
 				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 			</tr>
 		</table>
+
+		<!-- The actual snackbar -->
+<div id="snackbar">Se envio a imprimir</div> 
 	</center>

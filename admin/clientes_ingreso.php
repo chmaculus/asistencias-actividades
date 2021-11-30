@@ -50,12 +50,6 @@ if($_GET["id_clientes_dalvian"]){
       return;
     }
 
-    var email = document.getElementById('email').value;
-    if (email.length < 4) {
-      alert('El campo E-Mail debe ser valido');
-      return;
-    }
-
     this.submit();
   }
 </script>
