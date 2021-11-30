@@ -4,7 +4,7 @@ include("index.php");
 if($_GET["id_clientes_dalvian"]){
 	include("../includes/connect.php");
 	$q='select * from clientes_dalvian where id="'.$_GET["id_clientes_dalvian"].'"';
-	echo $q."<br>";
+	//echo $q."<br>";
 	$data=mysql_fetch_array(mysql_query($q));
 
 }
@@ -57,8 +57,6 @@ function trae_datos() {
         codigo_facturacion = document.getElementById('codigo_facturacion').value;
         console.log("trae_datos");
 
-        //open("POST", "trae_datos_cliente.php");
-
         $.ajax({
             type: "POST",
             url: "trae_datos_cliente.php",
@@ -67,23 +65,13 @@ function trae_datos() {
                 codigo_facturacion: codigo_facturacion
             },
             success:function(data){
-            	console.log("data: " + data);
+            	console.log("data: " + JSON.stringify(data));
+            	console.log(data.COD);
+            	$("#manzana").val(data.MZNA);
+            	$("#casa").val(data.CASA);
             },
         });
 
-/*				fetch('data.php')
-            .then((res) => {
-                return res.json();
-            })*/
-
-
-/*
-        $('#marca option:selected').each(function () {
-        $.post("trae_datos_cliente.php", { 'marca': marca }, function(data){
-                $("#clasificacion").html(data);
-        });
-        });
-        */
 }
 
 

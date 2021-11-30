@@ -37,13 +37,21 @@ if( $stmt === false) {
 }
 //log_this("trdata.log",date("H:i:s")."\n333\n");
 
+//$array0=sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC);
+
+//log_this("trdata.log","row:".print_r($array0,true)."\n");
+
 
 while($row=sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC)){
 	$array[]=$row;
 }
 
 ////$array=sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC);
-log_this("trdata.log","array: \n".print_r($array,true)."\n");
+//log_this("trdata.log","row:".print_r($row,true)."\n");
+
+
+$array = $array[0];
+log_this("trdata.log",print_r($array,true)."\n");
 
 echo json_encode($array);
 
