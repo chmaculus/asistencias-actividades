@@ -29,6 +29,9 @@ session_start();
 		  		fecha_ingreso date,
   				hora_ingreso time,
 			*/
+			if($aaa[0]=="actividad"){ $tipo=1; }
+			if($aaa[0]=="clase"){ $tipo=2; }
+			if($aaa[0]=="espacio"){ $tipo=3; }
 
 			$q='insert into clientes_asistencias set 
 				id_cliente="'.$_SESSION['dni']['id'].'",
@@ -36,6 +39,9 @@ session_start();
 			 codigo_facturacion="'.$_SESSION['dni']['codigo_facturacion'].'", 
 			 apellido="'.$_SESSION['dni']['apellido'].'", 
 			 nombres="'.$_SESSION['dni']['nombres'].'", 
+			 numero_documento="'.$_SESSION['dni']['numero_documento'].'", 
+			 tipo="'.$tipo.'", 
+			 detalle="'.$aaa[1].'", 
 			 fecha_ingreso="'.date("Y-m-d").'", 
 			 hora_ingreso="'.date("H:i:s").'"';
 			 mysql_query($q);
