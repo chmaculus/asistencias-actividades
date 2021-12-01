@@ -14,13 +14,12 @@ $num_dias_mes = date("t",mktime(0,0,0,$mes,1,$year));
 	<tr>
 		<td>Fecha desde</td>
 		<td>Fecha hasta</td>
-		<td>Residente</td>
 		<td>Actividad</td>
+		<td>Residente</td>
 	</tr>
 	<tr>
 		<td><input type="text" name="fecha_desde" value="<?php echo date("01/m/Y");?>" size="10"></td>
 		<td><input type="text" name="fecha_hasta" value="<?php echo $num_dias_mes.date("/m/Y");?>" size="10"></td>
-		<td><input type="text" name="residente" value="a" size="10"></td>
 		<td>
 			<select name="actividades">
 				<?php
@@ -37,8 +36,8 @@ $num_dias_mes = date("t",mktime(0,0,0,$mes,1,$year));
 				
 				?>
 			</select>
-
 		</td>
+		<td><input type="text" name="residente" value="<?php if($_POST["residente"]){echo $_POST["residente"];}?>" size="10"></td>
 	</tr>
 </table>
 
@@ -64,13 +63,23 @@ if(!$_POST["fecha_desde"]){
 	exit;
 }
 
-$query='select * from clientes_asistencias 
-where fecha_ingreso>="'.fecha_conv("/",$_POST["fecha_desde"]).'" 
+$query='select * from clientes_asistencias ';
+
+$where='where fecha_ingreso>="'.fecha_conv("/",$_POST["fecha_desde"]).'" 
 	and  fecha_ingreso<="'.fecha_conv("/",$_POST["fecha_hasta"]).'" 
 	';
 
+
+if($_POST["orden"]=="apellido"){
+	$order=' order by apellido, nombres ';
+}
+
 if($_POST["orden"]=="fecha"){
 	$order=' order by fecha_ingreso, hora_ingreso ';
+}
+
+if($_POST["orden"]=="detalle"){
+	$order=' order by tipo, detalle ';
 }
 
 
