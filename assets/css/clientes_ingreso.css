@@ -33,10 +33,10 @@ label , input{
 }
 
 table {
-	width: 800px;
+	width: 450px;
 	border-collapse: collapse;
 	overflow: hidden;
-
+	margin-left: 215px;
 }
 
 th,
@@ -71,7 +71,7 @@ th {
 
 .cabecera {
     background: none;
-    margin-top: 4.3%;
+    margin-top: -1.5%;
 }
 
 .tabla_botones{
@@ -159,8 +159,8 @@ margin-left: 10px;
 #logo_dalvian {
     position: absolute;
     width: 11em;
-    left: 40.5%;
-    top: 1%;
+    left: 25%;
+    top: 5%;
 }
 
 input[type=number] {

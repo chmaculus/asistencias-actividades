@@ -17,14 +17,12 @@
 	<tr class="nav_buttons">
 		<td><a href="clientes_ingreso.php"><button><img src="../assets/images/ingreso.svg" alt="puertita"></button></a></td>
 		<td><a href="clientes_busqueda.php"><button><img src="../assets/images/buscar.svg" alt="lupita"></button></a></td>
-		<td><a href="clientes_listado.php"><button><img src="../assets/images/listado.svg" alt="listita"></button></a></td>
 		<td><a href="dossa_main.php"><button><img src="../assets/images/libro.svg" alt="librito"></button></a></td>
 	</tr>
     <tr>
         <td>Ingresar</td>
         <td>Buscar</td>
-        <td>Listado</td>
-        <td>Buscar DOSSA</td>
+        <td>DOSSA</td>
     </tr>
 </table>
 </div>

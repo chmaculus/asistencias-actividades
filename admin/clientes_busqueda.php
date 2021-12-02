@@ -1,5 +1,5 @@
 <?php
-include("dossa_main.php");
+include("index.php");
 ?>
 <body onLoad=document.aa.busqueda.focus()>
 
@@ -15,7 +15,7 @@ $hasta=$_POST["hasta"];
 include('../includes/connect.php');
 ?>
 </body>
-<form name="aa" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>" method="post">
+<form class="formulario_busqueda" name="aa" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>" method="post">
 <input type="text" name="busqueda" value="<?php echo $_POST["busqueda"]; ?>">
 <input type="submit" name="buscar" value="Buscar"><br>
 
@@ -78,13 +78,12 @@ if(mysql_error()){
 #crea cabecera listado
 echo '<br><br><font1>Mostrando Resultados desde: '.($desde+1).' Hasta: '.$hasta.' de: '.$total_rows.'</font1><br>';
 
-echo '<table border="1">';
+echo '<table class="tabla_busqueda"; border="1">';
 echo '<tr>';
 	echo "<th>codigo facturacion</th>";
 	echo "<th>codigo residente</th>";
 	echo "<th>apellido</th>";
 	echo "<th>nombres</th>";
-	echo "<th>tipo_documento</th>";
 	echo "<th>numero_documento</th>";
 	echo "<th>manzana</th>";
 	echo "<th>casa</th>";
@@ -92,13 +91,7 @@ echo '<tr>';
 	echo "<th>numero</th>";
 	echo "<th>piso</th>";
 	echo "<th>dpto</th>";
-	echo "<th>cod_postal</th>";
 	echo "<th>telefono</th>";
-	echo "<th>email</th>";
-	echo "<th>observaciones</th>";
-	echo "<th>imagen_nombre</th>";
-	echo "<th>fecha_creado</th>";
-	echo "<th>fecha_modificado</th>";
 	echo "<td></td>";
 	echo "<td></td>";
 echo '</tr>';
@@ -110,7 +103,6 @@ while($row=mysql_fetch_array($result)){
 	echo '<td>'.$row["codigo_residente"].'</td>';
 	echo '<td>'.$row["apellido"].'</td>';
 	echo '<td>'.$row["nombres"].'</td>';
-	echo '<td>'.$row["tipo_documento"].'</td>';
 	echo '<td>'.$row["numero_documento"].'</td>';
 	echo '<td>'.$row["manzana"].'</td>';
 	echo '<td>'.$row["casa"].'</td>';
@@ -118,13 +110,7 @@ while($row=mysql_fetch_array($result)){
 	echo '<td>'.$row["numero"].'</td>';
 	echo '<td>'.$row["piso"].'</td>';
 	echo '<td>'.$row["dpto"].'</td>';
-	echo '<td>'.$row["cod_postal"].'</td>';
 	echo '<td>'.$row["telefono"].'</td>';
-	echo '<td>'.$row["email"].'</td>';
-	echo '<td>'.$row["observaciones"].'</td>';
-	echo '<td>'.$row["imagen_nombre"].'</td>';
-	echo '<td>'.$row["fecha_creado"].'</td>';
-	echo '<td>'.$row["fecha_modificado"].'</td>';
 	echo '<td><A HREF="clientes_ingreso.php?id_clientes_dalvian='.$row["id"].'"><button>Modificar</button></A></td>';
 	echo '<td><A HREF="clientes_eliminar.php?id_clientes_dalvian='.$row["id"].'"><button>Eliminar</button></A></td>';
 	echo "</tr>".chr(13);
