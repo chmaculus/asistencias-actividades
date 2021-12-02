@@ -1,11 +1,11 @@
-html,
-body {
-	height: 100%;
+html{
+	background-image: url("../../assets/images/form_background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 body {
 	margin: 0;
-	background: linear-gradient(45deg, #49a09d, #5f2c82);
 	font-family: sans-serif;
 	font-weight: 100;
 }
@@ -17,49 +17,159 @@ body {
 	transform: translate(-50%, -50%);
 }
 
+label , input{
+	color: #000;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#titulo{
+	font-size: 28px;
+    color: #000;
+	line-height: 1.5;
+    font-weight: 400;
+    font-family: "Poppins",Arial,sans-serif;
+}
+
 table {
 	width: 800px;
 	border-collapse: collapse;
 	overflow: hidden;
-	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+
 }
 
 th,
 td {
-	padding: 15px;
-	background-color: rgba(255,255,255,0.2);
-	color: #fff;
+	padding: 7.5px;
+	text-align: center;
 }
 
 th {
 	text-align: left;
 }
 
-thead {
-	th {
-		background-color: #55608f;
-	}
+.nav_buttons td a button{
+	margin-top: 30px;
+	cursor: pointer;
+	border-radius: 50%;
+	height: 75px;
+	width: 75px;
+	background: #46b5d1;
+	border: none;
 }
 
-tbody {
-	tr {
-		&:hover {
-			background-color: rgba(255,255,255,0.3);
-		}
-	}
-	td {
-		position: relative;
-		&:hover {
-			&:before {
-				content: "";
-				position: absolute;
-				left: 0;
-				right: 0;
-				top: -9999px;
-				bottom: -9999px;
-				background-color: rgba(255,255,255,0.2);
-				z-index: -1;
-			}
-		}
-	}
+.nav_buttons td a button:hover{
+	filter:brightness(120%);
+}
+
+.nav_buttons td a button img{
+	width: 55%;
+	height: 55%;
+	filter: invert(100%);
+}
+
+.cabecera {
+    background: none;
+    margin-top: 4.3%;
+}
+
+.tabla_botones{
+	margin-bottom: 3%;
+}
+
+.formulario_cliente {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2%;
+    width: 815px;
+}
+
+.datos_persona {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.datos_direccion{
+	border-radius: 20px;
+	display: flex;
+    flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-evenly;
+}
+
+input{
+	background: none;
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 4px;
+	width: 135px;
+	-webkit-appearance: none;
+}
+
+input:hover{
+	background: none;
+	border: none;
+	border-bottom: 1px solid #46b5d1;
+	padding: 4px;
+	width: 135px;
+}
+
+select{
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+	margin-top: 15px;
+}
+
+fieldset {
+    padding: 0;
+    margin-right: 0;
+    height: 172px;
+    border-radius: 5px;
+    border: 2px solid #46b5d1;
+    background: white;
+}
+
+textarea{
+	border:none
+}
+
+legend{
+font-size: 14px;
+color: #46b5d1;
+margin-left: 10px;
+}
+
+#button_aceptar{
+	cursor: pointer;
+}
+
+#logo_foca{
+	position: absolute;
+	top: 90%;
+	left: 89%;
+	width: 8em;
+}
+
+#logo_dalvian {
+    position: absolute;
+    width: 11em;
+    left: 40.5%;
+    top: 1%;
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }

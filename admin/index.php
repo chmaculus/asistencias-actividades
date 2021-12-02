@@ -11,13 +11,21 @@
 
 
 <center>
-<titulo>Clientes Dalvian</titulo>
+    <div class="cabecera">
+    <img id="logo_dalvian" src="../assets/images/club_house.png" alt="logo dalvian">
 <table>
-	<tr>
-		<td><A href="clientes_ingreso.php"><button>Ingresar</button></a></td>
-		<td><A href="clientes_busqueda.php"><button>Buscar</button></a></td>
-		<td><A href="clientes_listado.php"><button>Listado</button></a></td>
-		<td><A href="dossa_main.php"><button>Buscar DOSSA</button></a></td>
+	<tr class="nav_buttons">
+		<td><a href="clientes_ingreso.php"><button><img src="../assets/images/ingreso.svg" alt="puertita"></button></a></td>
+		<td><a href="clientes_busqueda.php"><button><img src="../assets/images/buscar.svg" alt="lupita"></button></a></td>
+		<td><a href="clientes_listado.php"><button><img src="../assets/images/listado.svg" alt="listita"></button></a></td>
+		<td><a href="dossa_main.php"><button><img src="../assets/images/libro.svg" alt="librito"></button></a></td>
 	</tr>
+    <tr>
+        <td>Ingresar</td>
+        <td>Buscar</td>
+        <td>Listado</td>
+        <td>Buscar DOSSA</td>
+    </tr>
 </table>
-<br><br>
+</div>
+<img id="logo_foca" src="../assets/images/logo-foca.png" alt="logo foca">
