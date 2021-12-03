@@ -1,30 +1,3 @@
-<?php
-include("index.php");
-include("../includes/connect_mssql.php");
-?>
-
-<center>
-<label>Buscar en DOSSA </label>
-
-<!-- primer nivel de seleccion -->
-<table>
-	<tr>
-		<td><button class="table_clientes">Clientes</button></td>
-		<td><button class="table_residentes">Residentes</button></td>
-	</tr>
-</table>
-<br><br>
-
-<!-- segundo nivel clientes -->
-<div class="seccion_clientes" hidden>
-	<titulo>Clientes Dalvian</titulo>
-	<table>
-		<tr>
-			<td><button class="apellido">Apellido / Nombre </button></td>
-			<td><A href="dossa_cli_busqueda_dni.php"><button>DNI</button></a></td>
-			<td><A href="dossa_cli_busqueda_mzna.php"><button>Mzna / Casa</button></a></td>
-		</tr>
-	</table>
 
 	<!-- tercer nivel clientes por apellido -->
 	<div class="seccion_residentes-apellido" hidden>
@@ -103,36 +76,3 @@ include("../includes/connect_mssql.php");
 
 		?>
 	</div>
-</div>
-
-<!-- segundo nivel residentes -->
-<div class="seccion_residentes" hidden>
-	<titulo>Buscar de residentes en DOSSA por:</titulo>
-	<table>
-		<tr>
-			<td><A href="dossa_res_busqueda_nombre.php"><button>Nombre</button></a></td>
-			<td><A href="dossa_res_busqueda_dni.php"><button>DNI</button></a></td>
-		</tr>
-	</table>
-	<br><br>
-</div>
-
-
-<!-- logica de la pagina -->
-<script>
-	$(".table_clientes").click(function(){
-		$(".seccion_clientes").show();
-		$(".seccion_residentes").hide();
-		$(".seccion_residentes-apellido").hide();
-	});
-
-	$(".table_residentes").click(function(){
-		$(".seccion_residentes").show();
-		$(".seccion_clientes").hide();
-		$(".seccion_residentes-apellido").hide();
-	});
-
-	$(".apellido").click(function(){
-		$(".seccion_residentes-apellido").show();
-	});
-</script>

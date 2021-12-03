@@ -12,17 +12,17 @@
 
 <center>
     <div class="cabecera">
-    <img id="logo_dalvian" src="../assets/images/club_house.png" alt="logo dalvian">
+    <a href="../admin"><img id="logo_dalvian" src="../assets/images/club_house.png" alt="logo dalvian"></a>
 <table>
 	<tr class="nav_buttons">
-		<td><a href="clientes_ingreso.php"><button><img src="../assets/images/ingreso.svg" alt="puertita"></button></a></td>
-		<td><a href="clientes_busqueda.php"><button><img src="../assets/images/buscar.svg" alt="lupita"></button></a></td>
-		<td><a href="dossa_main.php"><button><img src="../assets/images/libro.svg" alt="librito"></button></a></td>
+		<td class="botones_navegacion"><a href="clientes_ingreso.php"><button><img src="../assets/images/ingreso.svg" alt="puertita"></button></a></td>
+		<td class="botones_navegacion"><a href="clientes_busqueda.php"><button><img src="../assets/images/buscar.svg" alt="lupita"></button></a></td>
+		<td class="botones_navegacion"><a href="dossa_main.php"><button><img src="../assets/images/libro.svg" alt="librito"></button></a></td>
 	</tr>
     <tr>
-        <td>Ingresar</td>
-        <td>Buscar</td>
-        <td>DOSSA</td>
+        <td class="botones_navegacion">Ingresar</td>
+        <td class="botones_navegacion">Buscar</td>
+        <td class="botones_navegacion">DOSSA</td>
     </tr>
 </table>
 </div>

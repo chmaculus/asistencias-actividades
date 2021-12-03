@@ -1,5 +1,4 @@
 <?php
-include("dossa_cli_base.php");
 include("../includes/connect_mssql.php");
 ?>
 
@@ -72,4 +71,3 @@ echo '</table>';
 sqlsrv_free_stmt( $stmt);
 
 ?>
-

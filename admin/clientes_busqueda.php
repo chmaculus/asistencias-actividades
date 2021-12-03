@@ -5,7 +5,7 @@ include("index.php");
 
 <center>
 <br>
-<titulo>Busqueda clientes_dalvian</titulo>
+<label id="label_busqueda">Busqueda de Clientes</label>
 <?php
 $limite=20;
 $desde=$_POST["desde"];
@@ -16,8 +16,8 @@ include('../includes/connect.php');
 ?>
 </body>
 <form class="formulario_busqueda" name="aa" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>" method="post">
-<input type="text" name="busqueda" value="<?php echo $_POST["busqueda"]; ?>">
-<input type="submit" name="buscar" value="Buscar"><br>
+<input type="text" name="busqueda" value="<?php echo $_POST["busqueda"]; ?>">&nbsp;&nbsp;&nbsp;
+<input id="button_busqueda" type="submit" name="buscar" value="Buscar"><br>
 
 <?php
 
@@ -29,7 +29,7 @@ if($_POST["buscar"]=="Buscar"){
 #-------------------
 
 if (!$_POST["busqueda"]) {
-	echo '<br><font1>Busqueda vacia</font1>';
+	echo '<br><font1></font1>';
 	exit;
 }
 
@@ -76,29 +76,36 @@ if(mysql_error()){
 
 
 #crea cabecera listado
-echo '<br><br><font1>Mostrando Resultados desde: '.($desde+1).' Hasta: '.$hasta.' de: '.$total_rows.'</font1><br>';
+echo '<br><br><font1 class="font1">Mostrando Resultados desde: '.($desde+1).' Hasta: '.$hasta.' de '.$total_rows.'</font1><br>';
 
 echo '<table class="tabla_busqueda"; border="1">';
-echo '<tr>';
-	echo "<th>codigo facturacion</th>";
-	echo "<th>codigo residente</th>";
-	echo "<th>apellido</th>";
-	echo "<th>nombres</th>";
-	echo "<th>numero_documento</th>";
-	echo "<th>manzana</th>";
-	echo "<th>casa</th>";
-	echo "<th>calle</th>";
-	echo "<th>numero</th>";
-	echo "<th>piso</th>";
-	echo "<th>dpto</th>";
-	echo "<th>telefono</th>";
+echo '<tr class="cabecera_tabla">';
+	echo "<th>Código facturación</th>";
+	echo "<th>Código residente</th>";
+	echo "<th>Apellido</th>";
+	echo "<th>Nombres</th>";
+	echo "<th>Documento</th>";
+	echo "<th>Manzana</th>";
+	echo "<th>Casa</th>";
+	echo "<th>Calle</th>";
+	echo "<th>Número</th>";
+	echo "<th>Piso</th>";
+	echo "<th>Dpto</th>";
+	echo "<th>Teléfono</th>";
 	echo "<td></td>";
 	echo "<td></td>";
 echo '</tr>';
 #-------------------------------
 #muestra resultados
+$i = 0;
 while($row=mysql_fetch_array($result)){
-	echo "<tr>";
+	if($i == 0){
+		echo "<tr class='tabla1'>";
+		$i++;
+	}else{
+		echo "<tr class='tabla2'>";
+		$i--;
+	}
 	echo '<td>'.$row["codigo_facturacion"].'</td>';
 	echo '<td>'.$row["codigo_residente"].'</td>';
 	echo '<td>'.$row["apellido"].'</td>';
@@ -111,14 +118,14 @@ while($row=mysql_fetch_array($result)){
 	echo '<td>'.$row["piso"].'</td>';
 	echo '<td>'.$row["dpto"].'</td>';
 	echo '<td>'.$row["telefono"].'</td>';
-	echo '<td><A HREF="clientes_ingreso.php?id_clientes_dalvian='.$row["id"].'"><button>Modificar</button></A></td>';
-	echo '<td><A HREF="clientes_eliminar.php?id_clientes_dalvian='.$row["id"].'"><button>Eliminar</button></A></td>';
+	echo '<td><A HREF="clientes_ingreso.php?id_clientes_dalvian='.$row["id"].'"><button class="table_buttons" >Modificar</button></A></td>';
+	echo '<td><A HREF="clientes_eliminar.php?id_clientes_dalvian='.$row["id"].'"><button class="table_buttons" >Eliminar</button></A></td>';
 	echo "</tr>".chr(13);
 }
 echo "</table>";
+$i = 1;
 
-
-echo '<br><font1>Mostrando Resultados desde: '.($desde+1).' Hasta: '.$hasta.' de: '.$total_rows.'</font1><br>';
+echo '<br><font1 class="font2">Mostrando Resultados desde: '.($desde+1).' Hasta: '.$hasta.' de: '.$total_rows.'</font1><br>';
 
 #almacena variables
 echo '<input type="hidden" name="desde" value="'.$desde.'">';
@@ -126,8 +133,8 @@ echo '<input type="hidden" name="hasta" value="'.$hasta.'">';
 #-----------------------
 
 #botones de control de pagina
-echo '<input type="submit" name="control" value="anteriores">';
-echo '<input type="submit" name="control" value="siguientes">';
+echo '<input class="footer_botones" type="submit" name="control" value="anteriores">&nbsp;&nbsp;&nbsp;';
+echo '<input class="footer_botones" type="submit" name="control" value="siguientes">';
 #---------------------------
 
 ?>
