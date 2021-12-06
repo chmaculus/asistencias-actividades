@@ -238,6 +238,7 @@ margin-left: 10px;
 th {
 	text-shadow: 0 0 2px black;
 	text-align: left;
+	min-width: 50px;
 }
 
 th,td{

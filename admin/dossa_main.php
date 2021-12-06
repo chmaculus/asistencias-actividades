@@ -248,7 +248,6 @@ include("../includes/connect_mssql.php");
 	<!-- tercer nivel residentes por nombre -->
 	<div class="seccion_residentes-nombre" hidden>
 
-		<label>Buscar residente por nombre en DOSSA</label><br>
 		<form name="aa" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>" method="post">
 			<table>
 				<tr>
