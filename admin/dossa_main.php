@@ -182,7 +182,7 @@ include("../includes/connect_mssql.php");
 
 		$sql='select COD, NOM, DOM, CALLE, NUMERO, MZNA, CASA, PISO, DEPTO from clientes where mzna=\''.$mzna.'\' and casa=\''.$casa.'\' or ( dom like \'%M '.$mzna.' %\' and dom like \'%C '.$casa.'%\')';
 
-		echo $sql."<br>";
+		//echo $sql."<br>";
 
 		$stmt = sqlsrv_query( $conn, $sql );
 		if( $stmt === false) {
@@ -249,11 +249,7 @@ include("../includes/connect_mssql.php");
 	<div class="seccion_residentes-nombre" hidden>
 
 		<form name="aa" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>" method="post">
-			<table>
-				<tr>
-					<td>Nombre / Apellido</td><td><input type="text" name="nombre" value="<?php echo $_POST["nombre"]; ?>"></td>
-				</tr>
-			</table>
+					Nombre / Apellido<input type="text" name="nombre" value="<?php echo $_POST["nombre"]; ?>">
 			<input type="submit" name="buscar" value="Buscar"><br>
 		</form>
 
@@ -266,7 +262,7 @@ include("../includes/connect_mssql.php");
 
 		$sql='select top 500 COD_HAB, COD_RES, NOM, NUM_DOC, DIR, TEL, EMAIL from residentes where nom like \'%'.$_POST["nombre"].'%\' ';
 
-		echo $sql."<br>";
+		//echo $sql."<br>";
 
 		$stmt = sqlsrv_query( $conn, $sql );
 		if( $stmt === false) {
@@ -315,13 +311,8 @@ include("../includes/connect_mssql.php");
 	<!-- tercer nivel residentes por nombre -->
 	<div class="seccion_residentes-dni" hidden>
 
-		<label>Buscar residente por DNI en DOSSA</label><br>
 		<form name="aa" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>" method="post">
-		<table>
-		<tr>
-		<td>DNI</td><td><input type="text" name="dni" value="<?php echo $_POST["dni"]; ?>"></td>
-		</tr>
-		</tr></table>
+		<input class="input_busqueda" placeholder="DNI" type="text" name="dni" value="<?php echo $_POST["dni"]; ?>">
 		<input type="submit" name="buscar" value="Buscar"><br>
 		</form>
 
@@ -433,6 +424,5 @@ include("../includes/connect_mssql.php");
 		$(".seccion_residentes-dni").show();
 		$(".seccion_residentes-nombre").hide();
 	});
-
 
 </script>

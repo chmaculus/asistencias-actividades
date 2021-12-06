@@ -4,6 +4,7 @@ html{
 	background-repeat: no-repeat;
 	max-width: 100%;
 	max-height: 100%;
+	min-width: 100%;
 }
 
 body {
@@ -115,11 +116,7 @@ input{
 }
 
 input:hover{
-	background: none;
-	border: none;
 	border-bottom: 1px solid #46b5d1;
-	padding: 4px;
-	width: 135px;
 }
 
 .input_busqueda{
@@ -199,12 +196,6 @@ margin-left: 10px;
 }
 
 .footer_botones:hover{
-	cursor: pointer;
-	color: white;
-	background-color: #46b5d1;
-	border-radius: 10px;
-	width: 100px;
-	text-shadow: 0 0 2px black;
 	filter:brightness(120%);
 }
 
@@ -238,7 +229,7 @@ margin-left: 10px;
 th {
 	text-shadow: 0 0 2px black;
 	text-align: left;
-	min-width: 50px;
+	min-width: 100px;
 }
 
 th,td{
