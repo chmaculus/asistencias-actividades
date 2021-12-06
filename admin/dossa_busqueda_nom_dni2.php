@@ -1,6 +1,7 @@
 <?php
-include("clientes_dalvian_base.php");
+include("dossa_main.php");
 ?>
+
 <body onLoad=document.aa.busqueda.focus()>
 
 <center>
@@ -28,18 +29,34 @@ if($_POST["buscar"]=="Buscar"){
 }
 #-------------------
 
-if (!$_POST["busqueda"]) {
-	echo '<br><font1>Busqueda vacia</font1>';
+
+
+if(!$_POST["busqueda"]){
+	echo "Busqueda vacia<br>";
 	exit;
 }
 
+include("../includes/connect_mssql.php");
 
-$query='select * from clientes_dalvian where blabla like "%'.$_POST["busqueda"].'%"';
-#total de los resultados
-$total_rows=mysql_num_rows(mysql_query($query));
-if(mysql_error()){
-	echo mysql_error()." ".$SCRIPT_NAME;
+
+/*
+determinar el total de registros
+paginar
+
+*/
+
+
+$sql = 'SELECT top 500 COD, NOM, DNI, DOM, CALLE, MZNA, CASA, PISO, DEPTO, TORRE, TEL, EMAIL FROM clientes where nom like \'%'.$_POST["busqueda"].'%\'  ';
+$stmt = sqlsrv_query( $conn, $sql );
+if( $stmt === false) {
+	die( print_r( sqlsrv_errors(), true) );
 }
+
+
+
+
+
+
 #--------------------------------------------
 // control paginas
 #primera busqueda cuando no existen las variables
