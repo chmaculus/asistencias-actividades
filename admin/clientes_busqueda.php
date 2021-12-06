@@ -5,7 +5,6 @@ include("index.php");
 
 <center>
 <br>
-<label id="label_busqueda">Busqueda de Clientes</label>
 <?php
 $limite=20;
 $desde=$_POST["desde"];
@@ -15,10 +14,12 @@ $hasta=$_POST["hasta"];
 include('../includes/connect.php');
 ?>
 </body>
+<div class="busqueda_cliente">
+<label id="label_busqueda">Busqueda de Clientes</label>
 <form class="formulario_busqueda" name="aa" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>" method="post">
 <input type="text" name="busqueda" value="<?php echo $_POST["busqueda"]; ?>">&nbsp;&nbsp;&nbsp;
 <input id="button_busqueda" type="submit" name="buscar" value="Buscar"><br>
-
+</div>
 <?php
 
 #en caso de una nueva busqueda resetear las variables 

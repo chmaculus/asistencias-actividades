@@ -34,26 +34,19 @@ label , input{
     font-family: "Poppins",Arial,sans-serif;
 }
 
+.pie{
+	margin-top: 60px;
+}
+
 table {
-	width: 450px;
+	width: 350px;
 	border-collapse: collapse;
 	overflow: hidden;
-	margin-left: 215px;
-}
-
-th,
-td {
-	padding: 7.5px;
-	text-align: center;
-}
-
-th {
-	text-shadow: 0 0 2px black;
-	text-align: left;
+	margin-left: 975px;
 }
 
 .nav_buttons td a button{
-	margin-top: 30px;
+	margin-top: 14px;
 	cursor: pointer;
 	border-radius: 50%;
 	height: 75px;
@@ -81,12 +74,19 @@ th {
 	margin-bottom: 3%;
 }
 
+.tabla-nav_buttons{
+	position: absolute;
+	top: -1%;
+	right: -0.5%;
+}
+
 .formulario_cliente {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 2%;
+    margin-top: 12%;
     width: 815px;
+	margin-left: 95px;
 }
 
 .datos_persona {
@@ -120,6 +120,10 @@ input:hover{
 	border-bottom: 1px solid #46b5d1;
 	padding: 4px;
 	width: 135px;
+}
+
+.input_busqueda{
+	text-align: center !important;
 }
 
 select{
@@ -156,6 +160,11 @@ margin-left: 10px;
 	text-shadow: 0 0 2px black;
 }
 
+.busqueda_cliente{
+	margin-top: 30px;
+	margin-right: 100px;
+}
+
 #button_busqueda{
 	cursor: pointer;
 	color: white;
@@ -177,6 +186,7 @@ margin-left: 10px;
 	width: 100px;
 	text-shadow: 0 0 2px black;
 	margin-top: 15px;
+	margin-right: 90px;
 }
 
 .table_buttons{
@@ -204,7 +214,7 @@ margin-left: 10px;
 
 #logo_foca{
 	position: absolute;
-	top: 90%;
+	top: 91%;
 	left: 89%;
 	width: 8em;
 }
@@ -212,35 +222,64 @@ margin-left: 10px;
 #logo_dalvian {
     position: absolute;
     width: 11em;
-    left: 25%;
+    left: 2%;
     top: 4%;
+}
+
+.cabecera_tabla{
+	background-color: #46b5d1 !important;
+	color: white;
 }
 
 .formulario_busqueda{
 	margin-top: 10px;
 }
 
+th {
+	text-shadow: 0 0 2px black;
+	text-align: left;
+}
+
 th,td{
-	font-size: 15px;
+	padding: 7.5px;
+	text-align: center;
+	font-size: 12px;
 	border:none;
 	text-align: center;
 }
 
 .font1{
-	position: absolute;
-	top: 34.5%;
-	left: 38%;
+	color: #000;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+	padding-right: 90px;
 }
 
 .font2{
 	line-height: 26px;
+	color: #000;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+	padding-right: 50px;
+	margin-right: 50px;
 }
 
 .tabla_busqueda{
 	display: block;
 	margin-left: 0px;
 	float: left;
-	max-height: 282px;
+	max-height: 400px;
+	width: 100%;
+	overflow-y: scroll;
+}
+
+.tabla_busqueda2{
+	display: block;
+	margin-left: 0px;
+	float: left;
+	max-height: 340px;
 	width: 100%;
 	overflow-y: scroll;
 }
@@ -249,7 +288,7 @@ input[type=number] {
     -moz-appearance:textfield;
 }
 
-.table_clientes , .table_residentes{
+.table_clientes ,.table_residentes ,.dni ,.nombre ,.dni-residentes{
 	border: none;
 	height: 25px;
 	width: 85px;
@@ -260,8 +299,18 @@ input[type=number] {
 	text-shadow: 0 0 2px black;
 }
 
-.table_clientes:hover , .table_residentes:hover{
+.table_clientes:hover , .table_residentes:hover, .apellido:hover, .dni:hover, .domicilio:hover,.nombre:hover ,.dni-residentes:hover{
 	filter:brightness(120%);
+}
+
+.apellido, .domicilio{
+	border: none;
+	height: 25px;
+	cursor: pointer;
+	color: white;
+	background-color: #46b5d1;
+	border-radius: 10px;
+	text-shadow: 0 0 2px black;
 }
 
 .botones_navegacion{
@@ -274,6 +323,11 @@ input[type=number] {
 
 .tabla2{
 	background: rgb(224, 224, 224);
+}
+
+.cabecera_dossa{
+	padding-top: 30px;
+	padding-right: 60px;
 }
 
 input::-webkit-outer-spin-button,
