@@ -1,0 +1,27 @@
+
+SELECT
+	COD,
+	NOM,
+	DOM,
+	CALLE,
+	NUMERO,
+	MZNA,
+	CASA,
+	PISO,
+	DEPTO
+FROM
+	CLIENTES
+	where cod like '987'
+Array
+(
+    [COD] => 987
+    [NOM] => ALMA, JORGE Y AURORA, GIORGIO
+    [DOM] => M 29 C 10
+    [CALLE] => Cº RISCO PLATEADO
+    [NUMERO] => 340
+    [MZNA] =>  29
+    [CASA] => 11
+    [PISO] => 
+    [DEPTO] => 
+)
+
