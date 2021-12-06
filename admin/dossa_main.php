@@ -12,7 +12,7 @@ include("../includes/connect_mssql.php");
 <!-- primer nivel de seleccion -->
 	<button class="table_clientes">Clientes</button>
 	<button class="table_residentes">Residentes</button>
-<br><br><br>
+<br><br>
 </div>
 <!-- segundo nivel clientes -->
 <div class="seccion_clientes" hidden>
@@ -242,15 +242,15 @@ include("../includes/connect_mssql.php");
 
 <!-- segundo nivel residentes -->
 <div class="seccion_residentes" hidden>
-	<label>Buscar de residentes en DOSSA por:</label><br><br>
+	<label>Buscar de residentes en DOSSA por:</label>
 		<button class="nombre">Nombre</button>
-		<button  class="dni-residentes">DNI</button>
+		<button  class="dni-residentes">DNI</button><br><br>
 	<!-- tercer nivel residentes por nombre -->
 	<div class="seccion_residentes-nombre" hidden>
 
 		<form name="aa" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>" method="post">
-					Nombre / Apellido<input type="text" name="nombre" value="<?php echo $_POST["nombre"]; ?>">
-			<input type="submit" name="buscar" value="Buscar"><br>
+			Nombre / Apellido<input type="text" name="nombre" value="<?php echo $_POST["nombre"]; ?>">
+			<input type="submit" name="buscar" value="Buscar"><br><br>
 		</form>
 
 		<?php
