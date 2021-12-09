@@ -1,5 +1,6 @@
+<center>
 <?php
-include("index.php");
+//include("index.php");
 include("../includes/connect.php");
 include("../includes/funciones.php");
 
@@ -41,14 +42,15 @@ $num_dias_mes = date("t",mktime(0,0,0,$mes,1,$year));
 	</tr>
 </table>
 
+
 Ordernar por:
 <table border="1">
 	<tr>
-		<td>Apellido</td><td><input type="radio" name="ordenar" value="apellido" checked></td>
+		<td>Apellido</td><td><input type="radio" name="ordenar" value="apellido"  <?php if($_POST["ordenar"]=="apellido" OR !$_POST["ordernar"]){echo "checked";} ?>></td>
 		</tr><tr>
-		<td>Fecha/hora</td><td><input type="radio" name="ordenar" value="fecha"></td>
+		<td>Fecha/hora</td><td><input type="radio" name="ordenar" value="fecha" <?php if($_POST["ordenar"]=="fecha"){echo "checked";} ?>></td>
 		</tr><tr>
-		<td>Detalle</td><td><input type="radio" name="ordenar" value="detalle"></td>
+		<td>Detalle</td><td><input type="radio" name="ordenar" value="detalle" <?php if($_POST["ordenar"]=="detalle"){echo "checked";} ?>></td>
 	</tr>
 </table>
 <input type="submit" name="ACEPTAR" value="ACEPTAR">
@@ -69,21 +71,22 @@ $where='where fecha_ingreso>="'.fecha_conv("/",$_POST["fecha_desde"]).'"
 	and  fecha_ingreso<="'.fecha_conv("/",$_POST["fecha_hasta"]).'" 
 	';
 
+echo "ordernar: ".$_POST["ordenar"]."<br>";
 
-if($_POST["orden"]=="apellido"){
+if($_POST["ordenar"]=="apellido"){
 	$order=' order by apellido, nombres ';
 }
 
-if($_POST["orden"]=="fecha"){
+if($_POST["ordenar"]=="fecha"){
 	$order=' order by fecha_ingreso, hora_ingreso ';
 }
 
-if($_POST["orden"]=="detalle"){
+if($_POST["ordenar"]=="detalle"){
 	$order=' order by tipo, detalle ';
 }
 
 
-
+$query=$query.$where.$order;
 
 
 //$query='select * from clientes_asistencias where fecha>=';

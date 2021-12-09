@@ -6,7 +6,6 @@
 <tr>
 	<th>Codigo facturacion</th>	<td><?php echo $array_clientes_dalvian["codigo_facturacion"]; ?></td>
 </tr>
-</tr>
 <tr>
 	<th>Apellido</th>	<td><?php echo $array_clientes_dalvian["apellido"]; ?></td>
 </tr>

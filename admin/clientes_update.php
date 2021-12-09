@@ -1,7 +1,8 @@
 <?php
 include_once("index.php");
 
-
+echo "<center><br><br><br><br><br><br><br><br><br><br>";
+echo '<div class="datos_persona">';
 
 include_once("../includes/connect.php");
 $fecha=date("Y-n-d");
@@ -41,7 +42,10 @@ if($_POST["accion"]=="ingreso"){
 
 	#muestra registro ingresado
 	$query='select * from clientes_dalvian where id="'.$id_clientes_dalvian.'"';
-	$array_clientes_dalvian=mysql_fetch_array(mysql_query($query));
+	//echo $query."<br>";
+	$res=mysql_query($query);
+	if(mysql_error()){echo mysql_error();}
+	$array_clientes_dalvian=mysql_fetch_array($res);
 	include("clientes_muestra.inc.php");
 }
 #---------------------------------------------------------------------------------
@@ -103,6 +107,7 @@ if($_POST["accion"]=="ELIMINAR"){
 
 
 ?>
+</div>
 </center>
 </body>
 </html>

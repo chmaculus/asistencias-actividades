@@ -1,17 +1,25 @@
-registrar ingresos en tabla
-
 *listar consulta clientes mssql OK
 
-listado / modificacion clientes
+*listado / modificacion clientes
 
-listado / modificacion residentes
 
 boton traer mzna / casa
-evento on change sacar
+*evento on change sacar
 
-modificar cliente no funciona
+*modificar cliente no funciona
 
 backup automatico dossa
+
+exportar informe
+
+verificacion alta
+
+no pueden ver los datos ingresados
+
+subir cambios turnero
+
+modificar estructura tabla clientes_asistencia
+
 
 
 
