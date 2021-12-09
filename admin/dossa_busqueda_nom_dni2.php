@@ -46,7 +46,14 @@ paginar
 */
 
 
-$sql = 'SELECT top 500 COD, NOM, DNI, DOM, CALLE, MZNA, CASA, PISO, DEPTO, TORRE, TEL, EMAIL FROM clientes where nom like \'%'.$_POST["busqueda"].'%\'  ';
+$sql = 'SELECT count(*) FROM clientes where nom like \'%'.$_POST["busqueda"].'%\'  ';
+$stmt0 = sqlsrv_query( $conn, $sql );
+$total_rows=sqlsrv_num_rows( $stmt0 );
+sqlsrv_free_stmt( $stmt0 );
+
+
+
+$sql = 'SELECT top 100 COD, NOM, DNI, DOM, CALLE, MZNA, CASA, PISO, DEPTO, TORRE, TEL, EMAIL FROM clientes where nom like \'%'.$_POST["busqueda"].'%\'  ';
 $stmt = sqlsrv_query( $conn, $sql );
 if( $stmt === false) {
 	die( print_r( sqlsrv_errors(), true) );
@@ -86,11 +93,16 @@ if ($hasta > $total_rows) { $hasta = $total_rows ; }
 #---------------------------------------------------
 // fin control paginas
 
+
+echo $query."<br>";
+
+
+/*
 $result = mysql_query($query);
 if(mysql_error()){
 	echo mysql_error()." ".$SCRIPT_NAME;
 }
-
+*/
 
 #crea cabecera listado
 echo '<br><br><font1>Mostrando Resultados desde: '.($desde+1).' Hasta: '.$hasta.' de: '.$total_rows.'</font1><br>';

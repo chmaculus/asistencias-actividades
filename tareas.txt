@@ -6,5 +6,12 @@ listado / modificacion clientes
 
 listado / modificacion residentes
 
+boton traer mzna / casa
+evento on change sacar
+
+modificar cliente no funciona
+
+backup automatico dossa
+
 
 
