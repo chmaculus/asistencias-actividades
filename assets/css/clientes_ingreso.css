@@ -98,6 +98,10 @@ table {
 	justify-content: flex-start;
 }
 
+.seccion_residentes{
+	height: 34px;	
+}
+
 .datos_direccion{
 	border-radius: 20px;
 	display: flex;

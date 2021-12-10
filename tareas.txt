@@ -3,22 +3,28 @@
 *listado / modificacion clientes
 
 
-boton traer mzna / casa
+boton traer mzna / casa / nombre
+
+
 *evento on change sacar
 
 *modificar cliente no funciona
+*eliminar 
 
-backup automatico dossa
+*backup automatico dossa
 
+depurar informe
 exportar informe
 
 verificacion alta
+verificar registro duplicado
+
 
 no pueden ver los datos ingresados
 
 subir cambios turnero
 
-modificar estructura tabla clientes_asistencia
+*modificar estructura tabla clientes_asistencia
 
 
 

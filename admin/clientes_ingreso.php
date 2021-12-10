@@ -69,6 +69,7 @@ function trae_datos() {
             	console.log(data.COD);
             	$("#manzana").val(data.MZNA);
             	$("#casa").val(data.CASA);
+            	$("#titular").val(data.NOM);
             },
         });
 
@@ -76,12 +77,23 @@ function trae_datos() {
 
 </script>
 
+<!--  
+<form>
+		<label>Código de Residente</label>
+		<input type="text" name="codigo_facturacion" id="codigo_facturacion" value="<?php if(isset($data["codigo_facturacion"])){echo $data["codigo_facturacion"];}?>" size="8">
+		<button onclick="trae_datos();">Traer datos</button><br>
+</form>
+-->
+
 <form method="post" action="clientes_update.php" id="form_clientes_dalvian" class="formulario_cliente">
 
 	<div class="datos_persona">
 
 		<label>Código de Residente</label>
-		<input type="text" name="codigo_facturacion" id="codigo_facturacion" value="<?php if(isset($data["codigo_facturacion"])){echo $data["codigo_facturacion"];}?>" size="8" onchange="trae_datos();"><br>
+		<input type="text" name="codigo_facturacion" id="codigo_facturacion" value="<?php if(isset($data["codigo_facturacion"])){echo $data["codigo_facturacion"];}?>" size="8" onchange="trae_datos();">
+
+		<label>Titular</label>
+		<input type="text" name="titular" id="titular" value="<?php if(isset($data["titular"])){echo $data["titular"];}?>" size="30" readonly="readonly"><br>
 
 		<label>Apellido</label>
 		<input type="text" name="apellido" id="apellido" value="<?php if(isset($data["apellido"])){echo $data["apellido"];}?>" size="30"><br>
