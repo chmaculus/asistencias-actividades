@@ -2,7 +2,7 @@
 include_once("index.php");
 
 echo "<center><br><br><br><br><br><br><br><br><br><br>";
-echo '<div class="datos_persona">';
+echo '<div class="usuario_modificar">';
 
 include_once("../includes/connect.php");
 $fecha=date("Y-n-d");

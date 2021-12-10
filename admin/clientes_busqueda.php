@@ -36,7 +36,7 @@ if (!$_POST["busqueda"]) {
 }
 
 
-$query='select * from clientes_dalvian where apellido like "%'.$_POST["busqueda"].'%" or nombres like "%'.$_POST["busqueda"].'%" ';
+$query='select * from clientes_dalvian where apellido like "%'.$_POST["busqueda"].'%" or nombres like "%'.$_POST["busqueda"].'%" order by apellido, nombres';
 #total de los resultados
 $total_rows=mysql_num_rows(mysql_query($query));
 if(mysql_error()){
