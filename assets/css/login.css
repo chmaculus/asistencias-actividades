@@ -153,13 +153,6 @@ button:active {
     transition-duration: .1s;
 }
 
-
-.usuario_modificar{
-	position: absolute;
-    left: -39%;
-    top: 10%;
-}
-
 @media (min-width: 768px) {
   .button-36 {
     padding: 0 2.6rem;
