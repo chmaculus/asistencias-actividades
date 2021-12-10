@@ -43,7 +43,7 @@ table {
 	width: 350px;
 	border-collapse: collapse;
 	overflow: hidden;
-	margin-left: 500px;
+	margin-left: 975px;
 }
 
 .nav_buttons td a button{
@@ -127,7 +127,8 @@ select{
 	background: none;
 	border: none;
 	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-	margin-top: 15px;
+	margin-top: 10px;
+	margin-bottom: 12px;
 }
 
 fieldset {
