@@ -8,9 +8,12 @@ include("../includes/funciones.php");
 
 $num_dias_mes = date("t",mktime(0,0,0,$mes,1,$year));
 
-
 ?>
+
+
 <form action="<?php echo $SCRIPT_NAME ?>" method="post" enctype="multipart/form-data">
+<table>
+	<tr><td>
 <table class="t1">
 	<tr>
 		<td>Fecha desde</td>
@@ -53,9 +56,14 @@ Ordernar por:
 		<td>Detalle</td><td><input type="radio" name="ordenar" value="detalle" <?php if($_POST["ordenar"]=="detalle"){echo "checked";} ?>></td>
 	</tr>
 </table>
+
+</td></tr>
+</table>
+
 <input type="submit" name="ACEPTAR" value="ACEPTAR">
 
 </form>
+
 
 
 
@@ -71,7 +79,7 @@ $where='where fecha_ingreso>="'.fecha_conv("/",$_POST["fecha_desde"]).'"
 	and  fecha_ingreso<="'.fecha_conv("/",$_POST["fecha_hasta"]).'" 
 	';
 
-echo "ordernar: ".$_POST["ordenar"]."<br>";
+echo "ordenar: ".$_POST["ordenar"]."<br>";
 
 if($_POST["ordenar"]=="apellido"){
 	$order=' order by apellido, nombres ';

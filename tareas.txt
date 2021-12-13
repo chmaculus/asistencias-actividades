@@ -1,17 +1,15 @@
-*listar consulta clientes mssql OK
+*listar consulta clientes mssql OK (solved)
 
-*listado / modificacion clientes
-
-
-boton traer mzna / casa / nombre
+*listado / modificacion clientes (solved)
 
 
-*evento on change sacar
+*boton traer mzna / casa / nombre (solved)
 
-*modificar cliente no funciona
-*eliminar 
 
-*backup automatico dossa
+*modificar cliente no funciona (solved)
+*eliminar  (solved)
+
+*backup automatico dossa (solved)
 
 depurar informe
 exportar informe
@@ -20,11 +18,14 @@ verificacion alta
 verificar registro duplicado
 
 
-no pueden ver los datos ingresados
+*no pueden ver los datos ingresados (solved)
 
 subir cambios turnero
 
-*modificar estructura tabla clientes_asistencia
+*modificar estructura tabla clientes_asistencia (solved)
+
+codificacion de caracteres
+
 
 
 
