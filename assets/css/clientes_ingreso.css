@@ -281,6 +281,14 @@ th,td{
 	overflow-y: scroll;
 }
 
+.tabla_busqueda3{
+	margin-left: 0px;
+	float: left;
+	max-height: 340px;
+	width: 100%;
+	overflow-y: scroll;
+}
+
 input[type=number] {
     -moz-appearance:textfield;
 }
@@ -334,3 +342,6 @@ input::-webkit-inner-spin-button {
 }
 
 textarea { resize: none; }
+
+
+

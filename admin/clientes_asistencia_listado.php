@@ -1,27 +1,42 @@
+<!DOCTYPE html>
+<html lang="esp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Club House</title>
+    <link href="../assets/css/prueba1.css" rel="stylesheet">
+    <script src="../assets/js/jquery.min.js"></script>
+</head>
 <center>
-	<?php
+
+<?php
 //include("index.php");
-	include("../includes/connect.php");
-	include("../includes/funciones.php");
+include("../includes/connect.php");
+include("../includes/funciones.php");
 
 
 
 	$num_dias_mes = date("t",mktime(0,0,0,$mes,1,$year));
 
 	?>
+	<br><br><br><br><br><br>
+	<div class="busqueda_cliente">
 
-
-	<form action="<?php echo $SCRIPT_NAME ?>" method="post" enctype="multipart/form-data">
+	<form class="formulario_busqueda" action="<?php echo $SCRIPT_NAME ?>" method="post" enctype="multipart/form-data">
 		<table>
 			<tr>
 				<td>
-		<table border="1">
 
+
+
+
+		<table border="1">
 				<tr>
 					<td>Fecha desde</td>
 					<td>Fecha hasta</td>
 					<td>Actividad</td>
-					<td>Residente</td>
+					<td>Codigo residente</td>
 				</tr>
 
 				<tr>
@@ -45,32 +60,13 @@
 					</td>
 					<td><input type="text" name="residente" value="<?php if($_POST["residente"]){echo $_POST["residente"];}?>" size="10"></td>
 				</tr>
-
-	</table>
-
-
-
-				<td>
-					Buscar por:
-					<table border="1">
-						<tr>
-							<td>Codigo residente</td><td><input type="radio" name="ordenar" value="codigo"  <?php if($_POST["ordenar"]=="apellido" OR !$_POST["ordernar"]){echo "checked";} ?>></td>
-						</tr><tr>
-							<td>Apellido / Nombre</td><td><input type="radio" name="ordenar" value="ape" <?php if($_POST["ordenar"]=="fecha"){echo "checked";} ?>></td>
-						</table>
-					</td>
-
-
-
-
-
-
+		</table>
 
 
 
 
 <td>
-				Ordernar por:
+				Ordenar por:
 				<table border="1">
 					<tr>
 						<td>Apellido</td><td><input type="radio" name="ordenar" value="apellido"  <?php if($_POST["ordenar"]=="apellido" OR !$_POST["ordernar"]){echo "checked";} ?>></td>
@@ -83,11 +79,14 @@
 
 </td>
 
+</tr></table>
 			<input type="submit" name="ACEPTAR" value="ACEPTAR">
 
-		</form>
-
-
+</td>
+</tr>
+</table>
+</form>
+</div>
 
 
 <?php
@@ -101,6 +100,11 @@ $query='select * from clientes_asistencias ';
 $where='where fecha_ingreso>="'.fecha_conv("/",$_POST["fecha_desde"]).'" 
 	and  fecha_ingreso<="'.fecha_conv("/",$_POST["fecha_hasta"]).'" 
 	';
+
+if($_POST["residente"]){
+	$where=$where.' and codigo_facturacion="'.$_POST["residente"].'" ';
+}
+	
 
 echo "ordenar: ".$_POST["ordenar"]."<br>";
 
@@ -124,14 +128,15 @@ $query=$query.$where.$order;
 
 
 
-echo $query.";<br>";
+echo "<br><br><br>".$query.";<br><br><br>";
 
 $result=mysql_query($query);
 if(mysql_error()){echo mysql_error()."<br>".$query."<br>";}
 
-
-echo '<table border="1">';
-echo "<tr>";
+echo '<table class="tabla_busqueda"; border="1">';
+echo '<tr class="cabecera_tabla">';
+//echo '<table border="1">';
+//echo "<tr>";
 	echo "<th>Codigo residente</th>";
 	echo "<th>codigo facturacion</th>";
 	echo "<th>Apellido</th>";
@@ -144,7 +149,13 @@ echo "<tr>";
 echo "</tr>";
 
 while($row=mysql_fetch_array($result)){
-	echo "<tr>";
+		if($i == 0){
+		echo "<tr class='tabla1'>";
+		$i++;
+	}else{
+		echo "<tr class='tabla2'>";
+		$i--;
+	}
 	echo '<td>'.$row["id_cliente"].'</td>';
 	echo '<td>'.$row["codigo_facturacion"].'</td>';
 	echo '<td>'.$row["apellido"].'</td>';
@@ -157,4 +168,7 @@ while($row=mysql_fetch_array($result)){
 	echo "</tr>".chr(10);
 }
 ?>
-</table></center>
+</table>
+
+
+</center>
