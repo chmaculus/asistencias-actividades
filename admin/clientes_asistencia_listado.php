@@ -8,9 +8,10 @@
     <link href="../assets/css/prueba1.css" rel="stylesheet">
     <script src="../assets/js/jquery.min.js"></script>
 </head>
-<center>
-
 <?php
+
+include("header.inc.php");
+
 //include("index.php");
 include("../includes/connect.php");
 include("../includes/funciones.php");
@@ -21,9 +22,10 @@ include("../includes/funciones.php");
 
 	?>
 	<br><br><br><br><br><br>
+<center>
 	<div class="busqueda_cliente">
 
-	<form class="formulario_busqueda" action="<?php echo $SCRIPT_NAME ?>" method="post" enctype="multipart/form-data">
+	<form class="formulario_busqueda" action="<?php echo $SCRIPT_NAME; ?>" method="post" enctype="multipart/form-data">
 		<table>
 			<tr>
 				<td>
