@@ -46,34 +46,6 @@ th,td{
 	text-align: center;
 }
 
-thead {
-	th {
-		background-color: #55608f;
-	}
-}
-
-tbody {
-	tr {
-		&:hover {
-			background-color: rgba(255,255,255,0.3);
-		}
-	}
-	td {
-		position: relative;
-		&:hover {
-			&:before {
-				content: "";
-				position: absolute;
-				left: 0;
-				right: 0;
-				top: -9999px;
-				bottom: -9999px;
-				background-color: rgba(255,255,255,0.2);
-				z-index: -1;
-			}
-		}
-	}
-}
 
 .tabla1{
 	background: white;
@@ -81,6 +53,27 @@ tbody {
 
 .tabla2{
 	background: rgb(224, 224, 224);
+}
+
+.cabecera_tabla{
+	background-color: #46b5d1 !important;
+	color: white;
+}
+
+.nav_buttons td a button{
+	margin-top: 14px;
+	cursor: pointer;
+	border-radius: 50%;
+	height: 75px;
+	width: 75px;
+	background: #46b5d1;
+	border: none;
+}
+
+.tabla-nav_buttons{
+	position: absolute;
+	top: 1.5%;
+	right: 1.0%;
 }
 
 .nav_buttons td a button{
@@ -103,15 +96,14 @@ tbody {
 	filter: invert(100%);
 }
 
+.botones_navegacion{
+	border: none;
+}
+
+
 .cabecera {
     background: none;
     margin-top: 2%;
-}
-
-.tabla-nav_buttons{
-	position: absolute;
-	top: 1.5%;
-	right: 1.0%;
 }
 
 .tabla_botones{
@@ -123,5 +115,18 @@ tbody {
     width: 11em;
     left: 2%;
     top: 4%;
+}
+
+.tabla_botones{
+	margin-bottom: 3%;
+}
+
+.table_buttons{
+	cursor: pointer;
+	color: white;
+	background-color: #46b5d1;
+	border-radius: 5px;
+	width: 80px;
+	text-shadow: 0 0 2px black;
 }
 

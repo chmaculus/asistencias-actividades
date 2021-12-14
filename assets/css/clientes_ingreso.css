@@ -46,6 +46,12 @@ table {
 	margin-left: 975px;
 }
 
+.tabla-nav_buttons{
+	position: absolute;
+	top: 1.5%;
+	right: 1.0%;
+}
+
 .nav_buttons td a button{
 	margin-top: 14px;
 	cursor: pointer;
@@ -73,12 +79,6 @@ table {
 
 .tabla_botones{
 	margin-bottom: 3%;
-}
-
-.tabla-nav_buttons{
-	position: absolute;
-	top: 1.5%;
-	right: 1.0%;
 }
 
 .formulario_cliente {
