@@ -60,16 +60,6 @@ th,td{
 	color: white;
 }
 
-.nav_buttons td a button{
-	margin-top: 14px;
-	cursor: pointer;
-	border-radius: 50%;
-	height: 75px;
-	width: 75px;
-	background: #46b5d1;
-	border: none;
-}
-
 .tabla-nav_buttons{
 	position: absolute;
 	top: 1.5%;
