@@ -108,3 +108,20 @@ tbody {
     margin-top: 2%;
 }
 
+.tabla-nav_buttons{
+	position: absolute;
+	top: 1.5%;
+	right: 1.0%;
+}
+
+.tabla_botones{
+	margin-bottom: 3%;
+}
+
+#logo_dalvian {
+    position: absolute;
+    width: 11em;
+    left: 2%;
+    top: 4%;
+}
+
