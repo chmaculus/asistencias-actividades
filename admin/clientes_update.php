@@ -1,7 +1,8 @@
 <?php
 include_once("index.php");
 
-
+echo "<center>";
+echo '<div>';
 
 include_once("../includes/connect.php");
 $fecha=date("Y-n-d");
@@ -41,12 +42,12 @@ if($_POST["accion"]=="ingreso"){
 
 	#muestra registro ingresado
 	$query='select * from clientes_dalvian where id="'.$id_clientes_dalvian.'"';
-	$array_clientes_dalvian=mysql_fetch_array(mysql_query($query));
+	//echo $query."<br>";
+	$res=mysql_query($query);
+	if(mysql_error()){echo mysql_error();}
+	$array_clientes_dalvian=mysql_fetch_array($res);
 	include("clientes_muestra.inc.php");
 }
-#---------------------------------------------------------------------------------
-
-
 #---------------------------------------------------------------------------------
 if($_POST["accion"]=="modificacion"){
 		$id_clientes_dalvian=$_POST["id_clientes_dalvian"];
@@ -95,14 +96,20 @@ if(!mysql_error()){
 	}
 }
 if($_POST["accion"]=="ELIMINAR"){
+	$query='select * from clientes_dalvian where id="'.$id_clientes_dalvian.'"';
+	$array_clientes_dalvian=mysql_fetch_array(mysql_query($query));
+	include("clientes_muestra.inc.php");
  	$query='delete from clientes_dalvian where id="'.$id_clientes_dalvian.'"';
  	mysql_query($query);
-	if(mysql_error()){echo mysql_error()."<br>".$query."<br>".$_SERVER["SCRIPT_NAME"]."<br>";}
+	if(mysql_error()){echo mysql_error()."<br>".$query."<br>".$_SERVER["SCRIPT_NAME"]."<br>";}else{
+		echo "Los datos se eliminaron correctamente";
+	}
  	exit;
 }
 
 
 ?>
+</div>
 </center>
 </body>
 </html>

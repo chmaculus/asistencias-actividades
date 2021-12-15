@@ -69,6 +69,7 @@ function trae_datos() {
             	console.log(data.COD);
             	$("#manzana").val(data.MZNA);
             	$("#casa").val(data.CASA);
+            	$("#titular").val(data.NOM);
             },
         });
 
@@ -76,7 +77,48 @@ function trae_datos() {
 
 </script>
 
+<!--  
+<form>
+		<label>Código de Residente</label>
+		<input type="text" name="codigo_facturacion" id="codigo_facturacion" value="<?php if(isset($data["codigo_facturacion"])){echo $data["codigo_facturacion"];}?>" size="8">
+		<button onclick="trae_datos();">Traer datos</button><br>
+</form>
+-->
+
 <form method="post" action="clientes_update.php" id="form_clientes_dalvian" class="formulario_cliente">
+
+	<div class="datos_persona">
+
+		<label>Código de Residente</label>
+		<input type="text" name="codigo_facturacion" id="codigo_facturacion" value="<?php if(isset($data["codigo_facturacion"])){echo $data["codigo_facturacion"];}?>" size="8" onchange="trae_datos();">
+
+		<label>Titular</label>
+		<input type="text" name="titular" id="titular" value="<?php if(isset($data["titular"])){echo $data["titular"];}?>" size="30" readonly="readonly"><br>
+
+		<label>Apellido</label>
+		<input type="text" name="apellido" id="apellido" value="<?php if(isset($data["apellido"])){echo $data["apellido"];}?>" size="30"><br>
+
+		<label>Nombre Completo</label>
+		<input placeholder="Nombres" type="text" name="nombres" id="nombres" value="<?php if(isset($data["nombres"])){echo $data["nombres"];}?>" size="30"><br>
+
+		<label>Tipo Documento</label>
+		<select name="tipo_documento">
+		<option value="DNI" label="DNI"></option>
+		<option value="Extranjero" label="Extranjero"></option>
+		<option value="Pasaporte" label="Pasaporte"></option>
+		</select>
+
+		<label>Numero documento</label>
+		<input type="number" placeholder="Sin puntos" name="numero_documento" id="numero_documento" value="<?php if(isset($data["numero_documento"])){echo $data["numero_documento"];}?>" size="10"><br>
+
+		<label>Teléfono</label>
+		<input type="text" name="telefono" id="telefono" value="<?php if(isset($data["telefono"])){echo $data["telefono"];}?>" size="20"><br>
+
+		<label>E-Mail</label>
+		<input type="text" name="email" id="email" value="<?php if(isset($data["email"])){echo $data["email"];}?>" size="30"><br>
+
+
+	</div>
 
 	<div class="datos_direccion">
 
@@ -104,34 +146,7 @@ function trae_datos() {
 
 	</div>
 
-	<div class="datos_persona">
-
-		<label>Nombre Completo</label>
-		<input placeholder="Nombres" type="text" name="nombres" id="nombres" value="<?php if(isset($data["nombres"])){echo $data["nombres"];}?>" size="30"><br>
-
-		<label>Apellido</label>
-		<input type="text" name="apellido" id="apellido" value="<?php if(isset($data["apellido"])){echo $data["apellido"];}?>" size="30"><br>
-
-		<label>Numero documento</label>
-		<input type="number" placeholder="Sin puntos" name="numero_documento" id="numero_documento" value="<?php if(isset($data["numero_documento"])){echo $data["numero_documento"];}?>" size="10"><br>
-
-		<label>Teléfono</label>
-		<input type="text" name="telefono" id="telefono" value="<?php if(isset($data["telefono"])){echo $data["telefono"];}?>" size="20"><br>
-
-		<label>E-Mail</label>
-		<input type="text" name="email" id="email" value="<?php if(isset($data["email"])){echo $data["email"];}?>" size="30"><br>
-
-		<label>Código de Facturación</label>
-		<input type="text" name="codigo_facturacion" id="codigo_facturacion" value="<?php if(isset($data["codigo_facturacion"])){echo $data["codigo_facturacion"];}?>" size="8" onchange="trae_datos();"><br>
-
-		<label>Tipo Documento</label>
-		<select name="tipo_documento">
-		<option value="DNI" label="DNI"></option>
-		<option value="Extranjero" label="Extranjero"></option>
-		<option value="Pasaporte" label="Pasaporte"></option>
-		</select>
-
-	</div>
+	
 
 	<div class="pie">
 		<fieldset>

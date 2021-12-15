@@ -1,5 +1,5 @@
 <?php
-include("includes/connect.php");
+include("./includes/connect_turnero.php");
 include("includes/cabecera_categorias.php");
 ?>
 

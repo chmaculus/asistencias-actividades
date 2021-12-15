@@ -1,6 +1,6 @@
 <?php
 include("./includes/funciones.php");
-include("./includes/connect.php");
+include("./includes/connect_turnero.php");
 
 session_start();
 

@@ -26,7 +26,7 @@ FROM
 
 
 
-log_this("trdata.log","\n".$sql."\n");
+//log_this("trdata.log","\n".$sql."\n");
 
 $stmt = sqlsrv_query( $conn, $sql );
 //log_this("trdata.log",date("H:i:s")."\n222\n");
@@ -40,7 +40,7 @@ while($row=sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC)){
 }
 $array = $array[0];
 
-log_this("trdata.log",print_r($array,true)."\n");
+//log_this("trdata.log",print_r($array,true)."\n");
 
 echo json_encode($array);
 

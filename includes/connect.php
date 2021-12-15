@@ -2,7 +2,7 @@
 $server="localhost";
 $user="root";
 $passwd="";
-$base="agenda_dev";
+$base="agenda";
 $id_connection=mysql_connect($server,$user,$passwd);
 
 if(mysql_error()){

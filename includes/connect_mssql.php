@@ -1,9 +1,9 @@
 <?php
 //$server = "serverName\instanceName";
-$server = "10.231.45.205";
-$username ="debo";
-$password ="debo";
-$database ="DOSSA_08112021";
+$server = "localhost";
+$username ="sa";
+$password ="XxZza.2021!";
+$database ="DEBO_HEAD";
 
 $connectionInfo = array("Database"=>$database, "UID"=>$username, "PWD"=>$password);
 

@@ -1,5 +1,10 @@
 ./logs/*
 ./imagenes/*
 ./print.prn
+/includes/connect.php
+/includes/connect_mssql.php
+/admin/*.log
 
 
+
+includes/connect_turnero.php

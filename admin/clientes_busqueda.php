@@ -5,7 +5,6 @@ include("index.php");
 
 <center>
 <br>
-<label id="label_busqueda">Busqueda de Clientes</label>
 <?php
 $limite=20;
 $desde=$_POST["desde"];
@@ -15,10 +14,13 @@ $hasta=$_POST["hasta"];
 include('../includes/connect.php');
 ?>
 </body>
+<div class="busqueda_cliente">
+<label id="label_busqueda">Busqueda de Clientes</label>
 <form class="formulario_busqueda" name="aa" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>" method="post">
 <input type="text" name="busqueda" value="<?php echo $_POST["busqueda"]; ?>">&nbsp;&nbsp;&nbsp;
 <input id="button_busqueda" type="submit" name="buscar" value="Buscar"><br>
-
+</form>
+</div>
 <?php
 
 #en caso de una nueva busqueda resetear las variables 
@@ -34,7 +36,7 @@ if (!$_POST["busqueda"]) {
 }
 
 
-$query='select * from clientes_dalvian where apellido like "%'.$_POST["busqueda"].'%" or nombres like "%'.$_POST["busqueda"].'%" ';
+$query='select * from clientes_dalvian where apellido like "%'.$_POST["busqueda"].'%" or nombres like "%'.$_POST["busqueda"].'%" order by apellido, nombres';
 #total de los resultados
 $total_rows=mysql_num_rows(mysql_query($query));
 if(mysql_error()){
@@ -68,6 +70,10 @@ $query .= " limit $desde,$limite";// establece limite al query actual
 if ($hasta > $total_rows) { $hasta = $total_rows ; }
 #---------------------------------------------------
 // fin control paginas
+
+
+
+
 
 $result = mysql_query($query);
 if(mysql_error()){
@@ -118,8 +124,8 @@ while($row=mysql_fetch_array($result)){
 	echo '<td>'.$row["piso"].'</td>';
 	echo '<td>'.$row["dpto"].'</td>';
 	echo '<td>'.$row["telefono"].'</td>';
-	echo '<td><A HREF="clientes_ingreso.php?id_clientes_dalvian='.$row["id"].'"><button class="table_buttons" >Modificar</button></A></td>';
-	echo '<td><A HREF="clientes_eliminar.php?id_clientes_dalvian='.$row["id"].'"><button class="table_buttons" >Eliminar</button></A></td>';
+	echo '<td><a HREF="clientes_ingreso.php?id_clientes_dalvian='.$row["id"].'"><button class="table_buttons" >Modificar</button></a></td>';
+	echo '<td><a HREF="clientes_eliminar.php?id_clientes_dalvian='.$row["id"].'"><button class="table_buttons" >Eliminar</button></a></td>';
 	echo "</tr>".chr(13);
 }
 echo "</table>";
@@ -127,19 +133,28 @@ $i = 1;
 
 echo '<br><font1 class="font2">Mostrando Resultados desde: '.($desde+1).' Hasta: '.$hasta.' de: '.$total_rows.'</font1><br>';
 
+
+echo '<form class="formulario_busqueda" name="aa" action="'.$_SERVER["SCRIPT_NAME"].'" method="post">';
+
+#botones de control de pagina
+echo '<input type="hidden" name="busqueda" value="'.$_POST["busqueda"].'">';
+echo '<input class="footer_botones" type="submit" name="control" value="anteriores">&nbsp;&nbsp;&nbsp;';
+echo '<input class="footer_botones" type="submit" name="control" value="siguientes">';
+#---------------------------
+
 #almacena variables
 echo '<input type="hidden" name="desde" value="'.$desde.'">';
 echo '<input type="hidden" name="hasta" value="'.$hasta.'">';
 #-----------------------
 
-#botones de control de pagina
-echo '<input class="footer_botones" type="submit" name="control" value="anteriores">&nbsp;&nbsp;&nbsp;';
-echo '<input class="footer_botones" type="submit" name="control" value="siguientes">';
-#---------------------------
+echo '</form>';
+
+
+
 
 ?>
 
-</form>
+
 </center>
 </body>
 </html>
