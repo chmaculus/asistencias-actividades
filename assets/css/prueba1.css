@@ -19,6 +19,24 @@ body {
 	transform: translate(-50%, -50%);
 }
 
+label , input{
+	color: #000;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+#titulo{
+	font-size: 28px;
+    color: #000;
+	line-height: 1.5;
+    font-weight: 400;
+    font-family: "Poppins",Arial,sans-serif;
+}
+
+
+
 table {
 	border-collapse: collapse;
 	overflow: hidden;
@@ -118,5 +136,30 @@ th,td{
 	border-radius: 5px;
 	width: 80px;
 	text-shadow: 0 0 2px black;
+}
+
+/*
+#------------------------------------------------
+*/
+
+.formulario_cliente {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 12%;
+    width: 815px;
+	margin-left: 95px;
+}
+
+.datos_persona {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.seccion_residentes{
+	height: 34px;	
 }
 
