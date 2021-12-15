@@ -103,12 +103,17 @@ $where='where fecha_ingreso>="'.fecha_conv("/",$_POST["fecha_desde"]).'"
 	and  fecha_ingreso<="'.fecha_conv("/",$_POST["fecha_hasta"]).'" 
 	';
 
+if($_POST["actividades"]){
+	$where=$where.' and detalle ="'.$_POST["actividades"].'" ';
+}
+
+
 if($_POST["residente"]){
 	$where=$where.' and codigo_facturacion="'.$_POST["residente"].'" ';
 }
 	
 
-echo "ordenar: ".$_POST["ordenar"]."<br>";
+//echo "ordenar: ".$_POST["ordenar"]."<br>";
 
 if($_POST["ordenar"]=="apellido"){
 	$order=' order by apellido, nombres ';
@@ -130,7 +135,15 @@ $query=$query.$where.$order;
 
 
 
-echo "<br><br><br>".$query.";<br><br><br>";
+//echo "<br><br><br>".$query.";<br><br><br>";
+/*
+#:::::: 1s=1m 1h=1d
+select * from clientes_asistencias where fecha_ingreso>="2021-12-01" and fecha_ingreso<="2021-12-31" and codigo_facturacion="a" order by apellido, nombres ;
+#:::::1s=dm 1m=1h 
+select * from clientes_asistencias where fecha_ingreso>="2021-12-01" and fecha_ingreso<="2021-12-31" and detalle ="TAEKWONDO" order by apellido, nombres ;
+select * from clientes_asistencias where fecha_ingreso>="2021-12-01" and fecha_ingreso<="2021-12-31" and codigo_facturacion="1" order by apellido, nombres ;
+
+*/
 
 $result=mysql_query($query);
 if(mysql_error()){echo mysql_error()."<br>".$query."<br>";}
