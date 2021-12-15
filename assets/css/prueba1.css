@@ -1,0 +1,143 @@
+html,
+body {
+	background-image: url("../../assets/images/form_background.jpg");
+	height: 100%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+body {
+	margin: 0;
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
+.container {
+	/*position: absolute;*/
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+label , input{
+	color: #000;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+#titulo{
+	font-size: 28px;
+    color: #000;
+	line-height: 1.5;
+    font-weight: 400;
+    font-family: "Poppins",Arial,sans-serif;
+}
+
+
+
+table {
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+#table2 {
+	width: 350px;
+	border-collapse: collapse;
+	overflow: hidden;
+	margin-left: 975px;
+}
+
+th {
+	text-shadow: 0 0 2px black;
+	text-align: left;
+	min-width: 50px;
+}
+
+th,td{
+	padding: 7.5px;
+	text-align: center;
+	font-size: 12px;
+	border:none;
+	text-align: center;
+}
+
+
+.tabla1{
+	background: white;
+}
+
+.tabla2{
+	background: rgb(224, 224, 224);
+}
+
+.cabecera_tabla{
+	background-color: #46b5d1 !important;
+	color: white;
+}
+
+.tabla-nav_buttons{
+	position: absolute;
+	top: 1.5%;
+	right: 1.0%;
+}
+
+.nav_buttons td a button{
+	margin-top: 14px;
+	cursor: pointer;
+	border-radius: 50%;
+	height: 75px;
+	width: 75px;
+	background: #46b5d1;
+	border: none;
+}
+
+.nav_buttons td a button:hover{
+	filter:brightness(120%);
+}
+
+.nav_buttons td a button img{
+	width: 55%;
+	height: 55%;
+	filter: invert(100%);
+}
+
+.botones_navegacion{
+	border: none;
+}
+
+
+.cabecera {
+    background: none;
+    margin-top: 2%;
+}
+
+.tabla_botones{
+	margin-bottom: 3%;
+}
+
+#logo_dalvian {
+    position: absolute;
+    width: 11em;
+    left: 2%;
+    top: 4%;
+}
+
+.tabla_botones{
+	margin-bottom: 3%;
+}
+
+.table_buttons{
+	cursor: pointer;
+	color: white;
+	background-color: #46b5d1;
+	border-radius: 5px;
+	width: 80px;
+	text-shadow: 0 0 2px black;
+}
+
+/*
+#------------------------------------------------
+*/
