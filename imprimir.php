@@ -3,7 +3,7 @@ include("./includes/funciones.php");
 include("./includes/connect_turnero.php");
 
 
-date_default_timezone_set("America/Argentina/Mendoza");
+date_default_timezone_set("America/Argentina/Buenos_Aires");
 
 
 session_start();
