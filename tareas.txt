@@ -24,7 +24,17 @@ subir cambios turnero
 
 *modificar estructura tabla clientes_asistencia (solved)
 
-codificacion de caracteres
+codificacion de caracteres en admin
+
+cambiar tama;o y color
+
+sacar las actividades que no van
+
+
+
+
+
+
 
 
 

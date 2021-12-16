@@ -142,7 +142,6 @@ select * from clientes_asistencias where fecha_ingreso>="2021-12-01" and fecha_i
 #:::::1s=dm 1m=1h 
 select * from clientes_asistencias where fecha_ingreso>="2021-12-01" and fecha_ingreso<="2021-12-31" and detalle ="TAEKWONDO" order by apellido, nombres ;
 select * from clientes_asistencias where fecha_ingreso>="2021-12-01" and fecha_ingreso<="2021-12-31" and codigo_facturacion="1" order by apellido, nombres ;
-
 */
 
 $result=mysql_query($query);

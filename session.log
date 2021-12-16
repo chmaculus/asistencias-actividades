@@ -44,4 +44,22 @@ Array
             [codigo_facturacion] => 
         )
 
+    [ParSQL] => 
+            SELECT dia,mes,year,LugarID FROM lugar_fecha_no_habil WHERE LugarID = 23
+    [usuario] => Array
+        (
+            [nombre] => Karina Caffaratti
+            [email] => 
+            [dni] => 
+            [telefono] => 
+            [user] => 36
+            [grupo] => Admin Espacio
+            [grupo_id] => 4
+            [permiso] => 5
+            [id] => 36
+            [estado] => 1
+            [pass] => kari14296
+            [usuario_extra] => 0
+        )
+
 )
