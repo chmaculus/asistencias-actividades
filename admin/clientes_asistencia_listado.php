@@ -42,8 +42,10 @@ include("../includes/funciones.php");
 				</tr>
 
 				<tr>
-					<td><input type="text" name="fecha_desde" value="<?php echo date("01/m/Y");?>" size="10"></td>
-					<td><input type="text" name="fecha_hasta" value="<?php echo $num_dias_mes.date("/m/Y");?>" size="10"></td>
+					<td><input type="text" name="fecha_desde" value="<?php if($_POST["fecha_desde"]){echo $_POST["fecha_desde"]; }else{ echo date("01/m/Y");}?>" size="10"></td>
+					
+
+					<td><input type="text" name="fecha_hasta" value="<?php if($_POST["fecha_hasta"]){echo $_POST["fecha_hasta"]; }else{ echo date("01/m/Y");}?>" size="10"></td>
 					<td>
 						<select name="actividades">
 							<?php
@@ -145,8 +147,10 @@ select * from clientes_asistencias where fecha_ingreso>="2021-12-01" and fecha_i
 */
 
 $result=mysql_query($query);
+$rows=mysql_num_rows($result);
 if(mysql_error()){echo mysql_error()."<br>".$query."<br>";}
 
+echo "Cantidad de resultados: ".$rows."<br><br>";
 echo '<table class="tabla_busqueda"; border="1">';
 echo '<tr class="cabecera_tabla">';
 //echo '<table border="1">';
