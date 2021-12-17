@@ -2,6 +2,7 @@
 include("../includes/connect.php");
 include("../includes/funciones.php");
 
+date_default_timezone_set("America/Argentina/Buenos_Aires");
 
 $query=base64_decode($_POST["query"]);
 
