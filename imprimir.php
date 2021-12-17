@@ -2,12 +2,19 @@
 include("./includes/funciones.php");
 include("./includes/connect_turnero.php");
 
+
+date_default_timezone_set("America/Argentina/Buenos_Aires");
+
+$time=mktime();
+$time=$time+(60*60);
+
+
 session_start();
 
 		//echo "gettt: ".$_GET["data"]."<br>";
 		$aaa=base64_decode($_GET["data"]);
 		$aaa=explode(":", $aaa);
-			$fecha = date('d-m-Y H:i:s');
+			$fecha = date('d-m-Y H:i:s',$time);
 			$fecha_castellano=fechaCastellano ($fecha);
 
 			$dni = $_SESSION['dni']['numero_documento'];
@@ -42,8 +49,8 @@ session_start();
 			 numero_documento="'.$_SESSION['dni']['numero_documento'].'", 
 			 tipo="'.$tipo.'", 
 			 detalle="'.$aaa[1].'", 
-			 fecha_ingreso="'.date("Y-m-d").'", 
-			 hora_ingreso="'.date("H:i:s").'"';
+			 fecha_ingreso="'.date("Y-m-d",$time).'", 
+			 hora_ingreso="'.date("H:i:s",$time).'"';
 			 mysql_query($q);
 			 if(mysql_error()){
 			 	log_this("sql_error.log",date("H:i:s")."\n".mysql_error()." \n".$q.";\n\n");

@@ -6,7 +6,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00b3ff",endColorstr="#013e58",GradientType=1);
 }
 
-img,td,label,tr,tbody,table,center{
+img,td,label,tr,tbody,table,center,body{
   background: none;
 }
 
@@ -21,23 +21,27 @@ tbody {
   padding: .6rem 1rem;
   border: 1px solid #995309;
   border-radius: 4px;
-  background-color: #d9750b;
-  color: #fff;
-  font-size: 1.2rem;
+  background-color:  #5b8df1 ;
+  color: black;
+  font-size: 1.3rem;
   text-shadow: 0 -1px 0 rgba(0,0,0,.5);
   box-shadow: 0 1px 0 rgba(255,255,255,.5) inset, 0 1px 3px rgba(0,0,0,.2);
-  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f90),to(#e76a00));
-  background-image: linear-gradient(#f90 10%,#e76a00 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f0a100),to(#f70));
+  background-image: linear-gradient(#ffd87a 10%,#ff8f00 100%);
   vertical-align: middle;
   width: 212PX;
   height: 90px;
   margin: 0.25em;
+  -webkit-text-stroke: 0.8px #666;
+  font-weight: 600;
 }
+
+background-image: linear-gradient(#ffd87a 10%,#ff8f00 100%);
 
 .btn-3d:hover, .btn-3d:focus {
   background-color: #e0811b;
-  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f0a100),to(#f70));
-  background-image: linear-gradient(#f0a100 10%,#f70 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f90),to(#e76a00));
+  background-image: linear-gradient(#f90 10%,#e76a00 100%);
 }
 
 .btn-3d:active {

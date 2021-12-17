@@ -31,7 +31,7 @@ FROM
 $stmt = sqlsrv_query( $conn, $sql );
 //log_this("trdata.log",date("H:i:s")."\n222\n");
 if( $stmt === false) {
-    die( log_this(print_r( sqlsrv_errors(), true)) );
+    die( log_this("mssql_error.log",print_r( sqlsrv_errors(), true)) );
 }
 
 

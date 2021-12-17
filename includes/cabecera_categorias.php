@@ -30,10 +30,9 @@
 
 function Redirect() 
 {  
+	document.write("Se envio a imprimir"); 
 	window.location="./index.php"; 
 } 
-document.write("Se envio a imprimir"); 
-setTimeout('Redirect()', 2500);   
 
 
 var showToast = function() {
@@ -52,29 +51,11 @@ var showToast = function() {
 
   // After 3 seconds, remove the show class from DIV
   setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+	setTimeout('Redirect()', 2500);   
 } 
 
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -155,17 +136,6 @@ var showToast = function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 </style>
 
 <center>
@@ -174,7 +144,7 @@ var showToast = function() {
 	<table>
 		<tr>
 			<td>
-				<a href="./menu.php">
+				<a href="./index.php">
 					<img id="back" src="./assets/images/back.png"  width="50" height="50">
 				</a>
 			</td>
@@ -188,9 +158,6 @@ var showToast = function() {
 	#back{
 		background: none;
 		border: none;
-		background-image: url('./assets/images/back.png');
-		background-size:cover ;
-		background-repeat: no-repeat;
 		position: absolute;
 		top: 2%;
 		left: 0.6%;

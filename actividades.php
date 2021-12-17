@@ -11,7 +11,7 @@ include("includes/cabecera_categorias.php");
 				<table>
 					<tr>
 						<?php
-						$q='select * from actividades where activado=1 order by actividad';
+						$q='select * from actividades where activado=1 and mostrar_asistencias=1 order by actividad';
 						$res=mysql_query($q);
 						$count=0;
 						while($row=mysql_fetch_array($res)){

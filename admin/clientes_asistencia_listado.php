@@ -62,7 +62,7 @@ include("../includes/funciones.php");
 							?>
 						</select>
 					</td>
-					<td><input type="text" name="residente" value="<?php if($_POST["residente"]){echo $_POST["residente"];}?>" size="10"></td>
+					<td><input type="text" name="residente" placeholder="TODOS" value="<?php if($_POST["residente"]){echo $_POST["residente"];}?>" size="10"></td>
 				</tr>
 		</table>
 
@@ -150,16 +150,26 @@ $result=mysql_query($query);
 $rows=mysql_num_rows($result);
 if(mysql_error()){echo mysql_error()."<br>".$query."<br>";}
 
-echo "<br>Cantidad de resultados: ".$rows."<br><br>";
+echo "<br>Cantidad de resultados: ".$rows."";
+
+echo '<form action="clientes_asistencia_export.php" method="post">';
+echo '<input type="hidden" name="query" value="'.base64_encode($query).'">';
+echo '<input type="submit" name="EXPORTAR RESULTADOS" value="EXPORTAR RESULTADOS">';
+echo '</form><br>';
+
+
+
+
+
 echo '<table class="tabla_busqueda"; border="1">';
 echo '<tr class="cabecera_tabla">';
 //echo '<table border="1">';
 //echo "<tr>";
-	echo "<th>Codigo residente</th>";
-	echo "<th>codigo facturacion</th>";
+	echo "<th>Codigo cliente</th>";
+	echo "<th>codigo residente</th>";
 	echo "<th>Apellido</th>";
 	echo "<th>Nombres</th>";
-	echo "<th>Numero_documento</th>";
+//	echo "<th>Numero_documento</th>";
 	echo "<th>Tipo</th>";
 	echo "<th>Detalle</th>";
 	echo "<th>Fecha ingreso</th>";
@@ -178,7 +188,7 @@ while($row=mysql_fetch_array($result)){
 	echo '<td>'.$row["codigo_facturacion"].'</td>';
 	echo '<td>'.$row["apellido"].'</td>';
 	echo '<td>'.$row["nombres"].'</td>';
-	echo '<td>'.$row["numero_documento"].'</td>';
+//	echo '<td>'.$row["numero_documento"].'</td>';
 	echo '<td>'.$row["tipo"].'</td>';
 	echo '<td>'.$row["detalle"].'</td>';
 	echo '<td>'.fecha_conv("-",$row["fecha_ingreso"]).'</td>';
