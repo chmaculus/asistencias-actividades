@@ -1,7 +1,7 @@
 <?php
-$server="localhost";
-$user="root";
-$passwd="";
+$server="140.191.48.235";
+$user="user";
+$passwd="user";
 $base="agenda";
 $id_connection=mysql_connect($server,$user,$passwd);
 
@@ -14,5 +14,5 @@ mysql_select_db($base,$id_connection);
 if(mysql_error()){
 	echo "No se pudo Abrir la Base de Datos";
 }
-/* jejeje*/
+
 ?>

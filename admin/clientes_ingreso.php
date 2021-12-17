@@ -77,14 +77,6 @@ function trae_datos() {
 
 </script>
 
-<!--  
-<form>
-		<label>Código de Residente</label>
-		<input type="text" name="codigo_facturacion" id="codigo_facturacion" value="<?php if(isset($data["codigo_facturacion"])){echo $data["codigo_facturacion"];}?>" size="8">
-		<button onclick="trae_datos();">Traer datos</button><br>
-</form>
--->
-
 <form method="post" action="clientes_update.php" id="form_clientes_dalvian" class="formulario_cliente">
 
 	<div class="datos_persona">
@@ -103,8 +95,8 @@ function trae_datos() {
 
 		<label>Tipo Documento</label>
 		<select name="tipo_documento">
-		<option value="DNI" label="DNI"></option>
-		<option value="Extranjero" label="Extranjero"></option>
+		<option value="DNI" label="DNI"></option>	
+	<option value="Extranjero" label="Extranjero"></option>
 		<option value="Pasaporte" label="Pasaporte"></option>
 		</select>
 
