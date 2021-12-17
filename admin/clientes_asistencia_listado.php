@@ -159,7 +159,7 @@ echo '<tr class="cabecera_tabla">';
 	echo "<th>codigo facturacion</th>";
 	echo "<th>Apellido</th>";
 	echo "<th>Nombres</th>";
-	echo "<th>Numero_documento</th>";
+//	echo "<th>Numero_documento</th>";
 	echo "<th>Tipo</th>";
 	echo "<th>Detalle</th>";
 	echo "<th>Fecha ingreso</th>";
@@ -178,7 +178,7 @@ while($row=mysql_fetch_array($result)){
 	echo '<td>'.$row["codigo_facturacion"].'</td>';
 	echo '<td>'.$row["apellido"].'</td>';
 	echo '<td>'.$row["nombres"].'</td>';
-	echo '<td>'.$row["numero_documento"].'</td>';
+//	echo '<td>'.$row["numero_documento"].'</td>';
 	echo '<td>'.$row["tipo"].'</td>';
 	echo '<td>'.$row["detalle"].'</td>';
 	echo '<td>'.fecha_conv("-",$row["fecha_ingreso"]).'</td>';
