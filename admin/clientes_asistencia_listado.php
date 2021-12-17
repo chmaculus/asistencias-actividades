@@ -42,10 +42,10 @@ include("../includes/funciones.php");
 				</tr>
 
 				<tr>
-					<td><input type="text" name="fecha_desde" value="<?php if($_POST["fecha_desde"]){echo $_POST["fecha_desde"]; }else{ echo date("01/m/Y");}?>" size="10"></td>
+					<td><input type="text" name="fecha_desde" value="<?php if($_POST["fecha_desde"]){echo $_POST["fecha_desde"]; }else{ echo date("d/m/Y");}?>" size="10"></td>
 					
 
-					<td><input type="text" name="fecha_hasta" value="<?php if($_POST["fecha_hasta"]){echo $_POST["fecha_hasta"]; }else{ echo $num_dias_mes.date("/m/Y");}?>" size="10"></td>
+					<td><input type="text" name="fecha_hasta" value="<?php if($_POST["fecha_hasta"]){echo $_POST["fecha_hasta"]; }else{ echo date("d/m/Y");}?>" size="10"></td>
 					<td>
 						<select name="actividades">
 							<?php
