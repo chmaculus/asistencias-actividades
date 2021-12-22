@@ -34,7 +34,7 @@ include("../includes/funciones.php");
 							<td>Fecha desde</td>
 							<td>Fecha hasta</td>
 							<td>Actividad</td>
-							<td>Codigo residente</td>
+							<td>Código residente</td>
 						</tr>
 
 							<tr>
@@ -65,7 +65,7 @@ include("../includes/funciones.php");
 						<tr>
 							<td>Apellido</td><td><input type="radio" name="ordenar" value="apellido"  <?php if($_POST["ordenar"]=="apellido" OR !$_POST["ordernar"]){echo "checked";} ?>></td>
 						</tr><tr>
-							<td>Fecha/hora</td><td><input type="radio" name="ordenar" value="fecha" <?php if($_POST["ordenar"]=="fecha"){echo "checked";} ?>></td>
+							<td>Fecha/Hora</td><td><input type="radio" name="ordenar" value="fecha" <?php if($_POST["ordenar"]=="fecha"){echo "checked";} ?>></td>
 						</tr><tr>
 							<td>Detalle</td><td><input type="radio" name="ordenar" value="detalle" <?php if($_POST["ordenar"]=="detalle"){echo "checked";} ?>></td>
 						</tr>
@@ -155,8 +155,8 @@ echo '<table class="tabla_busqueda"; border="1">';
 echo '<tr class="cabecera_tabla">';
 //echo '<table border="1">';
 //echo "<tr>";
-	echo "<th>Codigo cliente</th>";
-	echo "<th>codigo residente</th>";
+	echo "<th>Código cliente</th>";
+	echo "<th>Código residente</th>";
 	echo "<th>Apellido</th>";
 	echo "<th>Nombres</th>";
 //	echo "<th>Numero_documento</th>";
