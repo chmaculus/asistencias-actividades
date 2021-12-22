@@ -29,61 +29,51 @@ include("../includes/funciones.php");
 		<table>
 			<tr>
 				<td>
+					<table border="1">
+						<tr>
+							<td>Fecha desde</td>
+							<td>Fecha hasta</td>
+							<td>Actividad</td>
+							<td>Código residente</td>
+						</tr>
 
+							<tr>
+								<td><input type="text" name="fecha_desde" value="<?php if($_POST["fecha_desde"]){echo $_POST["fecha_desde"]; }else{ echo date("d/m/Y");}?>" size="10"></td>
+								<td><input type="text" name="fecha_hasta" value="<?php if($_POST["fecha_hasta"]){echo $_POST["fecha_hasta"]; }else{ echo date("d/m/Y");}?>" size="10"></td>
+								<td>
+									<select name="actividades">
+										<?php
+										$q='select * from actividades where activado=1 and mostrar_asistencias=1 group by actividad order by actividad';
+										$res=mysql_query($q);
+										echo '<option value="" label="Todas"></option>'.chr(10);
+										while($row=mysql_fetch_array($res)){
+											if($_POST["actividades"]==$row["Actividad"]){
+												echo '<option value="'.$row["Actividad"].'" label="'.$row["Actividad"].'" selected></option>'.chr(10);
+											}else{
+												echo '<option value="'.$row["Actividad"].'" label="'.$row["Actividad"].'"></option>'.chr(10);
+											}
+										}
+										?>
+									</select>
+								</td>
+								<td><input type="text" name="residente" placeholder="TODOS" value="<?php if($_POST["residente"]){echo $_POST["residente"];}?>" size="10"></td>
+							</tr>
+					</table>
+				<td>
+					Ordenar por:
+					<table border="1">
+						<tr>
+							<td>Apellido</td><td><input type="radio" name="ordenar" value="apellido"  <?php if($_POST["ordenar"]=="apellido" OR !$_POST["ordernar"]){echo "checked";} ?>></td>
+						</tr><tr>
+							<td>Fecha/Hora</td><td><input type="radio" name="ordenar" value="fecha" <?php if($_POST["ordenar"]=="fecha"){echo "checked";} ?>></td>
+						</tr><tr>
+							<td>Detalle</td><td><input type="radio" name="ordenar" value="detalle" <?php if($_POST["ordenar"]=="detalle"){echo "checked";} ?>></td>
+						</tr>
+					</table>
+				</td>
 
-
-
-		<table border="1">
-				<tr>
-					<td>Fecha desde</td>
-					<td>Fecha hasta</td>
-					<td>Actividad</td>
-					<td>Codigo residente</td>
-				</tr>
-
-				<tr>
-					<td><input type="text" name="fecha_desde" value="<?php if($_POST["fecha_desde"]){echo $_POST["fecha_desde"]; }else{ echo date("d/m/Y");}?>" size="10"></td>
-					
-
-					<td><input type="text" name="fecha_hasta" value="<?php if($_POST["fecha_hasta"]){echo $_POST["fecha_hasta"]; }else{ echo date("d/m/Y");}?>" size="10"></td>
-					<td>
-						<select name="actividades">
-							<?php
-							$q='select * from actividades where activado=1 and mostrar_asistencias=1 group by actividad order by actividad';
-							$res=mysql_query($q);
-							echo '<option value="" label="Todas"></option>'.chr(10);
-							while($row=mysql_fetch_array($res)){
-								if($_POST["actividades"]==$row["Actividad"]){
-									echo '<option value="'.$row["Actividad"].'" label="'.$row["Actividad"].'" selected></option>'.chr(10);
-								}else{
-									echo '<option value="'.$row["Actividad"].'" label="'.$row["Actividad"].'"></option>'.chr(10);
-								}
-							}
-							?>
-						</select>
-					</td>
-					<td><input type="text" name="residente" placeholder="TODOS" value="<?php if($_POST["residente"]){echo $_POST["residente"];}?>" size="10"></td>
-				</tr>
-		</table>
-
-
-
-
-<td>
-				Ordenar por:
-				<table border="1">
-					<tr>
-						<td>Apellido</td><td><input type="radio" name="ordenar" value="apellido"  <?php if($_POST["ordenar"]=="apellido" OR !$_POST["ordernar"]){echo "checked";} ?>></td>
-					</tr><tr>
-						<td>Fecha/hora</td><td><input type="radio" name="ordenar" value="fecha" <?php if($_POST["ordenar"]=="fecha"){echo "checked";} ?>></td>
-					</tr><tr>
-						<td>Detalle</td><td><input type="radio" name="ordenar" value="detalle" <?php if($_POST["ordenar"]=="detalle"){echo "checked";} ?>></td>
-					</tr>
-				</table>
-
-</td>
-
-</tr></table>
+</tr>
+</table>
 			<input type="submit" name="ACEPTAR" value="ACEPTAR">
 
 </td>
@@ -165,8 +155,8 @@ echo '<table class="tabla_busqueda"; border="1">';
 echo '<tr class="cabecera_tabla">';
 //echo '<table border="1">';
 //echo "<tr>";
-	echo "<th>Codigo cliente</th>";
-	echo "<th>codigo residente</th>";
+	echo "<th>Código cliente</th>";
+	echo "<th>Código residente</th>";
 	echo "<th>Apellido</th>";
 	echo "<th>Nombres</th>";
 //	echo "<th>Numero_documento</th>";
