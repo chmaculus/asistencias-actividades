@@ -40,12 +40,17 @@ label , input{
     font-family: "Poppins",Arial,sans-serif;
 }
 
-
+.formulario_busqueda{
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	width: 745px;
+	height: 160px;
+	border-radius: 10px;
+	margin-top: 25px;
+}
 
 table {
 	border-collapse: collapse;
 	overflow: hidden;
-	box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
 #table2 {
@@ -82,7 +87,7 @@ th,td{
 	display: block;
     margin-left: 0px;
     float: left;
-    max-height: 400px;
+    max-height: 320px;
     width: 100%;
     overflow-y: scroll;
 }
