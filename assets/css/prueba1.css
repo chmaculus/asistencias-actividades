@@ -4,6 +4,7 @@ body {
 	height: 100%;
 	text-align: center;
 	vertical-align: middle;
+	background-size: cover;
 }
 
 body {
@@ -11,6 +12,10 @@ body {
 	font-family: sans-serif;
 	font-weight: 100;
 }
+
+img,td,label,tr,tbody,table,center,body,a,div{
+	background: none;
+  }
 
 .container {
 	/*position: absolute;*/
@@ -35,12 +40,17 @@ label , input{
     font-family: "Poppins",Arial,sans-serif;
 }
 
-
+.formulario_busqueda{
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	width: 745px;
+	height: 160px;
+	border-radius: 10px;
+	margin-top: 25px;
+}
 
 table {
 	border-collapse: collapse;
 	overflow: hidden;
-	box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
 #table2 {
@@ -53,7 +63,7 @@ table {
 th {
 	text-shadow: 0 0 2px black;
 	text-align: left;
-	min-width: 50px;
+	min-width: 145px;
 }
 
 th,td{
@@ -73,6 +83,15 @@ th,td{
 	background: rgb(224, 224, 224);
 }
 
+.tabla_busqueda{
+	display: block;
+    margin-left: 0px;
+    float: left;
+    max-height: 320px;
+    width: 100%;
+    overflow-y: scroll;
+}
+
 .cabecera_tabla{
 	background-color: #46b5d1 !important;
 	color: white;
@@ -82,6 +101,7 @@ th,td{
 	position: absolute;
 	top: 1.5%;
 	right: 1.0%;
+	box-shadow: none;
 }
 
 .nav_buttons td a button{

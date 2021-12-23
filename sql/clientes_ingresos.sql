@@ -14,7 +14,7 @@ CREATE TABLE `clientes_asistencias` (
   fecha_ingreso date,
   hora_ingreso time,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=242 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 alter table clientes_asistencias add index codigo_residente(codigo_residente);
