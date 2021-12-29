@@ -234,7 +234,6 @@ margin-left: 10px;
 th {
 	text-shadow: 0 0 2px black;
 	text-align: left;
-	min-width: 50px;
 }
 
 th,td{
@@ -273,12 +272,11 @@ th,td{
 }
 
 .tabla_busqueda2{
-	display: block;
+	display: inline-block;
 	margin-left: 0px;
-	float: left;
-	max-height: 340px;
-	width: 100%;
+	max-height: 390px;
 	overflow-y: scroll;
+	width: auto;
 }
 
 .tabla_busqueda3{

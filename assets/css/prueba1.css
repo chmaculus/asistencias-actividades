@@ -64,7 +64,6 @@ table {
 th {
 	text-shadow: 0 0 2px black;
 	text-align: left;
-	min-width: 170px;
 }
 
 th,td{
@@ -85,11 +84,9 @@ th,td{
 }
 
 .tabla_busqueda{
-	display: block;
+	display: inline-block;
     margin-left: 0px;
-    float: left;
     max-height: 320px;
-    width: 100%;
     overflow: scroll;
 }
 
