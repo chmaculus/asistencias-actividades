@@ -11,6 +11,7 @@ body {
 	margin: 0;
 	font-family: sans-serif;
 	font-weight: 100;
+	max-height: 95%;
 }
 
 img,td,label,tr,tbody,table,center,body,a,div{
@@ -63,7 +64,6 @@ table {
 th {
 	text-shadow: 0 0 2px black;
 	text-align: left;
-	min-width: 145px;
 }
 
 th,td{
@@ -84,12 +84,10 @@ th,td{
 }
 
 .tabla_busqueda{
-	display: block;
+	display: inline-block;
     margin-left: 0px;
-    float: left;
     max-height: 320px;
-    width: 100%;
-    overflow-y: scroll;
+    overflow: scroll;
 }
 
 .cabecera_tabla{
