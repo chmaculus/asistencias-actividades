@@ -5,8 +5,8 @@ include("./includes/connect_turnero.php");
 
 date_default_timezone_set("America/Argentina/Buenos_Aires");
 
-$time=mktime();
-$time=$time+(60*60);
+$epoch=mktime();
+$time=$epoch+(1*60*60);
 
 
 session_start();
@@ -57,18 +57,20 @@ session_start();
 
 			 }
 
-			//log_this("sql.log",date("H:i:s")." \n".$q.";\n\n");
+			log_this("sql.log",date("H:i:s")." \n".$q.";\n\n");
 
 			//mysql_query($q);
 			//grabar turno 
 
 			
-			imprimir_turno($aaa[0], $aaa[1], NULL, $fecha_castellano, $dni, $nombre,$direccion);
+			imprimir_turno($aaa[0], $aaa[1], NULL, $fecha_castellano, $dni, $nombre,$direccion, $time);
 			file_write("session.log",print_r($_SESSION,true));
+			file_write("hora.txt", $fecha);
+			file_write("horac.txt", $fecha_castellano);
 
 
 
-	function imprimir_turno($tipo, $valor, $array_nombre, $fecha, $dni, $nombre,$direccion){
+	function imprimir_turno($tipo, $valor, $array_nombre, $fecha, $dni, $nombre,$direccion,$time){
 	  $impresion = chr(27).'t'.chr(3); // ESC t n selecciona tabla de codigos de caracter n=
 	  $impresion .= chr(29).'!'.chr(40); // GS ! n cambia tamaño
 	  $impresion .= chr(27).'a'.chr(1); // ESC a n 0=izquierda, 1=centrar, 2=derecha
@@ -86,7 +88,7 @@ session_start();
 	  $impresion .= "\r\n";
 	  $impresion .= chr(29).'!'.chr(0); // GS ! n cambia tamaño
 	  $impresion .= chr(27).'a'.chr(0); // ESC a n 0=izquierda, 1=centrar, 2=derecha
-	  $impresion .= $fecha." ".date("H:i:s")."\r\n";
+	  $impresion .= $fecha." ".date("H:i:s",$time)."\r\n";
 	  $impresion .= "\r\n";
 
 	  $impresion .= "DNI: ".$dni."\r\n";
