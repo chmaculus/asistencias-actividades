@@ -23,11 +23,13 @@ tbody {
   border-radius: 4px;
   background-color:  #5b8df1 ;
   color: black;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   text-shadow: 0 -1px 0 rgba(0,0,0,.5);
   box-shadow: 0 1px 0 rgba(255,255,255,.5) inset, 0 1px 3px rgba(0,0,0,.2);
-  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f0a100),to(#f70));
-  background-image: linear-gradient(#ffd87a 10%,#ff8f00 100%);
+   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f0a100),to(#f70)); 
+  /* background-image: linear-gradient(#ffd87a 10%,#ff8f00 100%); */
+  /*background-image: linear-gradient(#ffd87a 10%,#ffb26f 100%);ffcc8c */
+  background-image: linear-gradient(#ffd87a 10%,#ffcc8c 100%);
   vertical-align: middle;
   width: 212PX;
   height: 90px;
