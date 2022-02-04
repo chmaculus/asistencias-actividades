@@ -32,7 +32,7 @@ include("../includes/connect.php");
     }
 
     var nombres = document.getElementById('nombres').value;
-    if (nombres.length < 4) {
+    if (nombres.length < 2) {
       alert('El campo Nombres debe ser valido');
       return;
     }
