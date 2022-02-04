@@ -26,13 +26,13 @@ include("../includes/connect.php");
     }
 
     var apellido = document.getElementById('apellido').value;
-    if (apellido.length < 4) {
+    if (apellido.length < 2) {
       alert('El campo Apellido debe ser valido');
       return;
     }
 
     var nombres = document.getElementById('nombres').value;
-    if (nombres.length < 4) {
+    if (nombres.length < 2) {
       alert('El campo Nombres debe ser valido');
       return;
     }
