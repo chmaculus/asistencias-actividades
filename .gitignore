@@ -4,6 +4,7 @@
 /includes/connect.php
 /includes/connect_mssql.php
 /admin/*.log
+./*.log
 
 
 

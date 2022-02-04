@@ -1,5 +1,5 @@
 <?php
-include("../includes/connect.php");
+include("../includes/connect_turnero.php");
 //include("../includes/connect_mssql.php");
 include("../includes/funciones.php");
 include("../includes/funciones_clientes.php");
