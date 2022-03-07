@@ -69,6 +69,7 @@ session_start();
 
 
 	function imprimir_turno($tipo, $valor, $array_nombre, $fecha, $dni, $nombre,$direccion){
+		$time=mysql_result(mysql_query("select current_time"),0,0);
 	  $impresion = chr(27).'t'.chr(3); // ESC t n selecciona tabla de codigos de caracter n=
 	  $impresion .= chr(29).'!'.chr(40); // GS ! n cambia tamaño
 	  $impresion .= chr(27).'a'.chr(1); // ESC a n 0=izquierda, 1=centrar, 2=derecha
@@ -86,7 +87,7 @@ session_start();
 	  $impresion .= "\r\n";
 	  $impresion .= chr(29).'!'.chr(0); // GS ! n cambia tamaño
 	  $impresion .= chr(27).'a'.chr(0); // ESC a n 0=izquierda, 1=centrar, 2=derecha
-	  $impresion .= $fecha." ".date("H:i:s")."\r\n";
+	  $impresion .= $fecha." ".$time."\r\n";
 	  $impresion .= "\r\n";
 
 	  $impresion .= "DNI: ".$dni."\r\n";
