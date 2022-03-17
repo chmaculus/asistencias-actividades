@@ -48,9 +48,9 @@ include("../includes/funciones.php");
 										echo '<option value="" label="Todas"></option>'.chr(10);
 										while($row=mysql_fetch_array($res)){
 											if($_POST["actividades"]==$row["Actividad"]){
-												echo '<option value="'.$row["Actividad"].'" label="'.$row["Actividad"].'" selected></option>'.chr(10);
+												echo '<option value="'.utf8_encode($row["Actividad"]).'" label="'.utf8_encode($row["Actividad"]).'" selected></option>'.chr(10);
 											}else{
-												echo '<option value="'.$row["Actividad"].'" label="'.$row["Actividad"].'"></option>'.chr(10);
+												echo '<option value="'.utf8_encode($row["Actividad"]).'" label="'.utf8_encode($row["Actividad"]).'"></option>'.chr(10);
 											}
 										}
 										?>
@@ -139,6 +139,8 @@ select * from clientes_asistencias where fecha_ingreso>="2021-12-01" and fecha_i
 $result=mysql_query($query);
 $rows=mysql_num_rows($result);
 if(mysql_error()){echo mysql_error()."<br>".$query."<br>";}
+
+log_this("logs/query_consulta_".date("Y-m").".log",date("H:i:s")." - ".$query."\n\n");
 
 echo "<br>Cantidad de resultados: ".$rows."";
 
