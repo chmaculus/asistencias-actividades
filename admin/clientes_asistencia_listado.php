@@ -17,6 +17,7 @@ include("../includes/connect.php");
 include("../includes/funciones.php");
 
 
+normalize1();
 
 	$num_dias_mes = date("t");
 
@@ -47,10 +48,10 @@ include("../includes/funciones.php");
 										$res=mysql_query($q);
 										echo '<option value="" label="Todas"></option>'.chr(10);
 										while($row=mysql_fetch_array($res)){
-											if($_POST["actividades"]==$row["Actividad"]){
-												echo '<option value="'.utf8_encode($row["Actividad"]).'" label="'.utf8_encode($row["Actividad"]).'" selected></option>'.chr(10);
+											if($_POST["actividades"]==$row["ID"]){
+												echo '<option value="'.$row["ID"].'" label="'.utf8_encode($row["Actividad"]).'" selected></option>'.chr(10);
 											}else{
-												echo '<option value="'.utf8_encode($row["Actividad"]).'" label="'.utf8_encode($row["Actividad"]).'"></option>'.chr(10);
+												echo '<option value="'.$row["ID"].'" label="'.utf8_encode($row["Actividad"]).'"></option>'.chr(10);
 											}
 										}
 										?>
@@ -96,7 +97,7 @@ $where='where fecha_ingreso>="'.fecha_conv("/",$_POST["fecha_desde"]).'"
 	';
 
 if($_POST["actividades"]){
-	$where=$where.' and detalle ="'.$_POST["actividades"].'" ';
+	$where=$where.' and id_actividad ="'.$_POST["actividades"].'" ';
 }
 
 
@@ -182,7 +183,7 @@ while($row=mysql_fetch_array($result)){
 	echo '<td>'.strtoupper($row["nombres"]).'</td>';
 //	echo '<td>'.$row["numero_documento"].'</td>';
 	//echo '<td>'.$row["tipo"].'</td>';
-	echo '<td>'.$row["detalle"].'</td>';
+	echo '<td>'.utf8_encode($row["detalle"]).'</td>';
 	echo '<td>'.fecha_conv("-",$row["fecha_ingreso"]).'</td>';
 	echo '<td>'.$row["hora_ingreso"].'</td>';
 	echo "</tr>".chr(10);
