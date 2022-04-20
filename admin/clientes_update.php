@@ -71,15 +71,15 @@ if($_POST["accion"]=="modificacion"){
 		imagen_nombre="'.$_POST["imagen_nombre"].'",
 		fecha_modificado="'.time().'",
 		codigo_facturacion="'.$_POST["codigo_facturacion"].'"
-				where id="'.$id_clientes_dalvian.'"
+				where id="'.$_POST["id_cliente"].'"
 			';
-			echo $query."<br>";
+			//echo $query."<br>";
 	mysql_query($query);
 	if(mysql_error()){echo mysql_error()."<br>".$query."<br>".$_SERVER["SCRIPT_NAME"]."<br>";}
 
 
 	#muestra registro ingresado
-	$query='select * from clientes_dalvian where id="'.$id_clientes_dalvian.'"';
+	$query='select * from clientes_dalvian where id="'.$_POST["id_cliente"].'"';
 	$array_clientes_dalvian=mysql_fetch_array(mysql_query($query));
 	include("clientes_muestra.inc.php");
 }

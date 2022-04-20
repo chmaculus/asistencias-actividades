@@ -145,8 +145,16 @@ function trae_datos() {
 			<legend>Observaciones</legend>
 		<textarea name="observaciones" id="observaciones" rows="10" cols="33"><?php if(isset($data["observaciones"])){echo $data["observaciones"];}?></textarea><br>
 		</fieldset>
+		<input type="hidden" name="id_cliente" value="<?php if(isset($data["id"])){echo $data["id"];}?>">
 
-		<input type="hidden" name="accion" value="ingreso"><br>
+			<?php 
+			if($_GET["id_clientes_dalvian"]){
+				echo '<input type="hidden" name="accion" value="modificacion"><br>';
+			}else{
+				echo '<input type="hidden" name="accion" value="ingreso"><br>';
+			}
+			?>
+		
 		<input id="button_aceptar" type="submit" name="ACEPTAR" value="ACEPTAR">
 
 	</div>

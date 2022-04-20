@@ -1,3 +1,4 @@
+<center>
     <div class="cabecera">
         <a href="../admin"><img id="logo_dalvian" src="../assets/images/club_house.png" alt="logo dalvian"></a>
         <table class="tabla-nav_buttons">
@@ -15,3 +16,7 @@
             </tr>
         </table>
     </div>
+    <img id="logo_foca" src="../assets/images/logo-foca.png" alt="logo foca">
+
+
+    
