@@ -87,12 +87,12 @@ echo '<br><br><font1 class="font1">Mostrando Resultados desde: '.($desde+1).' Ha
 echo '<table class="tabla_busqueda"; border="1">';
 echo '<tr class="cabecera_tabla">';
 	echo "<th>Código facturación</th>";
-	echo "<th>Código residente</th>";
+	echo "<th>M / C</th>";
 	echo "<th>Apellido</th>";
 	echo "<th>Nombres</th>";
 	echo "<th>Documento</th>";
-	echo "<th>Manzana</th>";
-	echo "<th>Casa</th>";
+	// echo "<th>Manzana</th>";
+	// echo "<th>Casa</th>";
 	echo "<th>Calle</th>";
 	echo "<th>Número</th>";
 	echo "<th>Piso</th>";
@@ -113,12 +113,13 @@ while($row=mysql_fetch_array($result)){
 		$i--;
 	}
 	echo '<td>'.$row["codigo_facturacion"].'</td>';
-	echo '<td>'.$row["codigo_residente"].'</td>';
+//	echo '<td>'.$row["codigo_residente"].'</td>';
+	echo '<td>'.$row["manzana"]." / ".$row["casa"].'</td>';
 	echo '<td>'.$row["apellido"].'</td>';
 	echo '<td>'.$row["nombres"].'</td>';
 	echo '<td>'.$row["numero_documento"].'</td>';
-	echo '<td>'.$row["manzana"].'</td>';
-	echo '<td>'.$row["casa"].'</td>';
+	// echo '<td>'.$row["manzana"].'</td>';
+	// echo '<td>'.$row["casa"].'</td>';
 	echo '<td>'.$row["calle"].'</td>';
 	echo '<td>'.$row["numero"].'</td>';
 	echo '<td>'.$row["piso"].'</td>';
