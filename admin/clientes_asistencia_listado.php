@@ -15,6 +15,7 @@ include("header.inc.php");
 //include("index.php");
 include("../includes/connect.php");
 include("../includes/funciones.php");
+include("../includes/funciones_clientes.php");
 
 
 normalize1();
@@ -141,6 +142,8 @@ $result=mysql_query($query);
 $rows=mysql_num_rows($result);
 if(mysql_error()){echo mysql_error()."<br>".$query."<br>";}
 
+//echo $query."<br>";
+
 log_this("logs/query_consulta_".date("Y-m").".log",date("H:i:s")." - ".$query."\n\n");
 
 echo "<br>Cantidad de resultados: ".$rows."";
@@ -159,7 +162,7 @@ echo '<tr class="cabecera_tabla">';
 //echo '<table border="1">';
 //echo "<tr>";
 	echo "<th>Código cliente</th>";
-	echo "<th>Código residente</th>";
+	echo "<th>M / C</th>";
 	echo "<th>Apellido</th>";
 	echo "<th>Nombres</th>";
 //	echo "<th>Numero_documento</th>";
@@ -170,15 +173,15 @@ echo '<tr class="cabecera_tabla">';
 echo "</tr>";
 
 while($row=mysql_fetch_array($result)){
-		if($i == 0){
-		echo "<tr class='tabla1'>";
-		$i++;
-	}else{
-		echo "<tr class='tabla2'>";
-		$i--;
-	}
+
+	if($i == 0){ echo "<tr class='tabla1'>"; $i++; 
+	}else{ echo "<tr class='tabla2'>"; $i--; }
+
+	$array1=trae_cliente_by_id($row["id_cliente"]);
+
 	echo '<td>'.$row["id_cliente"].'</td>';
-	echo '<td>'.$row["codigo_facturacion"].'</td>';
+	echo '<td>'.$array1["manzana"].' / '.$array1["casa"].'</td>';
+	//echo '<td>'.$row["codigo_facturacion"].'</td>';
 	echo '<td>'.strtoupper($row["apellido"]).'</td>';
 	echo '<td>'.strtoupper($row["nombres"]).'</td>';
 //	echo '<td>'.$row["numero_documento"].'</td>';

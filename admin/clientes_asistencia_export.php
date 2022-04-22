@@ -1,6 +1,7 @@
 <?php
 include("../includes/connect.php");
 include("../includes/funciones.php");
+include("../includes/funciones_clientes.php");
 
 date_default_timezone_set("America/Argentina/Buenos_Aires");
 
@@ -14,7 +15,7 @@ if(mysql_error()){echo mysql_error()."<br>".$query."<br>";}
 $linea='<table class="t1">';
 $linea.="<tr>";
 	$linea.="<th>Codigo Cliente</th>";
-	$linea.="<th>Codigo Residente</th>";
+	$linea.="<th>M / C</th>";
 	$linea.="<th>Apellido</th>";
 	$linea.="<th>Nombres</th>";
 	$linea.="<th>Detalle</th>";
@@ -27,9 +28,12 @@ $data=$linea;
 
 
 while($row=mysql_fetch_array($result)){
+	$array1=trae_cliente_by_id($row["id_cliente"]);
+
 	$linea="<tr>";
 	$linea.='<td>'.$row["id_cliente"].'</td>';
-	$linea.='<td>'.$row["codigo_facturacion"].'</td>';
+	$linea.='<td>'.$array1["manzana"].' / '.$array1["casa"].'</td>';
+//	$linea.='<td>'.$row["codigo_facturacion"].'</td>';
 	$linea.='<td>'.strtoupper($row["apellido"]).'</td>';
 	$linea.='<td>'.strtoupper($row["nombres"]).'</td>';
 	$linea.='<td>'.$row["detalle"].'</td>';
