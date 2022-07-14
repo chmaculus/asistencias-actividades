@@ -12,9 +12,6 @@ $rows=rows_getclientes_mysql($dni);
 //log_this("session.log","dni: ".$dni."\n");
 //log_this("session.log","rows: ".print_r($rows,true)."\n");
 
-echo "rows: ".$rows."<br>";
-
-
 $data=getclientes_mysql_dni($dni);
 
 //log_this("session.log","data: ".print_r($data,true)."\n");

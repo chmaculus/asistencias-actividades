@@ -135,6 +135,7 @@
 $( "#enter" ).click(function() {
     var dni =  $( "#input-dni" ).val();
     if(dni.toString().length == 8){
+        console.log("llega dni");
         $.ajax({
             type: "POST",
             url: "clientes/get_dni.php",
@@ -143,14 +144,18 @@ $( "#enter" ).click(function() {
                 dni: dni
             },
             success:function(data){
+                console.log("if1");
                 if(data != 0){
+                    console.log("if2");
                     location.href = "actividades.php";
                 }else{
+                    console.log("if3");
                     alert("Documento no encontrado: "+ dni)
                     $( "#input-dni" ).val('');
                 }
             },
         });
+        console.log("fin ajax");
     }else{
         alert("El DNI ingresado no es valido");
     }
