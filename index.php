@@ -54,70 +54,70 @@
             <script>
                 $( "#uno" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 1);
                     }
                 });    
 
                 $( "#dos" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 2);
                     }
                 });
 
                 $( "#tres" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 3);
                     }
                 });
 
                 $( "#cuatro" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 4);
                     }
                 });
 
                 $( "#cinco" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 5);
                     }
                 });
 
                 $( "#seis" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 6);
                     }
                 });
 
                 $( "#siete" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 7);
                     }
                 });
 
                 $( "#ocho" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 8);
                     }
                 });
 
                 $( "#nueve" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 9);
                     }
                 });
 
                 $( "#cero" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 0);
                     }
                 });
