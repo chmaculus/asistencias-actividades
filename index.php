@@ -54,70 +54,70 @@
             <script>
                 $( "#uno" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 1);
                     }
                 });    
 
                 $( "#dos" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 2);
                     }
                 });
 
                 $( "#tres" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 3);
                     }
                 });
 
                 $( "#cuatro" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 4);
                     }
                 });
 
                 $( "#cinco" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 5);
                     }
                 });
 
                 $( "#seis" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 6);
                     }
                 });
 
                 $( "#siete" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 7);
                     }
                 });
 
                 $( "#ocho" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 8);
                     }
                 });
 
                 $( "#nueve" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 9);
                     }
                 });
 
                 $( "#cero" ).click(function() {
                     var dni =  $( "#input-dni" ).val();
-                    if(dni.toString().length < 8){
+                    if(dni.toString().length < 10){
                         $( "#input-dni" ).val(dni + 0);
                     }
                 });
@@ -134,7 +134,7 @@
 
 $( "#enter" ).click(function() {
     var dni =  $( "#input-dni" ).val();
-    if(dni.toString().length == 8){
+    if(dni.toString().length >= 8 && dni.toString().length <= 10){
         console.log("llega dni");
         $.ajax({
             type: "POST",
@@ -164,7 +164,8 @@ $( "#enter" ).click(function() {
     //impide el ingreso de letras o caracteres por encima de 8 digitos
     $('#input-dni').keypress(function(event){
         var dni =  $( "#input-dni" ).val();
-        if(event.which != 8 && isNaN(String.fromCharCode(event.which)) || dni.toString().length == 8){
+//        if(event.which != 8 && isNaN(String.fromCharCode(event.which)) || dni.toString().length == 8){
+        if(event.which >= 8 && event.which <= 10 && isNaN(String.fromCharCode(event.which)) || (dni.toString().length >= 8 && dni.toString().length <= 10) ){
             event.preventDefault();
         }
     });
