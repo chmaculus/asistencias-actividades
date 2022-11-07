@@ -1,7 +1,7 @@
 <?php
 $server="localhost";
-$user="root";
-$passwd="";
+$user="agenda";
+$passwd="Agend49876!";
 $base="agenda";
 $id_connection=mysql_connect($server,$user,$passwd);
 
