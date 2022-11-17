@@ -40,8 +40,8 @@ normalize1();
 						</tr>
 
 							<tr>
-								<td><input type="text" name="fecha_desde" value="<?php if($_POST["fecha_desde"]){echo $_POST["fecha_desde"]; }else{ echo date("d/m/Y");}?>" size="10"></td>
-								<td><input type="text" name="fecha_hasta" value="<?php if($_POST["fecha_hasta"]){echo $_POST["fecha_hasta"]; }else{ echo date("d/m/Y");}?>" size="10"></td>
+								<td><input type="text" name="fecha_desde" value="<?php if($_POST["fecha_desde"]){echo $_POST["fecha_desde"]; }else{ echo date("1/m/Y");}?>" size="10"></td>
+								<td><input type="text" name="fecha_hasta" value="<?php if($_POST["fecha_hasta"]){echo $_POST["fecha_hasta"]; }else{ echo date("t/m/Y");}?>" size="10"></td>
 								<td>
 									<select name="actividades">
 										<?php
