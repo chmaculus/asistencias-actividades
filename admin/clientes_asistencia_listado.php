@@ -98,7 +98,7 @@ $where='where fecha_ingreso>="'.fecha_conv("/",$_POST["fecha_desde"]).'"
 	';
 
 if($_POST["actividades"]){
-	$where=$where.' and id_actividad ="'.$_POST["actividades"].'" ';
+	$where=$where.' and detalle ="'.$_POST["actividades"].'" ';
 }
 
 
