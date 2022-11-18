@@ -1,14 +1,8 @@
 <?php
 $server="localhost";
 $user="root";
-$passwd="";
-<<<<<<< HEAD:includes/connect.php
+$passwd="maculuss";
 $base="agenda";
-=======
-$base="agenda_dev";
-
-
->>>>>>> origin/produccion:includes/connect.php.example
 $id_connection=mysql_connect($server,$user,$passwd);
 
 if(mysql_error()){
@@ -20,9 +14,5 @@ mysql_select_db($base,$id_connection);
 if(mysql_error()){
 	echo "No se pudo Abrir la Base de Datos";
 }
-<<<<<<< HEAD:includes/connect.php
 /* jejeje*/
-=======
-
->>>>>>> origin/produccion:includes/connect.php.example
 ?>
