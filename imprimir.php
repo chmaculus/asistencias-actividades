@@ -48,7 +48,7 @@ session_start();
 			 nombres="'.$_SESSION['dni']['nombres'].'", 
 			 numero_documento="'.$_SESSION['dni']['numero_documento'].'", 
 			 tipo="'.$tipo.'", 
-			 detalle="'.$aaa[1].'", 
+			 detalle="'.quitar_tildes($aaa[1]).'", 
 			 fecha_ingreso="'.date("Y-m-d",$time).'", 
 			 hora_ingreso="'.date("H:i:s",$time).'"';
 			 mysql_query($q);

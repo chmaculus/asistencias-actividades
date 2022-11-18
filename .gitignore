@@ -1,19 +1,11 @@
-<<<<<<< HEAD
 /logs/*
 /imagenes/*
 /print.prn
 /admin/*.log
 /*.log
-=======
-./logs/*
-./imagenes/*
-./print.prn
 /includes/connect.php
 /includes/connect_mssql.php
 /admin/*.log
 /admin/logs
-
-
-
 includes/connect_turnero.php
->>>>>>> origin/produccion
+*.log

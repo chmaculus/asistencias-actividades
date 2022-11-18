@@ -49,10 +49,10 @@ normalize1();
 										$res=mysql_query($q);
 										echo '<option value="" label="Todas"></option>'.chr(10);
 										while($row=mysql_fetch_array($res)){
-											if($_POST["actividades"]==$row["ID"]){
-												echo '<option value="'.$row["ID"].'" label="'.utf8_encode($row["Actividad"]).'" selected></option>'.chr(10);
+											if($_POST["actividades"]==quitar_tildes($row["Actividad"])){
+												echo '<option value="'.quitar_tildes($row["Actividad"]).'" label="'.utf8_encode($row["Actividad"]).'" selected></option>'.chr(10);
 											}else{
-												echo '<option value="'.$row["ID"].'" label="'.utf8_encode($row["Actividad"]).'"></option>'.chr(10);
+												echo '<option value="'.quitar_tildes($row["Actividad"]).'" label="'.utf8_encode($row["Actividad"]).'"></option>'.chr(10);
 											}
 										}
 										?>
@@ -129,7 +129,7 @@ $query=$query.$where.$order;
 
 
 
-//echo "<br><br><br>".$query.";<br><br><br>";
+echo "<br><br><br>".$query.";<br><br><br>";
 /*
 #:::::: 1s=1m 1h=1d
 select * from clientes_asistencias where fecha_ingreso>="2021-12-01" and fecha_ingreso<="2021-12-31" and codigo_facturacion="a" order by apellido, nombres ;
